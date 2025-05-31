@@ -29,7 +29,7 @@ export async function encrypt(payload: JWTPayload) {
     .sign(new TextEncoder().encode(key));
 }
 
-export async function decrypt(session: string) {
+export async function decrypt(session: any) {
   try {
     const { payload } = await jwtVerify(
       session,
