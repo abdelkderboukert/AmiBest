@@ -1,9 +1,13 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Splash&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Splash&display=swap");
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 @theme inline {

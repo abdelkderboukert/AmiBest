@@ -1,6 +1,11 @@
 "use client";
 import { motion, useScroll, useTransform } from "framer-motion";
 import React, { useRef } from "react";
+import localFont from "next/font/local";
+
+const RoughSplash = localFont({
+  src: "../public/fonts/Rough Splash.ttf",
+});
 
 export default function MultiLayerParallax() {
   const ref = useRef(null);
@@ -9,7 +14,7 @@ export default function MultiLayerParallax() {
     offset: ["start start", "end start"],
   });
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
-  const textY = useTransform(scrollYProgress, [0, 1], ["-130%", "200%"]);
+  const textY = useTransform(scrollYProgress, [0, 1], ["-20%", "200%"]);
 
   return (
     <div
@@ -18,7 +23,7 @@ export default function MultiLayerParallax() {
     >
       <motion.h1
         style={{ y: textY }}
-        className="font-bold text-white text-7xl md:text-9xl relative z-10"
+        className={`font-bold text-white/70 text-5xl md:text-9xl relative z-10 ${RoughSplash.className} tracking-widest`}
       >
         AMIBEEST
       </motion.h1>
@@ -40,6 +45,34 @@ export default function MultiLayerParallax() {
           backgroundSize: "cover",
         }}
       />
+      <div className="abdolute inset-0 z-30 justify-center items-center text-6xl text-amber-400">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.2 }}
+          className="w-[80dvw] lg:w-[50dvw] h-max min-h-36 lg:h-44 mx-auto backdrop-blur-xs bg-white/20 rounded-lg lg:rounded-2xl flex flex-col"
+        >
+          <div className="w-full h-1/3 p-3 justify-start text-white text-xl">
+            Our Achievements
+          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 1.2 }}
+            className="size-full grid grid-cols-1 sm:grid-cols-3 gap-4 px-2"
+          >
+            <div className="bg-white/50 h-28 text-white flex items-center justify-center rounded-lg">
+              Box 1
+            </div>
+            <div className="bg-white/50 h-28 text-white flex items-center justify-center rounded-lg">
+              Box 2
+            </div>
+            <div className="bg-white/50 h-28 text-white flex items-center justify-center rounded-lg">
+              Box 3
+            </div>
+          </motion.div>
+        </motion.div>
+      </div>
     </div>
   );
 }
