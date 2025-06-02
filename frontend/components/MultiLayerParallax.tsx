@@ -61,14 +61,29 @@ export default function MultiLayerParallax() {
             transition={{ duration: 1, delay: 1.2 }}
             className="size-full grid grid-cols-1 sm:grid-cols-3 gap-4 px-2"
           >
-            <div className="bg-white/50 h-28 text-white flex items-center justify-center rounded-lg">
-              Box 1
+            <div className="relative bg-white/50 h-28 text-white rounded-lg overflow-hidden">
+              <div className="flex items-center justify-center h-full text-6xl font-bold">
+                168
+              </div>
+              <div className="absolute bottom-1 right-2 text-sm text-white opacity-80">
+                Project
+              </div>
             </div>
-            <div className="bg-white/50 h-28 text-white flex items-center justify-center rounded-lg">
-              Box 2
+            <div className="relative bg-white/50 h-28 text-white rounded-lg overflow-hidden">
+              <div className="flex items-center justify-center h-full text-6xl font-bold">
+                50
+              </div>
+              <div className="absolute bottom-1 right-2 text-sm text-white opacity-80">
+                Client
+              </div>
             </div>
-            <div className="bg-white/50 h-28 text-white flex items-center justify-center rounded-lg">
-              Box 3
+            <div className="relative bg-white/50 h-28 text-white rounded-lg overflow-hidden">
+              <div className="flex items-center justify-center h-full text-6xl font-bold">
+                7
+              </div>
+              <div className="absolute bottom-1 right-2 text-sm text-white opacity-80">
+                Ans Experions
+              </div>
             </div>
           </motion.div>
         </motion.div>
