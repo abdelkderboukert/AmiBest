@@ -6,7 +6,6 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { useRef } from "react";
 
-
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -16,62 +15,6 @@ export default function Home() {
       <Header />
       <main className={inter.className}>
         <MultiLayerParallax />
-        {/* <div className="w-full bg-[#06141D]">
-          <div className="max-w-lg space-y-4 mx-auto py-24 text-neutral-300">
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam
-              quae earum nobis quasi repellat. Amet facere nulla dolorum
-              accusantium sit dolores odio excepturi facilis laboriosam officiis
-              dolorem, nobis reprehenderit molestiae.
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam
-              quae earum nobis quasi repellat. Amet facere nulla dolorum
-              accusantium sit dolores odio excepturi facilis laboriosam officiis
-              dolorem, nobis reprehenderit molestiae.
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam
-              quae earum nobis quasi repellat. Amet facere nulla dolorum
-              accusantium sit dolores odio excepturi facilis laboriosam officiis
-              dolorem, nobis reprehenderit molestiae.
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam
-              quae earum nobis quasi repellat. Amet facere nulla dolorum
-              accusantium sit dolores odio excepturi facilis laboriosam officiis
-              dolorem, nobis reprehenderit molestiae.
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam
-              quae earum nobis quasi repellat. Amet facere nulla dolorum
-              accusantium sit dolores odio excepturi facilis laboriosam officiis
-              dolorem, nobis reprehenderit molestiae.
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam
-              quae earum nobis quasi repellat. Amet facere nulla dolorum
-              accusantium sit dolores odio excepturi facilis laboriosam officiis
-              dolorem, nobis reprehenderit molestiae.
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam
-              quae earum nobis quasi repellat. Amet facere nulla dolorum
-              accusantium sit dolores odio excepturi facilis laboriosam officiis
-              dolorem, nobis reprehenderit molestiae.
-            </p>
-          </div>
-        </div> */}
-        {/* <section className="w-full bg-[#06141D] h-screen flex justify-center items-center flex-col">
-          <h1 className="text-5xl text-neutral-300">About As</h1>
-          <p className="text-neutral-300 mx-auto text-center w-[80%] mt-4">
-            At AmiBest, we are dedicated to delivering high-quality solutions
-            that simplify and enhance your everyday life. Founded with a passion
-            for innovation and customer satisfaction, our company combines
-            technology, creativity, and expertise to bring you reliable and
-            user-friendly products and services.
-          </p>
-        </section> */}
         <section
           ref={ref}
           className="w-full h-screen bg-[#06141D] flex justify-center items-center flex-row lg:px-24"
@@ -139,10 +82,11 @@ export default function Home() {
             <div className="h-full w-1/5"></div>
           </motion.div>
         </section>
-        <section className="w-full justify-center items-center">
-          <div className="w-fit px-6 py-2 text-white font-semibold bg-blue-600 [clip-path:polygon(10%_0%,90%_0%,100%_100%,0%_100%)]">
+        <section className="size-full grid grid-cols-1 sm:grid-cols-4 gap-4 px-2">
+          <div className="h-56 bg-amber-400"><div className="h-28 px-6 py-2 text-white font-semibold bg-blue-600 [clip-path:polygon(5%_60%,100%_5%,100%_100%,0%_100%)]">
             Trapezoid Chip
-          </div>
+          </div></div>
+          
         </section>
       </main>
     </>
