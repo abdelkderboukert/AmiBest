@@ -138,6 +138,11 @@ export default function Home() {
             <div className="h-full w-1/5"></div>
           </motion.div>
         </section>
+        <section className="w-full justify-center items-center">
+          <div className="w-fit px-6 py-2 text-white font-semibold bg-blue-600 [clip-path:polygon(10%_0%,90%_0%,100%_100%,0%_100%)]">
+            Trapezoid Chip
+          </div>
+        </section>
       </main>
     </>
   );
