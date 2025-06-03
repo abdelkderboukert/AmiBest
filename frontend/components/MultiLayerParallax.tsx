@@ -2,6 +2,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import React, { useRef } from "react";
 import localFont from "next/font/local";
+import CountUp from "react-countup";
 
 const RoughSplash = localFont({
   src: "../public/fonts/Rough Splash.ttf",
@@ -63,25 +64,25 @@ export default function MultiLayerParallax() {
           >
             <div className="relative bg-white/50 h-28 text-white rounded-lg overflow-hidden">
               <div className="flex items-center justify-center h-full text-6xl font-bold">
-                168
+                <CountUp start={0} end={100} duration={5} />
               </div>
-              <div className="absolute bottom-1 right-2 text-sm text-white opacity-80">
+              <div className="absolute bottom-1 right-2 text-sm text-[#06141D] opacity-80">
                 Project
               </div>
             </div>
             <div className="relative bg-white/50 h-28 text-white rounded-lg overflow-hidden">
               <div className="flex items-center justify-center h-full text-6xl font-bold">
-                50
+                <CountUp start={0} end={50} duration={5} />
               </div>
-              <div className="absolute bottom-1 right-2 text-sm text-white opacity-80">
+              <div className="absolute bottom-1 right-2 text-sm text-[#06141D] opacity-80">
                 Client
               </div>
             </div>
             <div className="relative bg-white/50 h-28 text-white rounded-lg overflow-hidden">
               <div className="flex items-center justify-center h-full text-6xl font-bold">
-                7
+                <CountUp start={0} end={7} duration={5} />
               </div>
-              <div className="absolute bottom-1 right-2 text-sm text-white opacity-80">
+              <div className="absolute bottom-1 right-2 text-sm text-[#06141D] opacity-80">
                 Ans Experions
               </div>
             </div>
