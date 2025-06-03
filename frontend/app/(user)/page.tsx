@@ -6,6 +6,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { useRef } from "react";
 
+
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -123,7 +124,7 @@ export default function Home() {
             <div className="h-full w-4/5 flex flex-col">
               <Link
                 href={"https://maps.app.goo.gl/JrMJBhnWmdkMSTf8A"}
-                className="w-full h-4/5 bg-black bg-cover bg-no-repeat bg-current"
+                className="w-full h-4/5 bg-black bg-cover bg-no-repeat"
                 style={{ backgroundImage: "url('/img/local.png')" }}
               ></Link>
               <div className="w-0 lg:w-full h-1/5 flex items-start justify-start mt-1 p-3">
