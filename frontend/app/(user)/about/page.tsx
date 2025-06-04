@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import React from "react";
 import Image from "next/image";
 
@@ -39,6 +40,7 @@ const Page = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

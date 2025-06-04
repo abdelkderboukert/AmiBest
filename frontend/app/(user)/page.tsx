@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -138,7 +139,20 @@ export default function Home() {
             {/* </motion.div> */}
           </motion.div>
         </section>
+        <section className="w-full min-h-screen bg-[#06141D] justify-center items-center flex flex-col">
+          <motion.h1
+            className={`font-bold text-white/70 text-5xl md:text-7xl relative z-10 tracking-widest text-center`}
+          >
+            Contect US
+          </motion.h1>
+          <p className="text-white text-center w-1/2 mb-9">
+            At AmiBest, we offer a wide range of top-notch services tailored to
+            meet your every need. From concept to execution, we ensure quality,
+            efficiency, and satisfaction.
+          </p>
+        </section>
       </main>
+      <Footer />
     </>
   );
 }
