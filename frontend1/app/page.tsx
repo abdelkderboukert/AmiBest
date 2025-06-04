@@ -1,15 +1,24 @@
-import Link from "next/link"
-import Image from "next/image"
-import { Building2, ChevronRight, Clock, Compass, HardHat, Mail, MapPin, Phone } from "lucide-react"
+import Link from "next/link";
+import Image from "next/image";
+import {
+  Building2,
+  ChevronRight,
+  Clock,
+  Compass,
+  HardHat,
+  Mail,
+  MapPin,
+  Phone,
+} from "lucide-react";
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import ProjectCard from "@/components/project-card"
-import TestimonialCard from "@/components/testimonial-card"
-import TeamMember from "@/components/team-member"
-import MultiLayerParallax from "@/components/MultiLayerParallax"
-import React from "react"
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import ProjectCard from "@/components/project-card";
+import TestimonialCard from "@/components/testimonial-card";
+import TeamMember from "@/components/team-member";
+import MultiLayerParallax from "@/components/MultiLayerParallax";
+import React from "react";
 
 export default function Home() {
   return (
@@ -21,19 +30,34 @@ export default function Home() {
             <span className="text-xl font-bold">AmiBest</span>
           </div>
           <nav className="hidden md:flex items-center gap-6 text-sm">
-            <Link href="#" className="font-medium transition-colors hover:text-primary">
+            <Link
+              href="#"
+              className="font-medium transition-colors hover:text-primary"
+            >
               Home
             </Link>
-            <Link href="#projects" className="font-medium transition-colors hover:text-primary">
+            <Link
+              href="#projects"
+              className="font-medium transition-colors hover:text-primary"
+            >
               Projects
             </Link>
-            <Link href="#services" className="font-medium transition-colors hover:text-primary">
+            <Link
+              href="#services"
+              className="font-medium transition-colors hover:text-primary"
+            >
               Services
             </Link>
-            <Link href="#about" className="font-medium transition-colors hover:text-primary">
+            <Link
+              href="#about"
+              className="font-medium transition-colors hover:text-primary"
+            >
               About Us
             </Link>
-            <Link href="#contact" className="font-medium transition-colors hover:text-primary">
+            <Link
+              href="#contact"
+              className="font-medium transition-colors hover:text-primary"
+            >
               Contact
             </Link>
           </nav>
@@ -80,8 +104,12 @@ export default function Home() {
           <div className="container">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
               <div>
-                <h2 className="text-3xl font-bold tracking-tight">Our Featured Projects</h2>
-                <p className="text-muted-foreground mt-2">Explore our portfolio of completed engineering projects</p>
+                <h2 className="text-3xl font-bold tracking-tight">
+                  Our Featured Projects
+                </h2>
+                <p className="text-muted-foreground mt-2">
+                  Explore our portfolio of completed engineering projects
+                </p>
               </div>
             </div>
 
@@ -188,7 +216,9 @@ export default function Home() {
 
             <div className="flex justify-center mt-12">
               <Button variant="outline" className="gap-2">
-                View All Projects
+                <Link href="/projects">
+                  <span>View All Projects</span>
+                </Link>
                 <ChevronRight className="h-4 w-4" />
               </Button>
             </div>
@@ -199,9 +229,12 @@ export default function Home() {
         <section id="services" className="py-16 md:py-24 bg-muted/50">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-3xl font-bold tracking-tight">Comprehensive Engineering Services</h2>
+              <h2 className="text-3xl font-bold tracking-tight">
+                Comprehensive Engineering Services
+              </h2>
               <p className="text-muted-foreground mt-4">
-                From initial concept to final construction, we provide end-to-end civil engineering solutions
+                From initial concept to final construction, we provide
+                end-to-end civil engineering solutions
               </p>
             </div>
 
@@ -211,9 +244,12 @@ export default function Home() {
                   <div className="rounded-full bg-primary/10 p-3 w-12 h-12 flex items-center justify-center mb-4">
                     <Compass className="h-6 w-6 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold mb-2">Structural Engineering</h3>
+                  <h3 className="text-xl font-bold mb-2">
+                    Structural Engineering
+                  </h3>
                   <p className="text-muted-foreground">
-                    Comprehensive structural analysis, design, and assessment for buildings and infrastructure projects.
+                    Comprehensive structural analysis, design, and assessment
+                    for buildings and infrastructure projects.
                   </p>
                 </CardContent>
               </Card>
@@ -225,7 +261,8 @@ export default function Home() {
                   </div>
                   <h3 className="text-xl font-bold mb-2">Land Development</h3>
                   <p className="text-muted-foreground">
-                    Site planning, grading, drainage design, and permitting for residential and commercial developments.
+                    Site planning, grading, drainage design, and permitting for
+                    residential and commercial developments.
                   </p>
                 </CardContent>
               </Card>
@@ -235,9 +272,12 @@ export default function Home() {
                   <div className="rounded-full bg-primary/10 p-3 w-12 h-12 flex items-center justify-center mb-4">
                     <HardHat className="h-6 w-6 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold mb-2">Construction Management</h3>
+                  <h3 className="text-xl font-bold mb-2">
+                    Construction Management
+                  </h3>
                   <p className="text-muted-foreground">
-                    Expert oversight of construction projects, ensuring quality, safety, and adherence to schedules.
+                    Expert oversight of construction projects, ensuring quality,
+                    safety, and adherence to schedules.
                   </p>
                 </CardContent>
               </Card>
@@ -247,9 +287,12 @@ export default function Home() {
                   <div className="rounded-full bg-primary/10 p-3 w-12 h-12 flex items-center justify-center mb-4">
                     <Building2 className="h-6 w-6 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold mb-2">Infrastructure Design</h3>
+                  <h3 className="text-xl font-bold mb-2">
+                    Infrastructure Design
+                  </h3>
                   <p className="text-muted-foreground">
-                    Planning and design of roads, bridges, water systems, and other public infrastructure.
+                    Planning and design of roads, bridges, water systems, and
+                    other public infrastructure.
                   </p>
                 </CardContent>
               </Card>
@@ -261,7 +304,8 @@ export default function Home() {
                   </div>
                   <h3 className="text-xl font-bold mb-2">Project Planning</h3>
                   <p className="text-muted-foreground">
-                    Feasibility studies, cost estimation, and comprehensive project planning services.
+                    Feasibility studies, cost estimation, and comprehensive
+                    project planning services.
                   </p>
                 </CardContent>
               </Card>
@@ -271,13 +315,24 @@ export default function Home() {
                   <div className="rounded-full bg-primary/10 p-3 w-12 h-12 flex items-center justify-center mb-4">
                     <Mail className="h-6 w-6 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold mb-2">Permitting & Compliance</h3>
+                  <h3 className="text-xl font-bold mb-2">
+                    Permitting & Compliance
+                  </h3>
                   <p className="text-muted-foreground">
-                    Navigation of regulatory requirements and securing necessary approvals for your projects.
+                    Navigation of regulatory requirements and securing necessary
+                    approvals for your projects.
                   </p>
                 </CardContent>
               </Card>
             </div>
+          </div>
+          <div className="flex justify-center mt-12">
+            <Button variant="outline" className="gap-2">
+              <Link href="/services">
+                <span>View More Detai</span>
+              </Link>
+              <ChevronRight className="h-4 w-4" />
+            </Button>
           </div>
         </section>
 
@@ -286,16 +341,20 @@ export default function Home() {
           <div className="container">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl font-bold tracking-tight mb-4">About StructureCraft</h2>
+                <h2 className="text-3xl font-bold tracking-tight mb-4">
+                  About AmiBest
+                </h2>
                 <p className="text-lg mb-6">
-                  With over 25 years of experience, StructureCraft has established itself as a leader in civil
-                  engineering excellence. Our team of certified engineers brings innovation and precision to every
-                  project.
+                  With over 25 years of experience, AmiBest has established
+                  itself as a leader in civil engineering excellence. Our team
+                  of certified engineers brings innovation and precision to
+                  every project.
                 </p>
                 <p className="text-muted-foreground mb-8">
-                  We believe in sustainable development practices and implementing cutting-edge technologies to deliver
-                  projects that stand the test of time. Our commitment to quality and safety has earned us recognition
-                  across the industry.
+                  We believe in sustainable development practices and
+                  implementing cutting-edge technologies to deliver projects
+                  that stand the test of time. Our commitment to quality and
+                  safety has earned us recognition across the industry.
                 </p>
                 <div className="grid grid-cols-2 gap-4 mb-8">
                   <div>
@@ -304,7 +363,9 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="text-4xl font-bold text-primary">45+</h4>
-                    <p className="text-muted-foreground">Professional Engineers</p>
+                    <p className="text-muted-foreground">
+                      Professional Engineers
+                    </p>
                   </div>
                   <div>
                     <h4 className="text-4xl font-bold text-primary">25+</h4>
@@ -328,7 +389,9 @@ export default function Home() {
             </div>
 
             <div className="mt-24">
-              <h3 className="text-2xl font-bold text-center mb-12">Meet Our Leadership Team</h3>
+              <h3 className="text-2xl font-bold text-center mb-12">
+                Meet Our Leadership Team
+              </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 <TeamMember
                   name="Sarah Johnson"
@@ -358,20 +421,22 @@ export default function Home() {
         {/* Testimonials */}
         <section className="py-16 md:py-24 bg-muted/50">
           <div className="container">
-            <h2 className="text-3xl font-bold tracking-tight text-center mb-12">What Our Clients Say</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-center mb-12">
+              What Our Clients Say
+            </h2>
             <div className="grid md:grid-cols-3 gap-8">
               <TestimonialCard
-                quote="StructureCraft delivered our office complex on time and under budget. Their attention to detail and innovative solutions exceeded our expectations."
+                quote="AmiBest delivered our office complex on time and under budget. Their attention to detail and innovative solutions exceeded our expectations."
                 author="Robert Thompson"
                 company="Westside Development Corp"
               />
               <TestimonialCard
-                quote="Working with the StructureCraft team was seamless. Their expertise in structural engineering helped us overcome significant design challenges."
+                quote="Working with the AmiBest team was seamless. Their expertise in structural engineering helped us overcome significant design challenges."
                 author="Lisa Chen"
                 company="Urban Housing Authority"
               />
               <TestimonialCard
-                quote="The bridge project was complex, but StructureCraft's engineers provided creative solutions that saved us time and resources while enhancing safety."
+                quote="The bridge project was complex, but AmiBest's engineers provided creative solutions that saved us time and resources while enhancing safety."
                 author="James Wilson"
                 company="Metropolitan Transit Authority"
               />
@@ -384,10 +449,12 @@ export default function Home() {
           <div className="container">
             <div className="bg-primary text-primary-foreground rounded-lg p-8 md:p-12">
               <div className="max-w-3xl mx-auto text-center">
-                <h2 className="text-3xl font-bold mb-4">Ready to Start Your Project?</h2>
+                <h2 className="text-3xl font-bold mb-4">
+                  Ready to Start Your Project?
+                </h2>
                 <p className="text-lg mb-8 text-primary-foreground/90">
-                  Contact our team today for a consultation and discover how our engineering expertise can bring your
-                  vision to life.
+                  Contact our team today for a consultation and discover how our
+                  engineering expertise can bring your vision to life.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button size="lg" variant="secondary">
@@ -411,9 +478,12 @@ export default function Home() {
           <div className="container">
             <div className="grid md:grid-cols-2 gap-12">
               <div>
-                <h2 className="text-3xl font-bold tracking-tight mb-4">Contact Us</h2>
+                <h2 className="text-3xl font-bold tracking-tight mb-4">
+                  Contact Us
+                </h2>
                 <p className="text-muted-foreground mb-8">
-                  Have a project in mind or need engineering consultation? Our team is ready to assist you.
+                  Have a project in mind or need engineering consultation? Our
+                  team is ready to assist you.
                 </p>
 
                 <div className="space-y-6">
@@ -447,7 +517,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="font-medium">Email</h4>
-                      <p className="text-muted-foreground">info@structurecraft.com</p>
+                      <p className="text-muted-foreground">info@AmiBest.com</p>
                     </div>
                   </div>
                 </div>
@@ -516,10 +586,11 @@ export default function Home() {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <Building2 className="h-6 w-6 text-primary" />
-                <span className="text-xl font-bold">StructureCraft</span>
+                <span className="text-xl font-bold">AmiBest</span>
               </div>
               <p className="text-muted-foreground mb-4">
-                Building tomorrow's infrastructure with precision and innovation.
+                Building tomorrow's infrastructure with precision and
+                innovation.
               </p>
             </div>
 
@@ -527,27 +598,42 @@ export default function Home() {
               <h4 className="font-medium mb-4">Quick Links</h4>
               <ul className="space-y-2">
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground">
+                  <Link
+                    href="#"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link href="#projects" className="text-muted-foreground hover:text-foreground">
+                  <Link
+                    href="#projects"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
                     Projects
                   </Link>
                 </li>
                 <li>
-                  <Link href="#services" className="text-muted-foreground hover:text-foreground">
+                  <Link
+                    href="#services"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
                     Services
                   </Link>
                 </li>
                 <li>
-                  <Link href="#about" className="text-muted-foreground hover:text-foreground">
+                  <Link
+                    href="#about"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
                     About Us
                   </Link>
                 </li>
                 <li>
-                  <Link href="#contact" className="text-muted-foreground hover:text-foreground">
+                  <Link
+                    href="#contact"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
                     Contact
                   </Link>
                 </li>
@@ -558,27 +644,42 @@ export default function Home() {
               <h4 className="font-medium mb-4">Services</h4>
               <ul className="space-y-2">
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground">
+                  <Link
+                    href="#"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
                     Structural Engineering
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground">
+                  <Link
+                    href="#"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
                     Land Development
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground">
+                  <Link
+                    href="#"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
                     Construction Management
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground">
+                  <Link
+                    href="#"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
                     Infrastructure Design
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground">
+                  <Link
+                    href="#"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
                     Project Planning
                   </Link>
                 </li>
@@ -591,20 +692,27 @@ export default function Home() {
                 <p>1234 Engineering Way, Suite 500</p>
                 <p>Metropolis, CA 90001</p>
                 <p>Phone: (555) 123-4567</p>
-                <p>Email: info@structurecraft.com</p>
+                <p>Email: info@AmiBest.com</p>
               </address>
             </div>
           </div>
 
           <div className="border-t mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} StructureCraft Engineering. All rights reserved.
+              © {new Date().getFullYear()} AmiBest Engineering. All rights
+              reserved.
             </p>
             <div className="flex gap-4 mt-4 md:mt-0">
-              <Link href="#" className="text-muted-foreground hover:text-foreground">
+              <Link
+                href="#"
+                className="text-muted-foreground hover:text-foreground"
+              >
                 Privacy Policy
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-foreground">
+              <Link
+                href="#"
+                className="text-muted-foreground hover:text-foreground"
+              >
                 Terms of Service
               </Link>
             </div>
@@ -612,5 +720,5 @@ export default function Home() {
         </div>
       </footer>
     </div>
-  )
+  );
 }
