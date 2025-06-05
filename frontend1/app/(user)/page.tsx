@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -18,9 +19,54 @@ import ProjectCard from "@/components/project-card";
 import TestimonialCard from "@/components/testimonial-card";
 import TeamMember from "@/components/team-member";
 import MultiLayerParallax from "@/components/MultiLayerParallax";
-import React from "react";
+import React, { useState } from "react";
 
 export default function Home() {
+  interface FormData {
+    name: string;
+    company: string;
+    message: string;
+    email: string;
+    subject: string;
+  }
+
+  const [formData, setFormData] = useState<FormData>({
+    name: "",
+    company: "",
+    message: "",
+    email: "",
+    subject: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  // Update handleSubmit
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const response = await fetch("/api/sendEmail", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await response.json();
+    if (response.ok) {
+      alert("Email sent successfully!");
+    } else {
+      alert("Error sending email: " + data.error);
+    }
+  };
   return (
     <div className="flex flex-col min-h-screen">
       <header className="sticky top-0 z-40 w-full border-b bg-background">
@@ -524,7 +570,7 @@ export default function Home() {
               </div>
 
               <div className="bg-background p-6 rounded-lg border">
-                <form className="space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <label htmlFor="name" className="text-sm font-medium">
@@ -532,6 +578,8 @@ export default function Home() {
                       </label>
                       <input
                         id="name"
+                        value={formData.name}
+                        onChange={handleChange}
                         className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                         placeholder="Your name"
                       />
@@ -542,6 +590,8 @@ export default function Home() {
                       </label>
                       <input
                         id="email"
+                        value={formData.email}
+                        onChange={handleChange}
                         type="email"
                         className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                         placeholder="Your email"
@@ -555,6 +605,8 @@ export default function Home() {
                     </label>
                     <input
                       id="subject"
+                      value={formData.subject}
+                      onChange={handleChange}
                       className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                       placeholder="Project inquiry"
                     />
@@ -566,6 +618,8 @@ export default function Home() {
                     </label>
                     <textarea
                       id="message"
+                      value={formData.message}
+                      onChange={handleChange}
                       className="flex min-h-[120px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                       placeholder="Tell us about your project"
                     />

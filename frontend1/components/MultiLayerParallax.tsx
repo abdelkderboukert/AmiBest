@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import React, { useRef } from "react";
 import localFont from "next/font/local";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 // import CountUp from "react-countup";
 
 const RoughSplash = localFont({
@@ -100,13 +101,19 @@ export default function MultiLayerParallax() {
             residential, and public sector projects.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <Button size="lg">View Our Projects</Button>
+            <Button size="lg">
+              <Link href="/projects">
+                <span>View Our Projects</span>
+              </Link>
+            </Button>
             <Button
               size="lg"
               variant="outline"
               className="bg-white/10 text-white hover:bg-white/20"
             >
-              Our Services
+              <Link href="/Services">
+                <span>Our Services</span>
+              </Link>
             </Button>
           </div>
         </div>
