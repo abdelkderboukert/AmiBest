@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -89,19 +90,6 @@ export default function Home() {
             <div className="h-full w-1/5"></div>
           </motion.div>
         </section>
-        {/* <section className="size-full grid grid-cols-1 sm:grid-cols-4 gap-4 px-2">
-          <div className="relative h-56 ">
-            <div className="absolute inset-0 flex p-1 z-0 bg-transparent">
-              <div className="text-lg p-2 size-full font-bold text-black">
-                <div className="size-full inset-0 bg-amber-400">test</div>
-              </div>
-            </div>
-
-            <div className="absolute bottom-0 left-0 w-full z-10 h-28 px-6 py-2 text-white font-semibold bg-blue-600 [clip-path:polygon(5%_60%,100%_5%,100%_100%,0%_100%)]">
-              Trapezoid Chip
-            </div>
-          </div>
-        </section> */}
         <section className="w-full h-screen bg-[#06141D] justify-center items-center flex flex-col">
           <motion.h1
             className={`font-bold text-white/70 text-5xl md:text-7xl relative z-10 tracking-widest text-center`}
@@ -151,7 +139,20 @@ export default function Home() {
             {/* </motion.div> */}
           </motion.div>
         </section>
+        <section className="w-full min-h-screen bg-[#06141D] justify-center items-center flex flex-col">
+          <motion.h1
+            className={`font-bold text-white/70 text-5xl md:text-7xl relative z-10 tracking-widest text-center`}
+          >
+            Contect US
+          </motion.h1>
+          <p className="text-white text-center w-1/2 mb-9">
+            At AmiBest, we offer a wide range of top-notch services tailored to
+            meet your every need. From concept to execution, we ensure quality,
+            efficiency, and satisfaction.
+          </p>
+        </section>
       </main>
+      <Footer />
     </>
   );
 }
