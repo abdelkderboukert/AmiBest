@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useActionState } from "react";
-import * as motion from "motion/react-client";
+import {motion} from "framer-motion";
 import { login } from "./actions";
 
 export default function AdminLogin() {
