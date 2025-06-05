@@ -38,6 +38,8 @@ export default function Home() {
     subject: "",
   });
 
+  console.log(formData)
+
   const handleChange = (
     e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
   ) => {
