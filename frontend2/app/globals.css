@@ -1,0 +1,213 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #06141d;
+    --foreground: #ffffff;
+    --card: rgba(255, 255, 255, 0.08);
+    --card-foreground: #ffffff;
+    --popover: #0a1a26;
+    --popover-foreground: #ffffff;
+    --primary: #022f2e;
+    --primary-foreground: #ffffff;
+    --secondary: #ffffff;
+    --secondary-foreground: #06141d;
+    --muted: rgba(255, 255, 255, 0.05);
+    --muted-foreground: rgba(255, 255, 255, 0.7);
+    --accent: rgba(255, 255, 255, 0.1);
+    --accent-foreground: #ffffff;
+    --destructive: #ef4444;
+    --destructive-foreground: #ffffff;
+    --border: rgba(255, 255, 255, 0.1);
+    --input: rgba(255, 255, 255, 0.1);
+    --ring: #022f2e;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: #06141d;
+    --foreground: #ffffff;
+    --card: rgba(255, 255, 255, 0.08);
+    --card-foreground: #ffffff;
+    --popover: #0a1a26;
+    --popover-foreground: #ffffff;
+    --primary: #022f2e;
+    --primary-foreground: #ffffff;
+    --secondary: #ffffff;
+    --secondary-foreground: #06141d;
+    --muted: rgba(255, 255, 255, 0.05);
+    --muted-foreground: rgba(255, 255, 255, 0.7);
+    --accent: rgba(255, 255, 255, 0.1);
+    --accent-foreground: #ffffff;
+    --destructive: #ef4444;
+    --destructive-foreground: #ffffff;
+    --border: rgba(255, 255, 255, 0.1);
+    --input: rgba(255, 255, 255, 0.1);
+    --ring: #022f2e;
+  }
+}
+
+@layer base {
+  * {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  body {
+    background-color: #06141d;
+    color: #ffffff;
+  }
+}
+
+/* Custom styles for the engineering theme */
+.hero-gradient {
+  background: linear-gradient(135deg, #06141d 0%, #022f2e 100%);
+}
+
+.service-icon-bg {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.stats-highlight {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* Enhanced button styles */
+.btn-primary {
+  background: #022f2e;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #033a39;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(2, 47, 46, 0.3);
+}
+
+/* Card hover effects */
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.service-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.service-card:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* Navigation active state */
+.nav-active {
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #022f2e;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #033a39;
+}
+
+/* Form inputs */
+input,
+textarea,
+select {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-color: #022f2e !important;
+  box-shadow: 0 0 0 2px rgba(2, 47, 46, 0.3) !important;
+}
+
+/* Timeline line */
+.timeline-line {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Breadcrumb styling */
+.breadcrumb {
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Footer styling */
+.footer-bg {
+  background: rgba(0, 0, 0, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Tab styling */
+.tabs-list {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tabs-trigger {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.tabs-trigger[data-state="active"] {
+  background: #022f2e;
+  color: #ffffff;
+}
+
+/* Badge styling */
+.badge {
+  background: #022f2e;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Separator styling */
+.separator {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Line clamp utilities */
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}

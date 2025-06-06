@@ -440,10 +440,10 @@ export default function AdminPage() {
         <div className="w-full max-w-md p-8 space-y-8 service-card rounded-lg">
           <div className="text-center">
             <AlertTriangle className="mx-auto h-12 w-12 text-red-500" />
-            <h2 className="mt-6 text-3xl font-bold text-white">
+            <h2 className="mt-6 text-3xl font-bold text-black">
               Configuration Error
             </h2>
-            <p className="mt-2 text-sm text-white/70">
+            <p className="mt-2 text-sm text-black/70">
               Firebase is not properly configured
             </p>
           </div>
@@ -453,10 +453,10 @@ export default function AdminPage() {
           </Alert>
 
           <div className="space-y-4">
-            <p className="text-white/70 text-sm">
+            <p className="text-black/70 text-sm">
               Please ensure you have set up the following environment variables:
             </p>
-            <ul className="text-white/60 text-xs space-y-1">
+            <ul className="text-black/60 text-xs space-y-1">
               <li>• NEXT_PUBLIC_FIREBASE_API_KEY</li>
               <li>• NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN</li>
               <li>• NEXT_PUBLIC_FIREBASE_PROJECT_ID</li>
@@ -467,7 +467,7 @@ export default function AdminPage() {
           </div>
 
           <div className="text-center mt-4">
-            <Link href="/" className="text-sm text-white/70 hover:text-white">
+            <Link href="/" className="text-sm text-black/70 hover:text-black">
               Return to website
             </Link>
           </div>
@@ -490,8 +490,8 @@ export default function AdminPage() {
         <div className="w-full max-w-md p-8 space-y-8 service-card rounded-lg">
           <div className="text-center">
             <Building2 className="mx-auto h-12 w-12 text-primary" />
-            <h2 className="mt-6 text-3xl font-bold text-white">Admin Login</h2>
-            <p className="mt-2 text-sm text-white/70">
+            <h2 className="mt-6 text-3xl font-bold text-black">Admin Login</h2>
+            <p className="mt-2 text-sm text-black/70">
               Sign in to access the admin dashboard
             </p>
           </div>
@@ -507,7 +507,7 @@ export default function AdminPage() {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-white"
+                  className="block text-sm font-medium text-black"
                 >
                   Email address
                 </label>
@@ -525,7 +525,7 @@ export default function AdminPage() {
               <div>
                 <label
                   htmlFor="password"
-                  className="block text-sm font-medium text-white"
+                  className="block text-sm font-medium text-black"
                 >
                   Password
                 </label>
@@ -557,7 +557,7 @@ export default function AdminPage() {
           </form>
 
           <div className="text-center mt-4">
-            <Link href="/" className="text-sm text-white/70 hover:text-white">
+            <Link href="/" className="text-sm text-black/70 hover:text-black">
               Return to website
             </Link>
           </div>
@@ -572,12 +572,12 @@ export default function AdminPage() {
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
             <Building2 className="h-6 w-6 text-primary" />
-            <span className="text-xl font-bold text-white">
+            <span className="text-xl font-bold text-black">
               Admin Dashboard
             </span>
           </div>
           <div className="flex items-center gap-4">
-            <Link href="/" className="text-sm text-white/70 hover:text-white">
+            <Link href="/" className="text-sm text-black/70 hover:text-black">
               View Website
             </Link>
             <Button
@@ -610,10 +610,10 @@ export default function AdminPage() {
 
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
           <div>
-            <h1 className="text-3xl font-bold text-white">
+            <h1 className="text-3xl font-bold text-black">
               Project Management
             </h1>
-            <p className="text-white/70 mt-1">
+            <p className="text-black/70 mt-1">
               Add, edit, or remove projects from your portfolio
             </p>
           </div>
@@ -628,7 +628,7 @@ export default function AdminPage() {
 
         <div className="mb-6">
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-white/50" />
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-black/50" />
             <Input
               placeholder="Search projects..."
               value={searchQuery}
@@ -714,8 +714,8 @@ export default function AdminPage() {
       <Dialog open={isAddDialogOpen} onOpenChange={setIsAddDialogOpen}>
         <DialogContent className="sm:max-w-[600px] bg-background border-white/10">
           <DialogHeader>
-            <DialogTitle className="text-white">Add New Project</DialogTitle>
-            <DialogDescription className="text-white/70">
+            <DialogTitle className="text-black">Add New Project</DialogTitle>
+            <DialogDescription className="text-black/70">
               Fill in the details below to add a new project to your portfolio.
             </DialogDescription>
           </DialogHeader>
@@ -724,7 +724,7 @@ export default function AdminPage() {
               <div className="grid grid-cols-4 items-center gap-4">
                 <label
                   htmlFor="title"
-                  className="text-right text-white text-sm"
+                  className="text-right text-black text-sm"
                 >
                   Title
                 </label>
@@ -740,7 +740,7 @@ export default function AdminPage() {
               <div className="grid grid-cols-4 items-center gap-4">
                 <label
                   htmlFor="category"
-                  className="text-right text-white text-sm"
+                  className="text-right text-black text-sm"
                 >
                   Category
                 </label>
@@ -749,7 +749,7 @@ export default function AdminPage() {
                   name="category"
                   value={formData.category}
                   onChange={handleInputChange}
-                  className="col-span-3 flex h-10 w-full rounded-md border border-white/10 bg-background px-3 py-2 text-sm text-white"
+                  className="col-span-3 flex h-10 w-full rounded-md border border-white/10 bg-background px-3 py-2 text-sm text-black"
                   required
                 >
                   <option value="">Select a category</option>
@@ -761,7 +761,7 @@ export default function AdminPage() {
               <div className="grid grid-cols-4 items-center gap-4">
                 <label
                   htmlFor="description"
-                  className="text-right text-white text-sm"
+                  className="text-right text-black text-sm"
                 >
                   Description
                 </label>
@@ -770,14 +770,14 @@ export default function AdminPage() {
                   name="description"
                   value={formData.description}
                   onChange={handleInputChange}
-                  className="col-span-3 flex min-h-[100px] w-full rounded-md border border-white/10 bg-background px-3 py-2 text-sm text-white"
+                  className="col-span-3 flex min-h-[100px] w-full rounded-md border border-white/10 bg-background px-3 py-2 text-sm text-black"
                   required
                 />
               </div>
               <div className="grid grid-cols-4 items-center gap-4">
                 <label
                   htmlFor="featured"
-                  className="text-right text-white text-sm"
+                  className="text-right text-black text-sm"
                 >
                   Featured
                 </label>
@@ -792,7 +792,7 @@ export default function AdminPage() {
                   />
                   <label
                     htmlFor="featured"
-                    className="ml-2 text-sm text-white/70"
+                    className="ml-2 text-sm text-black/70"
                   >
                     Mark as featured project
                   </label>
@@ -801,7 +801,7 @@ export default function AdminPage() {
               <div className="grid grid-cols-4 items-center gap-4">
                 <label
                   htmlFor="image"
-                  className="text-right text-white text-sm"
+                  className="text-right text-black text-sm"
                 >
                   Image
                 </label>
@@ -833,7 +833,7 @@ export default function AdminPage() {
                 type="button"
                 variant="outline"
                 onClick={() => setIsAddDialogOpen(false)}
-                className="border-white/10 text-white"
+                className="border-white/10 text-black"
               >
                 Cancel
               </Button>
@@ -856,8 +856,8 @@ export default function AdminPage() {
       <Dialog open={isEditDialogOpen} onOpenChange={setIsEditDialogOpen}>
         <DialogContent className="sm:max-w-[600px] bg-background border-white/10">
           <DialogHeader>
-            <DialogTitle className="text-white">Edit Project</DialogTitle>
-            <DialogDescription className="text-white/70">
+            <DialogTitle className="text-black">Edit Project</DialogTitle>
+            <DialogDescription className="text-black/70">
               Update the project details below.
             </DialogDescription>
           </DialogHeader>
@@ -866,7 +866,7 @@ export default function AdminPage() {
               <div className="grid grid-cols-4 items-center gap-4">
                 <label
                   htmlFor="edit-title"
-                  className="text-right text-white text-sm"
+                  className="text-right text-black text-sm"
                 >
                   Title
                 </label>
@@ -882,7 +882,7 @@ export default function AdminPage() {
               <div className="grid grid-cols-4 items-center gap-4">
                 <label
                   htmlFor="edit-category"
-                  className="text-right text-white text-sm"
+                  className="text-right text-black text-sm"
                 >
                   Category
                 </label>
@@ -891,7 +891,7 @@ export default function AdminPage() {
                   name="category"
                   value={formData.category}
                   onChange={handleInputChange}
-                  className="col-span-3 flex h-10 w-full rounded-md border border-white/10 bg-background px-3 py-2 text-sm text-white"
+                  className="col-span-3 flex h-10 w-full rounded-md border border-white/10 bg-background px-3 py-2 text-sm text-black"
                   required
                 >
                   <option value="">Select a category</option>
@@ -903,7 +903,7 @@ export default function AdminPage() {
               <div className="grid grid-cols-4 items-center gap-4">
                 <label
                   htmlFor="edit-description"
-                  className="text-right text-white text-sm"
+                  className="text-right text-black text-sm"
                 >
                   Description
                 </label>
@@ -912,14 +912,14 @@ export default function AdminPage() {
                   name="description"
                   value={formData.description}
                   onChange={handleInputChange}
-                  className="col-span-3 flex min-h-[100px] w-full rounded-md border border-white/10 bg-background px-3 py-2 text-sm text-white"
+                  className="col-span-3 flex min-h-[100px] w-full rounded-md border border-white/10 bg-background px-3 py-2 text-sm text-black"
                   required
                 />
               </div>
               <div className="grid grid-cols-4 items-center gap-4">
                 <label
                   htmlFor="edit-featured"
-                  className="text-right text-white text-sm"
+                  className="text-right text-black text-sm"
                 >
                   Featured
                 </label>
@@ -934,7 +934,7 @@ export default function AdminPage() {
                   />
                   <label
                     htmlFor="edit-featured"
-                    className="ml-2 text-sm text-white/70"
+                    className="ml-2 text-sm text-black/70"
                   >
                     Mark as featured project
                   </label>
@@ -943,7 +943,7 @@ export default function AdminPage() {
               <div className="grid grid-cols-4 items-center gap-4">
                 <label
                   htmlFor="edit-image"
-                  className="text-right text-white text-sm"
+                  className="text-right text-black text-sm"
                 >
                   Image
                 </label>
@@ -956,7 +956,7 @@ export default function AdminPage() {
                     onChange={handleImageChange}
                     className="cursor-pointer"
                   />
-                  <p className="text-xs text-white/50 mt-1">
+                  <p className="text-xs text-black/50 mt-1">
                     Leave empty to keep the current image
                   </p>
                   {imagePreview && (
@@ -977,7 +977,7 @@ export default function AdminPage() {
                 type="button"
                 variant="outline"
                 onClick={() => setIsEditDialogOpen(false)}
-                className="border-white/10 text-white"
+                className="border-white/10 text-black"
               >
                 Cancel
               </Button>
@@ -1000,8 +1000,8 @@ export default function AdminPage() {
       <Dialog open={isDeleteDialogOpen} onOpenChange={setIsDeleteDialogOpen}>
         <DialogContent className="sm:max-w-[500px] bg-background border-white/10">
           <DialogHeader>
-            <DialogTitle className="text-white">Confirm Deletion</DialogTitle>
-            <DialogDescription className="text-white/70">
+            <DialogTitle className="text-black">Confirm Deletion</DialogTitle>
+            <DialogDescription className="text-black/70">
               Are you sure you want to delete this project? This action cannot
               be undone.
             </DialogDescription>
@@ -1018,10 +1018,10 @@ export default function AdminPage() {
                   />
                 </div>
                 <div>
-                  <h4 className="font-medium text-white">
+                  <h4 className="font-medium text-black">
                     {currentProject.title}
                   </h4>
-                  <p className="text-sm text-white/70">
+                  <p className="text-sm text-black/70">
                     {currentProject.category}
                   </p>
                 </div>
@@ -1033,7 +1033,7 @@ export default function AdminPage() {
               type="button"
               variant="outline"
               onClick={() => setIsDeleteDialogOpen(false)}
-              className="border-white/10 text-white"
+              className="border-white/10 text-black"
             >
               Cancel
             </Button>
@@ -1079,7 +1079,7 @@ function ProjectList({
   if (projects.length === 0) {
     return (
       <div className="text-center py-12">
-        <p className="text-white/70">No projects found</p>
+        <p className="text-black/70">No projects found</p>
       </div>
     );
   }
@@ -1103,7 +1103,7 @@ function ProjectList({
                 className="h-8 w-8 rounded-full bg-black/50 border-white/10 hover:bg-black/70"
                 onClick={() => onEdit(project)}
               >
-                <PencilLine className="h-4 w-4 text-white" />
+                <PencilLine className="h-4 w-4 text-black" />
                 <span className="sr-only">Edit</span>
               </Button>
               <Button
@@ -1112,26 +1112,26 @@ function ProjectList({
                 className="h-8 w-8 rounded-full bg-black/50 border-white/10 hover:bg-black/70"
                 onClick={() => onDelete(project)}
               >
-                <Trash2 className="h-4 w-4 text-white" />
+                <Trash2 className="h-4 w-4 text-black" />
                 <span className="sr-only">Delete</span>
               </Button>
             </div>
             <div className="absolute top-2 left-2">
-              <Badge className="bg-primary text-white">
+              <Badge className="bg-primary text-black">
                 {project.category}
               </Badge>
               {project.featured && (
-                <Badge className="ml-2 bg-yellow-500/80 text-white">
+                <Badge className="ml-2 bg-yellow-500/80 text-black">
                   Featured
                 </Badge>
               )}
             </div>
           </div>
           <CardContent className="p-4">
-            <h3 className="font-bold text-lg mb-1 text-white">
+            <h3 className="font-bold text-lg mb-1 text-black">
               {project.title}
             </h3>
-            <p className="text-white/70 text-sm line-clamp-2">
+            <p className="text-black/70 text-sm line-clamp-2">
               {project.description}
             </p>
           </CardContent>
