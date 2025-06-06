@@ -5,7 +5,16 @@ import { Inter } from "next/font/google";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
-import Footer from "@/components/Footer";
+import {
+  Building2,
+ // ChevronRight,
+ // Clock,
+ // Compass,
+ // HardHat,
+ // Mail,
+ // MapPin,
+ // Phone,
+} from "lucide-react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -152,7 +161,145 @@ export default function Home() {
           </p>
         </section>
       </main>
-      <Footer />
+      <footer className="border-t bg-[#06141D] bg-muted/30">
+        <div className="container py-8 md:py-12">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <Building2 className="h-6 w-6 text-primary" />
+                <span className="text-xl font-bold">AmiBest</span>
+              </div>
+              <p className="text-muted-foreground mb-4">
+                Building tomorrow&apos;s infrastructure with precision and
+                innovation.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="font-medium mb-4">Quick Links</h4>
+              <ul className="space-y-2">
+                <li>
+                  <Link
+                    href="#"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#projects"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    Projects
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#services"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    Services
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#about"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#contact"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    Contact
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-medium mb-4">Services</h4>
+              <ul className="space-y-2">
+                <li>
+                  <Link
+                    href="#"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    Structural Engineering
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    Land Development
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    Construction Management
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    Infrastructure Design
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    Project Planning
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-medium mb-4">Contact</h4>
+              <address className="not-italic text-muted-foreground space-y-2">
+                <p>1234 Engineering Way, Suite 500</p>
+                <p>Metropolis, CA 90001</p>
+                <p>Phone: (555) 123-4567</p>
+                <p>Email: info@AmiBest.com</p>
+              </address>
+            </div>
+          </div>
+
+          <div className="border-t mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <p className="text-sm text-muted-foreground">
+              © {new Date().getFullYear()} AmiBest Engineering. All rights
+              reserved.
+            </p>
+            <div className="flex gap-4 mt-4 md:mt-0">
+              <Link
+                href="#"
+                className="text-muted-foreground hover:text-foreground"
+              >
+                Privacy Policy
+              </Link>
+              <Link
+                href="#"
+                className="text-muted-foreground hover:text-foreground"
+              >
+                Terms of Service
+              </Link>
+            </div>
+          </div>
+        </div>
+      </footer>
     </>
   );
 }

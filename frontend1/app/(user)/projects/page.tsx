@@ -10,7 +10,7 @@ import {
   MapPin,
   Phone,
 } from "lucide-react";
-import ProjectCard from "@/components/project-card";
+import ProjectCard from "@/components/project-card1";
 import { Button } from "@/components/ui/button";
 
 const Page = () => {

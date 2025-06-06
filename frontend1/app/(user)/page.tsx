@@ -15,7 +15,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import ProjectCard from "@/components/project-card";
+import ProjectCard from "@/components/project-card1";
 import TestimonialCard from "@/components/testimonial-card";
 import TeamMember from "@/components/team-member";
 import MultiLayerParallax from "@/components/MultiLayerParallax";
