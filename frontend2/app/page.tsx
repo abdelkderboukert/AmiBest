@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import Link from "next/link"
-import Image from "next/image"
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
 import {
   Building2,
   ChevronRight,
@@ -14,17 +14,18 @@ import {
   Phone,
   ArrowRight,
   CheckCircle,
-} from "lucide-react"
+} from "lucide-react";
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import ProjectCard from "@/components/project-card"
-import TestimonialCard from "@/components/testimonial-card"
-import TeamMember from "@/components/team-member"
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import ProjectCard from "@/components/project-card";
+import TestimonialCard from "@/components/testimonial-card";
+import TeamMember from "@/components/team-member";
+import MultiLayerParallax from "@/components/MultiLayerParallax";
 
 export default function Home() {
-  const [activeImageIndex, setActiveImageIndex] = useState(0)
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
 
   // Project images for the image gallery
   const projectImages = [
@@ -53,7 +54,7 @@ export default function Home() {
       alt: "Central Station interior",
       caption: "Central Station - Interior Structure",
     },
-  ]
+  ];
 
   // Process images
   const processImages = [
@@ -81,7 +82,7 @@ export default function Home() {
       title: "Completion",
       description: "Final inspections and project delivery",
     },
-  ]
+  ];
 
   // Award images
   const awards = [
@@ -109,16 +110,62 @@ export default function Home() {
       title: "Safety Excellence",
       year: "2023",
     },
-  ]
+  ];
 
   // Auto-rotate featured images
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveImageIndex((prev) => (prev + 1) % projectImages.length)
-    }, 5000)
+      setActiveImageIndex((prev) => (prev + 1) % projectImages.length);
+    }, 5000);
 
-    return () => clearInterval(interval)
-  }, [projectImages.length])
+    return () => clearInterval(interval);
+  }, [projectImages.length]);
+
+  interface FormData {
+    name: string;
+    company: string;
+    message: string;
+    email: string;
+    subject: string;
+  }
+
+  const [formData, setFormData] = useState<FormData>({
+    name: "",
+    company: "",
+    message: "",
+    email: "",
+    subject: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  // Update handleSubmit
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const response = await fetch("/api/sendEmail", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await response.json();
+    if (response.ok) {
+      alert("Email sent successfully!");
+    } else {
+      alert("Error sending email: " + data.error);
+    }
+  };
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -129,25 +176,46 @@ export default function Home() {
             <span className="text-xl font-bold text-white">StructureCraft</span>
           </div>
           <nav className="hidden md:flex items-center gap-6 text-sm">
-            <Link href="#" className="font-medium transition-colors hover:text-primary text-white">
+            <Link
+              href="#"
+              className="font-medium transition-colors hover:text-primary text-white"
+            >
               Home
             </Link>
-            <Link href="#projects" className="font-medium transition-colors hover:text-primary text-white/70">
+            <Link
+              href="#projects"
+              className="font-medium transition-colors hover:text-primary text-white/70"
+            >
               Projects
             </Link>
-            <Link href="/services" className="font-medium transition-colors hover:text-primary text-white/70">
+            <Link
+              href="/services"
+              className="font-medium transition-colors hover:text-primary text-white/70"
+            >
               Services
             </Link>
-            <Link href="/about" className="font-medium transition-colors hover:text-primary text-white/70">
+            <Link
+              href="/about"
+              className="font-medium transition-colors hover:text-primary text-white/70"
+            >
               About Us
             </Link>
-            <Link href="#contact" className="font-medium transition-colors hover:text-primary text-white/70">
+            <Link
+              href="#contact"
+              className="font-medium transition-colors hover:text-primary text-white/70"
+            >
               Contact
             </Link>
           </nav>
           <div className="flex items-center gap-4">
-            <Button className="hidden md:flex bg-primary hover:bg-primary/90">Get a Quote</Button>
-            <Button variant="outline" size="icon" className="md:hidden border-white/20 text-white">
+            <Button className="hidden md:flex bg-primary hover:bg-primary/90">
+              Get a Quote
+            </Button>
+            <Button
+              variant="outline"
+              size="icon"
+              className="md:hidden border-white/20 text-white"
+            >
               <HardHat className="h-5 w-5" />
               <span className="sr-only">Toggle menu</span>
             </Button>
@@ -156,7 +224,7 @@ export default function Home() {
       </header>
       <main className="flex-1">
         {/* Hero Section with Video Background */}
-        <section className="relative hero-gradient">
+        {/* <section className="relative hero-gradient">
           <div className="absolute inset-0 z-0">
             <Image
               src="/placeholder.svg?height=800&width=1600"
@@ -199,15 +267,19 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
+        <MultiLayerParallax />
 
         {/* Image Gallery Section */}
         <section className="py-16 bg-white/5">
           <div className="container">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold tracking-tight text-white mb-4">Project Showcase</h2>
+              <h2 className="text-3xl font-bold tracking-tight text-white mb-4">
+                Project Showcase
+              </h2>
               <p className="text-white/70 max-w-2xl mx-auto">
-                Explore our latest engineering achievements through our visual gallery
+                Explore our latest engineering achievements through our visual
+                gallery
               </p>
             </div>
 
@@ -215,14 +287,18 @@ export default function Home() {
               {/* Main featured image */}
               <div className="md:col-span-2 relative h-[500px] rounded-lg overflow-hidden">
                 <Image
-                  src={projectImages[activeImageIndex].src || "/placeholder.svg"}
+                  src={
+                    projectImages[activeImageIndex].src || "/placeholder.svg"
+                  }
                   alt={projectImages[activeImageIndex].alt}
                   fill
                   className="object-cover transition-all duration-1000"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
                 <div className="absolute bottom-0 left-0 p-6">
-                  <p className="text-white text-xl font-bold">{projectImages[activeImageIndex].caption}</p>
+                  <p className="text-white text-xl font-bold">
+                    {projectImages[activeImageIndex].caption}
+                  </p>
                 </div>
               </div>
 
@@ -244,7 +320,9 @@ export default function Home() {
                     />
                     <div
                       className={`absolute inset-0 bg-black/30 ${
-                        index === activeImageIndex ? "bg-black/10" : "hover:bg-black/10"
+                        index === activeImageIndex
+                          ? "bg-black/10"
+                          : "hover:bg-black/10"
                       }`}
                     ></div>
                   </div>
@@ -259,7 +337,9 @@ export default function Home() {
                   key={index}
                   onClick={() => setActiveImageIndex(index)}
                   className={`w-3 h-3 rounded-full transition-all ${
-                    index === activeImageIndex ? "bg-primary" : "bg-white/30 hover:bg-white/50"
+                    index === activeImageIndex
+                      ? "bg-primary"
+                      : "bg-white/30 hover:bg-white/50"
                   }`}
                 />
               ))}
@@ -272,8 +352,12 @@ export default function Home() {
           <div className="container">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
               <div>
-                <h2 className="text-3xl font-bold tracking-tight text-white">Our Featured Projects</h2>
-                <p className="text-white/70 mt-2">Explore our portfolio of completed engineering projects</p>
+                <h2 className="text-3xl font-bold tracking-tight text-white">
+                  Our Featured Projects
+                </h2>
+                <p className="text-white/70 mt-2">
+                  Explore our portfolio of completed engineering projects
+                </p>
               </div>
             </div>
 
@@ -387,7 +471,11 @@ export default function Home() {
             </Tabs>
 
             <div className="flex justify-center mt-12">
-              <Button variant="outline" className="gap-2 border-white/20 text-white hover:bg-white/10" asChild>
+              <Button
+                variant="outline"
+                className="gap-2 border-white/20 text-white hover:bg-white/10"
+                asChild
+              >
                 <Link href="/projects">
                   View All Projects
                   <ChevronRight className="h-4 w-4" />
@@ -401,9 +489,12 @@ export default function Home() {
         <section id="services" className="py-16 md:py-24 bg-white/5">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-3xl font-bold tracking-tight text-white">Comprehensive Engineering Services</h2>
+              <h2 className="text-3xl font-bold tracking-tight text-white">
+                Comprehensive Engineering Services
+              </h2>
               <p className="text-white/70 mt-4">
-                From initial concept to final construction, we provide end-to-end civil engineering solutions
+                From initial concept to final construction, we provide
+                end-to-end civil engineering solutions
               </p>
             </div>
 
@@ -413,9 +504,12 @@ export default function Home() {
                   <div className="rounded-full service-icon-bg p-3 w-12 h-12 flex items-center justify-center mb-4">
                     <Compass className="h-6 w-6 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold mb-2 text-white">Structural Engineering</h3>
+                  <h3 className="text-xl font-bold mb-2 text-white">
+                    Structural Engineering
+                  </h3>
                   <p className="text-white/70">
-                    Comprehensive structural analysis, design, and assessment for buildings and infrastructure projects.
+                    Comprehensive structural analysis, design, and assessment
+                    for buildings and infrastructure projects.
                   </p>
                 </CardContent>
               </Card>
@@ -425,9 +519,12 @@ export default function Home() {
                   <div className="rounded-full service-icon-bg p-3 w-12 h-12 flex items-center justify-center mb-4">
                     <MapPin className="h-6 w-6 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold mb-2 text-white">Land Development</h3>
+                  <h3 className="text-xl font-bold mb-2 text-white">
+                    Land Development
+                  </h3>
                   <p className="text-white/70">
-                    Site planning, grading, drainage design, and permitting for residential and commercial developments.
+                    Site planning, grading, drainage design, and permitting for
+                    residential and commercial developments.
                   </p>
                 </CardContent>
               </Card>
@@ -437,9 +534,12 @@ export default function Home() {
                   <div className="rounded-full service-icon-bg p-3 w-12 h-12 flex items-center justify-center mb-4">
                     <HardHat className="h-6 w-6 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold mb-2 text-white">Construction Management</h3>
+                  <h3 className="text-xl font-bold mb-2 text-white">
+                    Construction Management
+                  </h3>
                   <p className="text-white/70">
-                    Expert oversight of construction projects, ensuring quality, safety, and adherence to schedules.
+                    Expert oversight of construction projects, ensuring quality,
+                    safety, and adherence to schedules.
                   </p>
                 </CardContent>
               </Card>
@@ -449,9 +549,12 @@ export default function Home() {
                   <div className="rounded-full service-icon-bg p-3 w-12 h-12 flex items-center justify-center mb-4">
                     <Building2 className="h-6 w-6 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold mb-2 text-white">Infrastructure Design</h3>
+                  <h3 className="text-xl font-bold mb-2 text-white">
+                    Infrastructure Design
+                  </h3>
                   <p className="text-white/70">
-                    Planning and design of roads, bridges, water systems, and other public infrastructure.
+                    Planning and design of roads, bridges, water systems, and
+                    other public infrastructure.
                   </p>
                 </CardContent>
               </Card>
@@ -461,9 +564,12 @@ export default function Home() {
                   <div className="rounded-full service-icon-bg p-3 w-12 h-12 flex items-center justify-center mb-4">
                     <Clock className="h-6 w-6 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold mb-2 text-white">Project Planning</h3>
+                  <h3 className="text-xl font-bold mb-2 text-white">
+                    Project Planning
+                  </h3>
                   <p className="text-white/70">
-                    Feasibility studies, cost estimation, and comprehensive project planning services.
+                    Feasibility studies, cost estimation, and comprehensive
+                    project planning services.
                   </p>
                 </CardContent>
               </Card>
@@ -473,9 +579,12 @@ export default function Home() {
                   <div className="rounded-full service-icon-bg p-3 w-12 h-12 flex items-center justify-center mb-4">
                     <Mail className="h-6 w-6 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold mb-2 text-white">Permitting & Compliance</h3>
+                  <h3 className="text-xl font-bold mb-2 text-white">
+                    Permitting & Compliance
+                  </h3>
                   <p className="text-white/70">
-                    Navigation of regulatory requirements and securing necessary approvals for your projects.
+                    Navigation of regulatory requirements and securing necessary
+                    approvals for your projects.
                   </p>
                 </CardContent>
               </Card>
@@ -487,24 +596,37 @@ export default function Home() {
         <section className="py-16 md:py-24">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-3xl font-bold tracking-tight text-white">Our Engineering Process</h2>
+              <h2 className="text-3xl font-bold tracking-tight text-white">
+                Our Engineering Process
+              </h2>
               <p className="text-white/70 mt-4">
-                A systematic approach to delivering exceptional results on every project
+                A systematic approach to delivering exceptional results on every
+                project
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {processImages.map((process, index) => (
-                <div key={index} className="service-card overflow-hidden rounded-lg">
+                <div
+                  key={index}
+                  className="service-card overflow-hidden rounded-lg"
+                >
                   <div className="relative h-48">
-                    <Image src={process.src || "/placeholder.svg"} alt={process.alt} fill className="object-cover" />
+                    <Image
+                      src={process.src || "/placeholder.svg"}
+                      alt={process.alt}
+                      fill
+                      className="object-cover"
+                    />
                     <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
                     <div className="absolute top-4 left-4 bg-primary text-white text-sm font-bold py-1 px-3 rounded-full">
                       Step {index + 1}
                     </div>
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold mb-2 text-white">{process.title}</h3>
+                    <h3 className="text-xl font-bold mb-2 text-white">
+                      {process.title}
+                    </h3>
                     <p className="text-white/70">{process.description}</p>
                   </div>
                 </div>
@@ -525,16 +647,20 @@ export default function Home() {
           <div className="container">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl font-bold tracking-tight mb-4 text-white">About StructureCraft</h2>
+                <h2 className="text-3xl font-bold tracking-tight mb-4 text-white">
+                  About AmiBest
+                </h2>
                 <p className="text-lg mb-6 text-white">
-                  With over 25 years of experience, StructureCraft has established itself as a leader in civil
-                  engineering excellence. Our team of certified engineers brings innovation and precision to every
-                  project.
+                  With over 25 years of experience, StructureCraft has
+                  established itself as a leader in civil engineering
+                  excellence. Our team of certified engineers brings innovation
+                  and precision to every project.
                 </p>
                 <p className="text-white/70 mb-8">
-                  We believe in sustainable development practices and implementing cutting-edge technologies to deliver
-                  projects that stand the test of time. Our commitment to quality and safety has earned us recognition
-                  across the industry.
+                  We believe in sustainable development practices and
+                  implementing cutting-edge technologies to deliver projects
+                  that stand the test of time. Our commitment to quality and
+                  safety has earned us recognition across the industry.
                 </p>
                 <div className="grid grid-cols-2 gap-4 mb-8">
                   <div>
@@ -554,11 +680,13 @@ export default function Home() {
                     <p className="text-white/70">Industry Awards</p>
                   </div>
                 </div>
-                <Button className="bg-primary hover:bg-primary/90">Learn More About Us</Button>
+                <Button className="bg-primary hover:bg-primary/90">
+                  Learn More About Us
+                </Button>
               </div>
               <div className="relative h-[400px] md:h-[500px]">
                 <Image
-                  src="/placeholder.svg?height=500&width=600"
+                  src="/img/Group 12.png"
                   alt="Engineering team"
                   fill
                   className="object-cover rounded-lg"
@@ -567,27 +695,29 @@ export default function Home() {
             </div>
 
             <div className="mt-24">
-              <h3 className="text-2xl font-bold text-center mb-12 text-white">Meet Our Leadership Team</h3>
+              <h3 className="text-2xl font-bold text-center mb-12 text-white">
+                Meet Our Leadership Team
+              </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 <TeamMember
                   name="Sarah Johnson"
                   role="Principal Engineer"
-                  imageUrl="/placeholder.svg?height=300&width=300"
+                  imageUrl="/img/profil.jpg"
                 />
                 <TeamMember
                   name="Michael Chen"
                   role="Structural Director"
-                  imageUrl="/placeholder.svg?height=300&width=300"
+                  imageUrl="/img/profil.jpg"
                 />
                 <TeamMember
                   name="David Rodriguez"
                   role="Project Manager"
-                  imageUrl="/placeholder.svg?height=300&width=300"
+                  imageUrl="/img/profil.jpg"
                 />
                 <TeamMember
                   name="Aisha Patel"
                   role="Environmental Specialist"
-                  imageUrl="/placeholder.svg?height=300&width=300"
+                  imageUrl="/img/profil.jpg"
                 />
               </div>
             </div>
@@ -598,9 +728,12 @@ export default function Home() {
         <section className="py-16 md:py-24">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-3xl font-bold tracking-tight text-white">Awards & Recognition</h2>
+              <h2 className="text-3xl font-bold tracking-tight text-white">
+                Awards & Recognition
+              </h2>
               <p className="text-white/70 mt-4">
-                Our commitment to excellence has been recognized by leading industry organizations
+                Our commitment to excellence has been recognized by leading
+                industry organizations
               </p>
             </div>
 
@@ -608,7 +741,12 @@ export default function Home() {
               {awards.map((award, index) => (
                 <div key={index} className="service-card p-6 text-center">
                   <div className="relative w-24 h-24 mx-auto mb-4">
-                    <Image src={award.src || "/placeholder.svg"} alt={award.alt} fill className="object-contain" />
+                    <Image
+                      src={award.src || "/placeholder.svg"}
+                      alt={award.alt}
+                      fill
+                      className="object-contain"
+                    />
                   </div>
                   <h3 className="text-white font-bold mb-1">{award.title}</h3>
                   <p className="text-white/70 text-sm">{award.year}</p>
@@ -622,9 +760,12 @@ export default function Home() {
         <section className="py-16 md:py-24 bg-white/5">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-3xl font-bold tracking-tight text-white">Project Highlights</h2>
+              <h2 className="text-3xl font-bold tracking-tight text-white">
+                Project Highlights
+              </h2>
               <p className="text-white/70 mt-4">
-                Explore some of our most challenging and innovative engineering solutions
+                Explore some of our most challenging and innovative engineering
+                solutions
               </p>
             </div>
 
@@ -641,26 +782,38 @@ export default function Home() {
                   <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2 text-white">City Center Bridge</h3>
+                  <h3 className="text-xl font-bold mb-2 text-white">
+                    City Center Bridge
+                  </h3>
                   <p className="text-white/70 mb-4">
-                    A 500-meter suspension bridge designed to withstand extreme weather conditions while maintaining
-                    aesthetic harmony with the urban landscape.
+                    A 500-meter suspension bridge designed to withstand extreme
+                    weather conditions while maintaining aesthetic harmony with
+                    the urban landscape.
                   </p>
                   <div className="space-y-2 mb-4">
                     <div className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                      <p className="text-white/70 text-sm">Innovative cable-stayed design</p>
+                      <p className="text-white/70 text-sm">
+                        Innovative cable-stayed design
+                      </p>
                     </div>
                     <div className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                      <p className="text-white/70 text-sm">Earthquake-resistant foundation</p>
+                      <p className="text-white/70 text-sm">
+                        Earthquake-resistant foundation
+                      </p>
                     </div>
                     <div className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                      <p className="text-white/70 text-sm">Integrated pedestrian walkways</p>
+                      <p className="text-white/70 text-sm">
+                        Integrated pedestrian walkways
+                      </p>
                     </div>
                   </div>
-                  <Button variant="outline" className="border-white/20 text-white hover:bg-white/10">
+                  <Button
+                    variant="outline"
+                    className="border-white/20 text-white hover:bg-white/10"
+                  >
                     View Project Details
                   </Button>
                 </div>
@@ -678,26 +831,37 @@ export default function Home() {
                   <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2 text-white">Tech Park Campus</h3>
+                  <h3 className="text-xl font-bold mb-2 text-white">
+                    Tech Park Campus
+                  </h3>
                   <p className="text-white/70 mb-4">
-                    A sustainable office complex featuring cutting-edge green building technologies and LEED Gold
-                    certification.
+                    A sustainable office complex featuring cutting-edge green
+                    building technologies and LEED Gold certification.
                   </p>
                   <div className="space-y-2 mb-4">
                     <div className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                      <p className="text-white/70 text-sm">Solar-integrated building envelope</p>
+                      <p className="text-white/70 text-sm">
+                        Solar-integrated building envelope
+                      </p>
                     </div>
                     <div className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                      <p className="text-white/70 text-sm">Rainwater harvesting system</p>
+                      <p className="text-white/70 text-sm">
+                        Rainwater harvesting system
+                      </p>
                     </div>
                     <div className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                      <p className="text-white/70 text-sm">Geothermal heating and cooling</p>
+                      <p className="text-white/70 text-sm">
+                        Geothermal heating and cooling
+                      </p>
                     </div>
                   </div>
-                  <Button variant="outline" className="border-white/20 text-white hover:bg-white/10">
+                  <Button
+                    variant="outline"
+                    className="border-white/20 text-white hover:bg-white/10"
+                  >
                     View Project Details
                   </Button>
                 </div>
@@ -709,7 +873,9 @@ export default function Home() {
         {/* Testimonials */}
         <section className="py-16 md:py-24">
           <div className="container">
-            <h2 className="text-3xl font-bold tracking-tight text-center mb-12 text-white">What Our Clients Say</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-center mb-12 text-white">
+              What Our Clients Say
+            </h2>
             <div className="grid md:grid-cols-3 gap-8">
               <TestimonialCard
                 quote="StructureCraft delivered our office complex on time and under budget. Their attention to detail and innovative solutions exceeded our expectations."
@@ -745,10 +911,12 @@ export default function Home() {
               </div>
               <div className="bg-primary text-primary-foreground rounded-lg p-8 md:p-12">
                 <div className="max-w-xl">
-                  <h2 className="text-3xl font-bold mb-4">Ready to Start Your Project?</h2>
+                  <h2 className="text-3xl font-bold mb-4">
+                    Ready to Start Your Project?
+                  </h2>
                   <p className="text-lg mb-8 text-primary-foreground/90">
-                    Contact our team today for a consultation and discover how our engineering expertise can bring your
-                    vision to life.
+                    Contact our team today for a consultation and discover how
+                    our engineering expertise can bring your vision to life.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4">
                     <Button size="lg" variant="secondary">
@@ -769,23 +937,26 @@ export default function Home() {
         </section>
 
         {/* Contact */}
-        <section id="contact" className="py-16 md:py-24 bg-black/20">
+        <section id="contact" className="py-16 md:py-24 bg-muted/30">
           <div className="container">
             <div className="grid md:grid-cols-2 gap-12">
               <div>
-                <h2 className="text-3xl font-bold tracking-tight mb-4 text-white">Contact Us</h2>
-                <p className="text-white/70 mb-8">
-                  Have a project in mind or need engineering consultation? Our team is ready to assist you.
+                <h2 className="text-3xl font-bold tracking-tight mb-4">
+                  Contact Us
+                </h2>
+                <p className="text-muted-foreground mb-8">
+                  Have a project in mind or need engineering consultation? Our
+                  team is ready to assist you.
                 </p>
 
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
-                    <div className="service-icon-bg p-3 rounded-full">
-                      <MapPin className="h-5 w-5 text-white" />
+                    <div className="bg-primary/10 p-3 rounded-full">
+                      <MapPin className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                      <h4 className="font-medium text-white">Office Location</h4>
-                      <p className="text-white/70">
+                      <h4 className="font-medium">Office Location</h4>
+                      <p className="text-muted-foreground">
                         1234 Engineering Way, Suite 500
                         <br />
                         Metropolis, CA 90001
@@ -794,86 +965,88 @@ export default function Home() {
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="service-icon-bg p-3 rounded-full">
-                      <Phone className="h-5 w-5 text-white" />
+                    <div className="bg-primary/10 p-3 rounded-full">
+                      <Phone className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                      <h4 className="font-medium text-white">Phone</h4>
-                      <p className="text-white/70">(555) 123-4567</p>
+                      <h4 className="font-medium">Phone</h4>
+                      <p className="text-muted-foreground">(555) 123-4567</p>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="service-icon-bg p-3 rounded-full">
-                      <Mail className="h-5 w-5 text-white" />
+                    <div className="bg-primary/10 p-3 rounded-full">
+                      <Mail className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                      <h4 className="font-medium text-white">Email</h4>
-                      <p className="text-white/70">info@structurecraft.com</p>
+                      <h4 className="font-medium">Email</h4>
+                      <p className="text-muted-foreground">info@AmiBest.com</p>
                     </div>
                   </div>
                 </div>
-
-                {/* Office Image */}
-                <div className="mt-8 relative h-48 rounded-lg overflow-hidden">
-                  <Image
-                    src="/placeholder.svg?height=300&width=600"
-                    alt="StructureCraft office building"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
               </div>
 
-              <div className="service-card p-6 rounded-lg">
-                <form className="space-y-4">
+              <div className="bg-background p-6 rounded-lg border">
+                <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <label htmlFor="name" className="text-sm font-medium text-white">
+                      <label htmlFor="name" className="text-sm font-medium">
                         Name
                       </label>
                       <input
                         id="name"
-                        className="flex h-10 w-full rounded-md px-3 py-2 text-sm"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                         placeholder="Your name"
                       />
                     </div>
                     <div className="space-y-2">
-                      <label htmlFor="email" className="text-sm font-medium text-white">
+                      <label htmlFor="email" className="text-sm font-medium">
                         Email
                       </label>
                       <input
                         id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
                         type="email"
-                        className="flex h-10 w-full rounded-md px-3 py-2 text-sm"
+                        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                         placeholder="Your email"
                       />
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <label htmlFor="subject" className="text-sm font-medium text-white">
+                    <label htmlFor="subject" className="text-sm font-medium">
                       Subject
                     </label>
                     <input
                       id="subject"
-                      className="flex h-10 w-full rounded-md px-3 py-2 text-sm"
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleChange}
+                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                       placeholder="Project inquiry"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <label htmlFor="message" className="text-sm font-medium text-white">
+                    <label htmlFor="message" className="text-sm font-medium">
                       Message
                     </label>
                     <textarea
                       id="message"
-                      className="flex min-h-[120px] w-full rounded-md px-3 py-2 text-sm"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      className="flex min-h-[120px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                       placeholder="Tell us about your project"
                     />
                   </div>
 
-                  <Button type="submit" className="w-full bg-primary hover:bg-primary/90">
+                  <Button type="submit" className="w-full">
                     Send Message
                   </Button>
                 </form>
@@ -888,14 +1061,22 @@ export default function Home() {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <Building2 className="h-6 w-6 text-primary" />
-                <span className="text-xl font-bold text-white">StructureCraft</span>
+                <span className="text-xl font-bold text-white">
+                  StructureCraft
+                </span>
               </div>
-              <p className="text-white/70 mb-4">Building tomorrow's infrastructure with precision and innovation.</p>
+              <p className="text-white/70 mb-4">
+                Building tomorrow's infrastructure with precision and
+                innovation.
+              </p>
 
               {/* Footer Gallery */}
               <div className="grid grid-cols-3 gap-2 mt-4">
                 {[1, 2, 3, 4, 5, 6].map((i) => (
-                  <div key={i} className="relative h-16 rounded-sm overflow-hidden">
+                  <div
+                    key={i}
+                    className="relative h-16 rounded-sm overflow-hidden"
+                  >
                     <Image
                       src={`/placeholder.svg?height=64&width=64&text=Project${i}`}
                       alt={`Project thumbnail ${i}`}
@@ -916,22 +1097,34 @@ export default function Home() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="#projects" className="text-white/70 hover:text-white">
+                  <Link
+                    href="#projects"
+                    className="text-white/70 hover:text-white"
+                  >
                     Projects
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services" className="text-white/70 hover:text-white">
+                  <Link
+                    href="/services"
+                    className="text-white/70 hover:text-white"
+                  >
                     Services
                   </Link>
                 </li>
                 <li>
-                  <Link href="/about" className="text-white/70 hover:text-white">
+                  <Link
+                    href="/about"
+                    className="text-white/70 hover:text-white"
+                  >
                     About Us
                   </Link>
                 </li>
                 <li>
-                  <Link href="#contact" className="text-white/70 hover:text-white">
+                  <Link
+                    href="#contact"
+                    className="text-white/70 hover:text-white"
+                  >
                     Contact
                   </Link>
                 </li>
@@ -987,7 +1180,9 @@ export default function Home() {
                   className="object-cover"
                 />
                 <div className="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/10 transition-all">
-                  <span className="text-white text-sm font-medium">View Map</span>
+                  <span className="text-white text-sm font-medium">
+                    View Map
+                  </span>
                 </div>
               </div>
             </div>
@@ -995,7 +1190,8 @@ export default function Home() {
 
           <div className="border-t border-white/10 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-white/70">
-              © {new Date().getFullYear()} StructureCraft Engineering. All rights reserved.
+              © {new Date().getFullYear()} StructureCraft Engineering. All
+              rights reserved.
             </p>
             <div className="flex gap-4 mt-4 md:mt-0">
               <Link href="#" className="text-white/70 hover:text-white">
@@ -1009,5 +1205,5 @@ export default function Home() {
         </div>
       </footer>
     </div>
-  )
+  );
 }
