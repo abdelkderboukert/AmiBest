@@ -1,11 +1,20 @@
-import Link from "next/link"
-import Image from "next/image"
-import { Building2, Award, GraduationCap, Briefcase, MapPin, Users, CheckCircle, Clock } from "lucide-react"
+import Link from "next/link";
+import Image from "next/image";
+import {
+  Building2,
+  Award,
+  GraduationCap,
+  Briefcase,
+  MapPin,
+  Users,
+  CheckCircle,
+  Clock,
+} from "lucide-react";
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import TeamMember from "@/components/team-member"
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import TeamMember from "@/components/team-member";
 
 export default function AboutPage() {
   return (
@@ -14,22 +23,37 @@ export default function AboutPage() {
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
             <Building2 className="h-6 w-6 text-primary" />
-            <span className="text-xl font-bold">StructureCraft</span>
+            <span className="text-xl font-bold">AmiBest</span>
           </div>
           <nav className="hidden md:flex items-center gap-6 text-sm">
-            <Link href="/" className="font-medium transition-colors hover:text-primary">
+            <Link
+              href="/"
+              className="font-medium transition-colors hover:text-primary"
+            >
               Home
             </Link>
-            <Link href="/#projects" className="font-medium transition-colors hover:text-primary">
+            <Link
+              href="/#projects"
+              className="font-medium transition-colors hover:text-primary"
+            >
               Projects
             </Link>
-            <Link href="/services" className="font-medium transition-colors hover:text-primary">
+            <Link
+              href="/services"
+              className="font-medium transition-colors hover:text-primary"
+            >
               Services
             </Link>
-            <Link href="/about" className="font-medium transition-colors hover:text-primary text-primary">
+            <Link
+              href="/about"
+              className="font-medium transition-colors hover:text-primary text-primary"
+            >
               About Us
             </Link>
-            <Link href="/#contact" className="font-medium transition-colors hover:text-primary">
+            <Link
+              href="/#contact"
+              className="font-medium transition-colors hover:text-primary"
+            >
               Contact
             </Link>
           </nav>
@@ -54,13 +78,13 @@ export default function AboutPage() {
         {/* Hero Section */}
         <section className="relative hero-gradient text-white">
           <div className="absolute inset-0 z-0">
-            <Image
+            {/* <Image
               src="/placeholder.svg?height=600&width=1600"
               alt="Engineering team at work"
               fill
               className="object-cover opacity-20"
               priority
-            />
+            /> */}
           </div>
           <div className="container relative z-10 py-24 md:py-32">
             <div className="max-w-3xl">
@@ -68,8 +92,9 @@ export default function AboutPage() {
                 Building Excellence Since 1998
               </h1>
               <p className="text-xl text-gray-200 mb-8">
-                StructureCraft is a team of dedicated engineers, designers, and project managers committed to delivering
-                innovative and sustainable engineering solutions.
+                AmiBest is a team of dedicated engineers, designers, and project
+                managers committed to delivering innovative and sustainable
+                engineering solutions.
               </p>
               <div className="flex flex-wrap gap-4 mt-8">
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 flex items-center gap-3">
@@ -110,22 +135,30 @@ export default function AboutPage() {
           <div className="container">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl font-bold tracking-tight mb-6">Our Story</h2>
+                <h2 className="text-3xl font-bold tracking-tight mb-6">
+                  Our Story
+                </h2>
                 <p className="text-lg mb-6">
-                  Founded in 1998 by Sarah Johnson and Michael Chen, StructureCraft began as a small structural
-                  engineering firm with a vision to transform the built environment through innovative design and
-                  sustainable practices.
+                  Founded in 1998 by Sarah Johnson and Michael Chen,
+                  StructureCraft began as a small structural engineering firm
+                  with a vision to transform the built environment through
+                  innovative design and sustainable practices.
                 </p>
                 <p className="text-muted-foreground mb-6">
-                  What started as a team of five engineers working from a small office has grown into a
-                  multidisciplinary firm with over 45 professional engineers and offices in three major cities. Our
-                  growth has been driven by our commitment to excellence, our collaborative approach, and our ability to
-                  tackle complex engineering challenges.
+                  What started as a team of five engineers working from a small
+                  office has grown into a multidisciplinary firm with over 45
+                  professional engineers and offices in three major cities. Our
+                  growth has been driven by our commitment to excellence, our
+                  collaborative approach, and our ability to tackle complex
+                  engineering challenges.
                 </p>
                 <p className="text-muted-foreground mb-6">
-                  Today, StructureCraft is recognized as a leader in civil engineering, known for delivering projects
-                  that balance technical innovation, environmental responsibility, and community needs. From iconic
-                  bridges to sustainable commercial developments, our portfolio showcases our versatility and expertise.
+                  Today, StructureCraft is recognized as a leader in civil
+                  engineering, known for delivering projects that balance
+                  technical innovation, environmental responsibility, and
+                  community needs. From iconic bridges to sustainable commercial
+                  developments, our portfolio showcases our versatility and
+                  expertise.
                 </p>
                 <div className="flex items-center gap-4 mt-8">
                   <Image
@@ -136,8 +169,10 @@ export default function AboutPage() {
                     className="rounded-full"
                   />
                   <div>
-                    <p className="font-bold">Sarah Johnson</p>
-                    <p className="text-sm text-muted-foreground">Co-founder & Principal Engineer</p>
+                    <p className="font-bold">Amirat Mohamed</p>
+                    <p className="text-sm text-muted-foreground">
+                      Co-founder & Principal Engineer
+                    </p>
                   </div>
                 </div>
               </div>
@@ -157,9 +192,12 @@ export default function AboutPage() {
         <section className="py-16 md:py-24 bg-muted/50">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-3xl font-bold tracking-tight mb-4">Our Core Values</h2>
+              <h2 className="text-3xl font-bold tracking-tight mb-4">
+                Our Core Values
+              </h2>
               <p className="text-lg text-muted-foreground">
-                These principles guide our work and define our approach to every project we undertake
+                These principles guide our work and define our approach to every
+                project we undertake
               </p>
             </div>
 
@@ -171,7 +209,8 @@ export default function AboutPage() {
                   </div>
                   <h3 className="text-xl font-bold mb-2">Excellence</h3>
                   <p className="text-muted-foreground">
-                    We are committed to delivering the highest quality in everything we do, from design to execution.
+                    We are committed to delivering the highest quality in
+                    everything we do, from design to execution.
                   </p>
                 </CardContent>
               </Card>
@@ -183,7 +222,8 @@ export default function AboutPage() {
                   </div>
                   <h3 className="text-xl font-bold mb-2">Collaboration</h3>
                   <p className="text-muted-foreground">
-                    We believe in the power of teamwork and partnership, working closely with clients and stakeholders.
+                    We believe in the power of teamwork and partnership, working
+                    closely with clients and stakeholders.
                   </p>
                 </CardContent>
               </Card>
@@ -191,11 +231,15 @@ export default function AboutPage() {
               <Card className="service-card">
                 <CardContent className="pt-6">
                   <div className="rounded-full service-icon-bg p-3 w-12 h-12 flex items-center justify-center mb-4">
-                    <CheckCircle className="h-6 w-6" style={{ color: "#06141D" }} />
+                    <CheckCircle
+                      className="h-6 w-6"
+                      style={{ color: "#06141D" }}
+                    />
                   </div>
                   <h3 className="text-xl font-bold mb-2">Integrity</h3>
                   <p className="text-muted-foreground">
-                    We uphold the highest ethical standards in our business practices and professional relationships.
+                    We uphold the highest ethical standards in our business
+                    practices and professional relationships.
                   </p>
                 </CardContent>
               </Card>
@@ -203,11 +247,15 @@ export default function AboutPage() {
               <Card className="service-card">
                 <CardContent className="pt-6">
                   <div className="rounded-full service-icon-bg p-3 w-12 h-12 flex items-center justify-center mb-4">
-                    <GraduationCap className="h-6 w-6" style={{ color: "#06141D" }} />
+                    <GraduationCap
+                      className="h-6 w-6"
+                      style={{ color: "#06141D" }}
+                    />
                   </div>
                   <h3 className="text-xl font-bold mb-2">Innovation</h3>
                   <p className="text-muted-foreground">
-                    We continuously seek new ideas and approaches to solve complex engineering challenges.
+                    We continuously seek new ideas and approaches to solve
+                    complex engineering challenges.
                   </p>
                 </CardContent>
               </Card>
@@ -219,7 +267,8 @@ export default function AboutPage() {
                   </div>
                   <h3 className="text-xl font-bold mb-2">Reliability</h3>
                   <p className="text-muted-foreground">
-                    We deliver on our promises, meeting deadlines and exceeding expectations consistently.
+                    We deliver on our promises, meeting deadlines and exceeding
+                    expectations consistently.
                   </p>
                 </CardContent>
               </Card>
@@ -227,11 +276,15 @@ export default function AboutPage() {
               <Card className="service-card">
                 <CardContent className="pt-6">
                   <div className="rounded-full service-icon-bg p-3 w-12 h-12 flex items-center justify-center mb-4">
-                    <Briefcase className="h-6 w-6" style={{ color: "#06141D" }} />
+                    <Briefcase
+                      className="h-6 w-6"
+                      style={{ color: "#06141D" }}
+                    />
                   </div>
                   <h3 className="text-xl font-bold mb-2">Sustainability</h3>
                   <p className="text-muted-foreground">
-                    We prioritize environmentally responsible design and construction practices in all our projects.
+                    We prioritize environmentally responsible design and
+                    construction practices in all our projects.
                   </p>
                 </CardContent>
               </Card>
@@ -243,9 +296,12 @@ export default function AboutPage() {
         <section className="py-16 md:py-24">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-3xl font-bold tracking-tight mb-4">Meet Our Team</h2>
+              <h2 className="text-3xl font-bold tracking-tight mb-4">
+                Meet Our Team
+              </h2>
               <p className="text-lg text-muted-foreground">
-                Our diverse team of experts brings together decades of experience in various engineering disciplines
+                Our diverse team of experts brings together decades of
+                experience in various engineering disciplines
               </p>
             </div>
 
@@ -254,7 +310,9 @@ export default function AboutPage() {
                 <TabsList>
                   <TabsTrigger value="leadership">Leadership</TabsTrigger>
                   <TabsTrigger value="engineering">Engineering</TabsTrigger>
-                  <TabsTrigger value="project-management">Project Management</TabsTrigger>
+                  <TabsTrigger value="project-management">
+                    Project Management
+                  </TabsTrigger>
                 </TabsList>
               </div>
 
@@ -263,22 +321,22 @@ export default function AboutPage() {
                   <TeamMember
                     name="Sarah Johnson"
                     role="Principal Engineer & Co-founder"
-                    imageUrl="/placeholder.svg?height=300&width=300"
+                    imageUrl="/img/profil.jpg"
                   />
                   <TeamMember
                     name="Michael Chen"
                     role="Structural Director & Co-founder"
-                    imageUrl="/placeholder.svg?height=300&width=300"
+                    imageUrl="/img/profil.jpg"
                   />
                   <TeamMember
                     name="David Rodriguez"
                     role="Chief Project Manager"
-                    imageUrl="/placeholder.svg?height=300&width=300"
+                    imageUrl="/img/profil.jpg"
                   />
                   <TeamMember
                     name="Aisha Patel"
                     role="Environmental Division Head"
-                    imageUrl="/placeholder.svg?height=300&width=300"
+                    imageUrl="/img/profil.jpg"
                   />
                 </div>
               </TabsContent>
@@ -340,9 +398,12 @@ export default function AboutPage() {
         <section className="py-16 md:py-24 bg-muted/50">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-3xl font-bold tracking-tight mb-4">Our Journey</h2>
+              <h2 className="text-3xl font-bold tracking-tight mb-4">
+                Our Journey
+              </h2>
               <p className="text-lg text-muted-foreground">
-                Key milestones in our company's history that have shaped who we are today
+                Key milestones in our company's history that have shaped who we
+                are today
               </p>
             </div>
 
@@ -359,10 +420,13 @@ export default function AboutPage() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="md:text-right md:pr-12">
                       <h3 className="text-2xl font-bold mb-2">1998</h3>
-                      <h4 className="text-xl font-medium mb-3">Company Founded</h4>
+                      <h4 className="text-xl font-medium mb-3">
+                        Company Founded
+                      </h4>
                       <p className="text-muted-foreground">
-                        Sarah Johnson and Michael Chen establish StructureCraft with a team of five engineers, focusing
-                        on structural design for commercial buildings.
+                        Sarah Johnson and Michael Chen establish StructureCraft
+                        with a team of five engineers, focusing on structural
+                        design for commercial buildings.
                       </p>
                     </div>
                     <div className="md:pl-12">
@@ -395,10 +459,13 @@ export default function AboutPage() {
                     </div>
                     <div className="md:pl-12 md:order-2 order-1">
                       <h3 className="text-2xl font-bold mb-2">2005</h3>
-                      <h4 className="text-xl font-medium mb-3">First Major Infrastructure Project</h4>
+                      <h4 className="text-xl font-medium mb-3">
+                        First Major Infrastructure Project
+                      </h4>
                       <p className="text-muted-foreground">
-                        Completion of the Westside Bridge project marks our expansion into public infrastructure,
-                        earning the firm its first industry award for innovation.
+                        Completion of the Westside Bridge project marks our
+                        expansion into public infrastructure, earning the firm
+                        its first industry award for innovation.
                       </p>
                     </div>
                   </div>
@@ -411,10 +478,13 @@ export default function AboutPage() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="md:text-right md:pr-12">
                       <h3 className="text-2xl font-bold mb-2">2012</h3>
-                      <h4 className="text-xl font-medium mb-3">Expansion & New Headquarters</h4>
+                      <h4 className="text-xl font-medium mb-3">
+                        Expansion & New Headquarters
+                      </h4>
                       <p className="text-muted-foreground">
-                        With a growing team of 25 engineers, we move into our current headquarters and open our second
-                        office in the neighboring state.
+                        With a growing team of 25 engineers, we move into our
+                        current headquarters and open our second office in the
+                        neighboring state.
                       </p>
                     </div>
                     <div className="md:pl-12">
@@ -447,10 +517,13 @@ export default function AboutPage() {
                     </div>
                     <div className="md:pl-12 md:order-2 order-1">
                       <h3 className="text-2xl font-bold mb-2">2018</h3>
-                      <h4 className="text-xl font-medium mb-3">Sustainability Initiative</h4>
+                      <h4 className="text-xl font-medium mb-3">
+                        Sustainability Initiative
+                      </h4>
                       <p className="text-muted-foreground">
-                        Launch of our Green Engineering division, focusing on sustainable design practices and
-                        environmentally responsible construction methods.
+                        Launch of our Green Engineering division, focusing on
+                        sustainable design practices and environmentally
+                        responsible construction methods.
                       </p>
                     </div>
                   </div>
@@ -463,10 +536,13 @@ export default function AboutPage() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="md:text-right md:pr-12">
                       <h3 className="text-2xl font-bold mb-2">2023</h3>
-                      <h4 className="text-xl font-medium mb-3">25th Anniversary & Global Projects</h4>
+                      <h4 className="text-xl font-medium mb-3">
+                        25th Anniversary & Global Projects
+                      </h4>
                       <p className="text-muted-foreground">
-                        Celebrating 25 years of excellence with the completion of our first international project and
-                        the opening of our third office.
+                        Celebrating 25 years of excellence with the completion
+                        of our first international project and the opening of
+                        our third office.
                       </p>
                     </div>
                     <div className="md:pl-12">
@@ -490,43 +566,74 @@ export default function AboutPage() {
         <section className="py-16 md:py-24">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-3xl font-bold tracking-tight mb-4">Certifications & Affiliations</h2>
+              <h2 className="text-3xl font-bold tracking-tight mb-4">
+                Certifications & Affiliations
+              </h2>
               <p className="text-lg text-muted-foreground">
-                We maintain the highest standards through professional certifications and industry partnerships
+                We maintain the highest standards through professional
+                certifications and industry partnerships
               </p>
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
               <div className="flex flex-col items-center text-center">
                 <div className="w-24 h-24 bg-muted rounded-full flex items-center justify-center mb-4">
-                  <Image src="/placeholder.svg?height=60&width=60" alt="Certification 1" width={60} height={60} />
+                  <Image
+                    src="/placeholder.svg?height=60&width=60"
+                    alt="Certification 1"
+                    width={60}
+                    height={60}
+                  />
                 </div>
                 <h4 className="font-bold mb-1">LEED Certified</h4>
-                <p className="text-sm text-muted-foreground">Leadership in Energy and Environmental Design</p>
+                <p className="text-sm text-muted-foreground">
+                  Leadership in Energy and Environmental Design
+                </p>
               </div>
 
               <div className="flex flex-col items-center text-center">
                 <div className="w-24 h-24 bg-muted rounded-full flex items-center justify-center mb-4">
-                  <Image src="/placeholder.svg?height=60&width=60" alt="Certification 2" width={60} height={60} />
+                  <Image
+                    src="/placeholder.svg?height=60&width=60"
+                    alt="Certification 2"
+                    width={60}
+                    height={60}
+                  />
                 </div>
                 <h4 className="font-bold mb-1">ISO 9001</h4>
-                <p className="text-sm text-muted-foreground">Quality Management Systems</p>
+                <p className="text-sm text-muted-foreground">
+                  Quality Management Systems
+                </p>
               </div>
 
               <div className="flex flex-col items-center text-center">
                 <div className="w-24 h-24 bg-muted rounded-full flex items-center justify-center mb-4">
-                  <Image src="/placeholder.svg?height=60&width=60" alt="Certification 3" width={60} height={60} />
+                  <Image
+                    src="/placeholder.svg?height=60&width=60"
+                    alt="Certification 3"
+                    width={60}
+                    height={60}
+                  />
                 </div>
                 <h4 className="font-bold mb-1">ASCE Member</h4>
-                <p className="text-sm text-muted-foreground">American Society of Civil Engineers</p>
+                <p className="text-sm text-muted-foreground">
+                  American Society of Civil Engineers
+                </p>
               </div>
 
               <div className="flex flex-col items-center text-center">
                 <div className="w-24 h-24 bg-muted rounded-full flex items-center justify-center mb-4">
-                  <Image src="/placeholder.svg?height=60&width=60" alt="Certification 4" width={60} height={60} />
+                  <Image
+                    src="/placeholder.svg?height=60&width=60"
+                    alt="Certification 4"
+                    width={60}
+                    height={60}
+                  />
                 </div>
                 <h4 className="font-bold mb-1">PE Licensed</h4>
-                <p className="text-sm text-muted-foreground">Professional Engineer Certification</p>
+                <p className="text-sm text-muted-foreground">
+                  Professional Engineer Certification
+                </p>
               </div>
             </div>
 
@@ -577,9 +684,12 @@ export default function AboutPage() {
         <section className="py-16 md:py-24 bg-muted/50">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-3xl font-bold tracking-tight mb-4">Our Locations</h2>
+              <h2 className="text-3xl font-bold tracking-tight mb-4">
+                Our Locations
+              </h2>
               <p className="text-lg text-muted-foreground">
-                With offices in three major cities, we're positioned to serve clients across the region
+                With offices in three major cities, we're positioned to serve
+                clients across the region
               </p>
             </div>
 
@@ -661,14 +771,19 @@ export default function AboutPage() {
           <div className="container">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl font-bold tracking-tight mb-6">Join Our Team</h2>
+                <h2 className="text-3xl font-bold tracking-tight mb-6">
+                  Join Our Team
+                </h2>
                 <p className="text-lg mb-6">
-                  We're always looking for talented individuals who share our passion for engineering excellence and
-                  innovation. Join our team and be part of projects that shape the future of our built environment.
+                  We're always looking for talented individuals who share our
+                  passion for engineering excellence and innovation. Join our
+                  team and be part of projects that shape the future of our
+                  built environment.
                 </p>
                 <p className="text-muted-foreground mb-6">
-                  At StructureCraft, we offer competitive compensation, professional development opportunities, and a
-                  collaborative work environment that fosters growth and creativity.
+                  At StructureCraft, we offer competitive compensation,
+                  professional development opportunities, and a collaborative
+                  work environment that fosters growth and creativity.
                 </p>
                 <div className="space-y-4 mb-8">
                   <div className="flex items-start gap-3">
@@ -684,7 +799,9 @@ export default function AboutPage() {
                     <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                     <div>
                       <h4 className="font-medium">Work-Life Balance</h4>
-                      <p className="text-sm text-muted-foreground">Flexible scheduling and remote work options</p>
+                      <p className="text-sm text-muted-foreground">
+                        Flexible scheduling and remote work options
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -692,7 +809,8 @@ export default function AboutPage() {
                     <div>
                       <h4 className="font-medium">Diverse Projects</h4>
                       <p className="text-sm text-muted-foreground">
-                        Opportunity to work on a wide range of challenging projects
+                        Opportunity to work on a wide range of challenging
+                        projects
                       </p>
                     </div>
                   </div>
@@ -716,10 +834,13 @@ export default function AboutPage() {
           <div className="container">
             <div className="bg-primary text-primary-foreground rounded-lg p-8 md:p-12">
               <div className="max-w-3xl mx-auto text-center">
-                <h2 className="text-3xl font-bold mb-4">Ready to Work With Us?</h2>
+                <h2 className="text-3xl font-bold mb-4">
+                  Ready to Work With Us?
+                </h2>
                 <p className="text-lg mb-8 text-primary-foreground/90">
-                  Contact our team today to discuss your project needs and discover how our engineering expertise can
-                  bring your vision to life.
+                  Contact our team today to discuss your project needs and
+                  discover how our engineering expertise can bring your vision
+                  to life.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button size="lg" variant="secondary">
@@ -748,7 +869,8 @@ export default function AboutPage() {
                 <span className="text-xl font-bold">StructureCraft</span>
               </div>
               <p className="text-muted-foreground mb-4">
-                Building tomorrow's infrastructure with precision and innovation.
+                Building tomorrow's infrastructure with precision and
+                innovation.
               </p>
             </div>
 
@@ -756,27 +878,42 @@ export default function AboutPage() {
               <h4 className="font-medium mb-4">Quick Links</h4>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/" className="text-muted-foreground hover:text-foreground">
+                  <Link
+                    href="/"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#projects" className="text-muted-foreground hover:text-foreground">
+                  <Link
+                    href="/#projects"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
                     Projects
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services" className="text-muted-foreground hover:text-foreground">
+                  <Link
+                    href="/services"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
                     Services
                   </Link>
                 </li>
                 <li>
-                  <Link href="/about" className="text-muted-foreground hover:text-foreground">
+                  <Link
+                    href="/about"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
                     About Us
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#contact" className="text-muted-foreground hover:text-foreground">
+                  <Link
+                    href="/#contact"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
                     Contact
                   </Link>
                 </li>
@@ -787,27 +924,42 @@ export default function AboutPage() {
               <h4 className="font-medium mb-4">Services</h4>
               <ul className="space-y-2">
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground">
+                  <Link
+                    href="#"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
                     Structural Engineering
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground">
+                  <Link
+                    href="#"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
                     Land Development
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground">
+                  <Link
+                    href="#"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
                     Construction Management
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground">
+                  <Link
+                    href="#"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
                     Infrastructure Design
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground">
+                  <Link
+                    href="#"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
                     Project Planning
                   </Link>
                 </li>
@@ -827,13 +979,20 @@ export default function AboutPage() {
 
           <div className="border-t mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} StructureCraft Engineering. All rights reserved.
+              © {new Date().getFullYear()} StructureCraft Engineering. All
+              rights reserved.
             </p>
             <div className="flex gap-4 mt-4 md:mt-0">
-              <Link href="#" className="text-muted-foreground hover:text-foreground">
+              <Link
+                href="#"
+                className="text-muted-foreground hover:text-foreground"
+              >
                 Privacy Policy
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-foreground">
+              <Link
+                href="#"
+                className="text-muted-foreground hover:text-foreground"
+              >
                 Terms of Service
               </Link>
             </div>
@@ -841,5 +1000,5 @@ export default function AboutPage() {
         </div>
       </footer>
     </div>
-  )
+  );
 }

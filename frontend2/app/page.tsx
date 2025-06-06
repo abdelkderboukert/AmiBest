@@ -173,7 +173,7 @@ export default function Home() {
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
             <Building2 className="h-6 w-6 text-primary" />
-            <span className="text-xl font-bold text-white">StructureCraft</span>
+            <span className="text-xl font-bold text-white">AmiBest</span>
           </div>
           <nav className="hidden md:flex items-center gap-6 text-sm">
             <Link
@@ -651,7 +651,7 @@ export default function Home() {
                   About AmiBest
                 </h2>
                 <p className="text-lg mb-6 text-white">
-                  With over 25 years of experience, StructureCraft has
+                  With over 25 years of experience, AmiBest has
                   established itself as a leader in civil engineering
                   excellence. Our team of certified engineers brings innovation
                   and precision to every project.
@@ -878,17 +878,17 @@ export default function Home() {
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
               <TestimonialCard
-                quote="StructureCraft delivered our office complex on time and under budget. Their attention to detail and innovative solutions exceeded our expectations."
+                quote="AmiBest delivered our office complex on time and under budget. Their attention to detail and innovative solutions exceeded our expectations."
                 author="Robert Thompson"
                 company="Westside Development Corp"
               />
               <TestimonialCard
-                quote="Working with the StructureCraft team was seamless. Their expertise in structural engineering helped us overcome significant design challenges."
+                quote="Working with the AmiBest team was seamless. Their expertise in structural engineering helped us overcome significant design challenges."
                 author="Lisa Chen"
                 company="Urban Housing Authority"
               />
               <TestimonialCard
-                quote="The bridge project was complex, but StructureCraft's engineers provided creative solutions that saved us time and resources while enhancing safety."
+                quote="The bridge project was complex, but AmiBest's engineers provided creative solutions that saved us time and resources while enhancing safety."
                 author="James Wilson"
                 company="Metropolitan Transit Authority"
               />
@@ -1062,7 +1062,7 @@ export default function Home() {
               <div className="flex items-center gap-2 mb-4">
                 <Building2 className="h-6 w-6 text-primary" />
                 <span className="text-xl font-bold text-white">
-                  StructureCraft
+                  AmiBest
                 </span>
               </div>
               <p className="text-white/70 mb-4">
@@ -1168,7 +1168,7 @@ export default function Home() {
                 <p>1234 Engineering Way, Suite 500</p>
                 <p>Metropolis, CA 90001</p>
                 <p>Phone: (555) 123-4567</p>
-                <p>Email: info@structurecraft.com</p>
+                <p>Email: info@AmiBest.com</p>
               </address>
 
               {/* Map Preview */}
@@ -1190,7 +1190,7 @@ export default function Home() {
 
           <div className="border-t border-white/10 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-white/70">
-              © {new Date().getFullYear()} StructureCraft Engineering. All
+              © {new Date().getFullYear()} AmiBest Engineering. All
               rights reserved.
             </p>
             <div className="flex gap-4 mt-4 md:mt-0">
