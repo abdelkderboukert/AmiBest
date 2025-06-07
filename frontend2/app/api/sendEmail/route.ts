@@ -13,13 +13,8 @@ interface EmailRequestBody {
 
 export async function POST(req: Request) {
   try {
-    const {
-      name,
-      company,
-      message,
-      email,
-      subject,
-    }: EmailRequestBody = await req.json();
+    const { name, company, message, email, subject }: EmailRequestBody =
+      await req.json();
 
     console.log(process.env.EMAIL_USER, process.env.EMAIL_PASS);
     // Create a transporter
@@ -36,17 +31,41 @@ export async function POST(req: Request) {
     // Set up email data
     const mailOptions = {
       from: process.env.EMAIL_USER, // sender address
-      to: "abdelkaderboukart@gmail.com", // list of receivers
+      to: "sarlamibest@gmail.com", // list of receivers
       subject: `Message from ${name}`, // Subject line
       // react: `Email from ${name} who works at ${company} about: ${message}. Product reference: ${ref}.  Email: ${email}. Phone: ${phoneNumber}`,
       html: `
-        <h1>Message from ${name}</h1>
-        <p><strong>Company:</strong> ${company}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>subject:</strong> ${subject}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message}</p>
-      `,
+  <div style="font-family: Arial, sans-serif; background: #f4f6f8; padding: 20px;">
+    <div style="max-width: 600px; margin: auto; background: #ffffff; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); padding: 30px;">
+      <h2 style="text-align: center; color: #333;">New Contact Message</h2>
+      
+      <div style="margin-bottom: 15px;">
+        <strong style="color: #555;">Full Name:</strong>
+        <div style="background: #f1f1f1; padding: 10px; border-radius: 6px;">${name}</div>
+      </div>
+
+      <div style="margin-bottom: 15px;">
+        <strong style="color: #555;">Company:</strong>
+        <div style="background: #f1f1f1; padding: 10px; border-radius: 6px;">${company}</div>
+      </div>
+
+      <div style="margin-bottom: 15px;">
+        <strong style="color: #555;">Email Address:</strong>
+        <div style="background: #f1f1f1; padding: 10px; border-radius: 6px;">${email}</div>
+      </div>
+
+      <div style="margin-bottom: 15px;">
+        <strong style="color: #555;">Subject:</strong>
+        <div style="background: #f1f1f1; padding: 10px; border-radius: 6px;">${subject}</div>
+      </div>
+
+      <div style="margin-bottom: 15px;">
+        <strong style="color: #555;">Message:</strong>
+        <div style="background: #f9f9f9; border-left: 4px solid #007bff; padding: 15px; border-radius: 5px;">${message}</div>
+      </div>
+    </div>
+  </div>
+`,
     };
 
     // Send mail

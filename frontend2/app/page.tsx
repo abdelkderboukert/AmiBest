@@ -980,7 +980,9 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="font-medium">Email</h4>
-                      <p className="text-muted-foreground">info@AmiBest.com</p>
+                      <p className="text-muted-foreground">
+                        sarlamibest@gmail.com
+                      </p>
                     </div>
                   </div>
                 </div>
