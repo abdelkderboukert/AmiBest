@@ -111,7 +111,7 @@ export default function MultiLayerParallax() {
               variant="outline"
               className="bg-white/10 text-white hover:bg-white/20"
             >
-              <Link href="/Services">
+              <Link href="/services">
                 <span>Our Services</span>
               </Link>
             </Button>

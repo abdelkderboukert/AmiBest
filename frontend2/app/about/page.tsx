@@ -513,20 +513,19 @@ export default function AboutPage() {
                       </div>
                     </div>
                     <div className="md:pl-12 md:order-2 order-1">
-                      <h3 className="text-2xl font-bold mb-2">2018</h3>
+                      <h3 className="text-2xl font-bold mb-2">2025</h3>
                       <h4 className="text-xl font-medium mb-3">
-                        Sustainability Initiative
+                        8th Anniversary & Global Projects
                       </h4>
                       <p className="text-muted-foreground">
-                        Launch of our Green Engineering division, focusing on
-                        sustainable design practices and environmentally
-                        responsible construction methods.
+                        Celebrating 8 years of excellence with the completion of
+                        our first international project.
                       </p>
                     </div>
                   </div>
                 </div>
 
-                <div className="relative">
+                {/* <div className="relative">
                   <div className="absolute left-1/2 transform -translate-x-1/2 -mt-3">
                     <div className="w-6 h-6 rounded-full bg-primary"></div>
                   </div>
@@ -534,7 +533,7 @@ export default function AboutPage() {
                     <div className="md:text-right md:pr-12">
                       <h3 className="text-2xl font-bold mb-2">2025</h3>
                       <h4 className="text-xl font-medium mb-3">
-                        25th Anniversary & Global Projects
+                        8th Anniversary & Global Projects
                       </h4>
                       <p className="text-muted-foreground">
                         Celebrating 8 years of excellence with the completion of
@@ -552,7 +551,7 @@ export default function AboutPage() {
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
