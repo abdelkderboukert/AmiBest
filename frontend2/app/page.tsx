@@ -59,25 +59,25 @@ export default function Home() {
   // Process images
   const processImages = [
     {
-      src: "/placeholder.svg?height=400&width=600",
+      src: "/img/planing.jpg",
       alt: "Planning phase",
       title: "Planning",
       description: "Initial concept development and feasibility studies",
     },
     {
-      src: "/placeholder.svg?height=400&width=600",
+      src: "/img/desing.jpg",
       alt: "Design phase",
       title: "Design",
       description: "Detailed engineering and architectural design",
     },
     {
-      src: "/placeholder.svg?height=400&width=600",
+      src: "/img/construction.jpg",
       alt: "Construction phase",
       title: "Construction",
       description: "Expert project management and quality control",
     },
     {
-      src: "/placeholder.svg?height=400&width=600",
+      src: "/img/finProject.jpg",
       alt: "Completion phase",
       title: "Completion",
       description: "Final inspections and project delivery",
@@ -651,10 +651,10 @@ export default function Home() {
                   About AmiBest
                 </h2>
                 <p className="text-lg mb-6 text-white">
-                  With over 25 years of experience, AmiBest has
-                  established itself as a leader in civil engineering
-                  excellence. Our team of certified engineers brings innovation
-                  and precision to every project.
+                  With over 25 years of experience, AmiBest has established
+                  itself as a leader in civil engineering excellence. Our team
+                  of certified engineers brings innovation and precision to
+                  every project.
                 </p>
                 <p className="text-white/70 mb-8">
                   We believe in sustainable development practices and
@@ -681,7 +681,7 @@ export default function Home() {
                   </div>
                 </div>
                 <Button className="bg-primary hover:bg-primary/90">
-                  Learn More About Us
+                  <Link href={"/about"}>Learn More About Us</Link>
                 </Button>
               </div>
               <div className="relative h-[400px] md:h-[500px]">
@@ -902,7 +902,7 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="relative h-[400px] rounded-lg overflow-hidden">
                 <Image
-                  src="/placeholder.svg?height=600&width=800"
+                  src="/img/startProject.jpg"
                   alt="Engineering consultation"
                   fill
                   className="object-cover"
@@ -1061,9 +1061,7 @@ export default function Home() {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <Building2 className="h-6 w-6 text-primary" />
-                <span className="text-xl font-bold text-white">
-                  AmiBest
-                </span>
+                <span className="text-xl font-bold text-white">AmiBest</span>
               </div>
               <p className="text-white/70 mb-4">
                 Building tomorrow's infrastructure with precision and
@@ -1190,8 +1188,8 @@ export default function Home() {
 
           <div className="border-t border-white/10 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-white/70">
-              © {new Date().getFullYear()} AmiBest Engineering. All
-              rights reserved.
+              © {new Date().getFullYear()} AmiBest Engineering. All rights
+              reserved.
             </p>
             <div className="flex gap-4 mt-4 md:mt-0">
               <Link href="#" className="text-white/70 hover:text-white">

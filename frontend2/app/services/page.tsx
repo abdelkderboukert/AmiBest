@@ -1,9 +1,9 @@
-import Link from "next/link"
-import Image from "next/image"
-import { Building2, CheckCircle, Clock, HardHat, Mail } from "lucide-react"
+import Link from "next/link";
+import Image from "next/image";
+import { Building2, CheckCircle, Clock, HardHat, Mail } from "lucide-react";
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function ServicesPage() {
   return (
@@ -12,22 +12,37 @@ export default function ServicesPage() {
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
             <Building2 className="h-6 w-6 text-primary" />
-            <span className="text-xl font-bold">StructureCraft</span>
+            <span className="text-xl font-bold">AmiBest</span>
           </div>
           <nav className="hidden md:flex items-center gap-6 text-sm">
-            <Link href="/" className="font-medium transition-colors hover:text-primary">
+            <Link
+              href="/"
+              className="font-medium transition-colors hover:text-primary"
+            >
               Home
             </Link>
-            <Link href="/#projects" className="font-medium transition-colors hover:text-primary">
+            <Link
+              href="/#projects"
+              className="font-medium transition-colors hover:text-primary"
+            >
               Projects
             </Link>
-            <Link href="/services" className="font-medium transition-colors hover:text-primary text-primary">
+            <Link
+              href="/services"
+              className="font-medium transition-colors hover:text-primary text-primary"
+            >
               Services
             </Link>
-            <Link href="/#about" className="font-medium transition-colors hover:text-primary">
+            <Link
+              href="/#about"
+              className="font-medium transition-colors hover:text-primary"
+            >
               About Us
             </Link>
-            <Link href="/#contact" className="font-medium transition-colors hover:text-primary">
+            <Link
+              href="/#contact"
+              className="font-medium transition-colors hover:text-primary"
+            >
               Contact
             </Link>
           </nav>
@@ -57,8 +72,9 @@ export default function ServicesPage() {
                 Comprehensive Engineering Services
               </h1>
               <p className="text-xl text-muted-foreground mb-8">
-                From initial concept to final construction, we provide end-to-end civil engineering solutions that meet
-                the highest standards of quality, safety, and innovation.
+                From initial concept to final construction, we provide
+                end-to-end civil engineering solutions that meet the highest
+                standards of quality, safety, and innovation.
               </p>
               <Button size="lg">Schedule a Consultation</Button>
             </div>
@@ -70,18 +86,24 @@ export default function ServicesPage() {
           <div className="container">
             <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
               <div>
-                <h2 className="text-3xl font-bold tracking-tight mb-6">Structural Engineering</h2>
+                <h2 className="text-3xl font-bold tracking-tight mb-6">
+                  Structural Engineering
+                </h2>
                 <p className="text-lg text-muted-foreground mb-6">
-                  Our structural engineering team provides comprehensive analysis, design, and assessment services for
-                  buildings and infrastructure projects of all scales.
+                  Our structural engineering team provides comprehensive
+                  analysis, design, and assessment services for buildings and
+                  infrastructure projects of all scales.
                 </p>
                 <div className="space-y-4 mb-8">
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                     <div>
-                      <h4 className="font-medium">Structural Analysis & Design</h4>
+                      <h4 className="font-medium">
+                        Structural Analysis & Design
+                      </h4>
                       <p className="text-sm text-muted-foreground">
-                        Advanced modeling and analysis using latest software and methodologies
+                        Advanced modeling and analysis using latest software and
+                        methodologies
                       </p>
                     </div>
                   </div>
@@ -108,7 +130,7 @@ export default function ServicesPage() {
               </div>
               <div className="relative h-[400px] rounded-lg overflow-hidden">
                 <Image
-                  src="/placeholder.svg?height=400&width=600"
+                  src="/img/t1.jpg"
                   alt="Structural Engineering"
                   fill
                   className="object-cover"
@@ -119,17 +141,19 @@ export default function ServicesPage() {
             <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
               <div className="order-2 lg:order-1 relative h-[400px] rounded-lg overflow-hidden">
                 <Image
-                  src="/placeholder.svg?height=400&width=600"
+                  src="/img/t2.jpg"
                   alt="Land Development"
                   fill
                   className="object-cover"
                 />
               </div>
               <div className="order-1 lg:order-2">
-                <h2 className="text-3xl font-bold tracking-tight mb-6">Land Development</h2>
+                <h2 className="text-3xl font-bold tracking-tight mb-6">
+                  Land Development
+                </h2>
                 <p className="text-lg text-muted-foreground mb-6">
-                  Complete site planning and development services from initial feasibility studies through final
-                  construction documentation.
+                  Complete site planning and development services from initial
+                  feasibility studies through final construction documentation.
                 </p>
                 <div className="space-y-4 mb-8">
                   <div className="flex items-start gap-3">
@@ -154,7 +178,9 @@ export default function ServicesPage() {
                     <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                     <div>
                       <h4 className="font-medium">Environmental Compliance</h4>
-                      <p className="text-sm text-muted-foreground">Environmental impact assessment and mitigation</p>
+                      <p className="text-sm text-muted-foreground">
+                        Environmental impact assessment and mitigation
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -164,23 +190,31 @@ export default function ServicesPage() {
 
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl font-bold tracking-tight mb-6">Infrastructure Design</h2>
+                <h2 className="text-3xl font-bold tracking-tight mb-6">
+                  Infrastructure Design
+                </h2>
                 <p className="text-lg text-muted-foreground mb-6">
-                  Planning and design of critical infrastructure including roads, bridges, water systems, and public
-                  facilities.
+                  Planning and design of critical infrastructure including
+                  roads, bridges, water systems, and public facilities.
                 </p>
                 <div className="space-y-4 mb-8">
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                     <div>
-                      <h4 className="font-medium">Transportation Infrastructure</h4>
-                      <p className="text-sm text-muted-foreground">Roads, bridges, and transit system design</p>
+                      <h4 className="font-medium">
+                        Transportation Infrastructure
+                      </h4>
+                      <p className="text-sm text-muted-foreground">
+                        Roads, bridges, and transit system design
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                     <div>
-                      <h4 className="font-medium">Water & Wastewater Systems</h4>
+                      <h4 className="font-medium">
+                        Water & Wastewater Systems
+                      </h4>
                       <p className="text-sm text-muted-foreground">
                         Municipal water infrastructure and treatment facilities
                       </p>
@@ -200,7 +234,7 @@ export default function ServicesPage() {
               </div>
               <div className="relative h-[400px] rounded-lg overflow-hidden">
                 <Image
-                  src="/placeholder.svg?height=400&width=600"
+                  src="/img/t3.jpg"
                   alt="Infrastructure Design"
                   fill
                   className="object-cover"
@@ -214,9 +248,12 @@ export default function ServicesPage() {
         <section className="py-16 md:py-24">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-3xl font-bold tracking-tight mb-4">Additional Services</h2>
+              <h2 className="text-3xl font-bold tracking-tight mb-4">
+                Additional Services
+              </h2>
               <p className="text-lg text-muted-foreground">
-                Supporting services that complement our core engineering capabilities
+                Supporting services that complement our core engineering
+                capabilities
               </p>
             </div>
 
@@ -230,8 +267,8 @@ export default function ServicesPage() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-4">
-                    Expert oversight of construction projects, ensuring quality, safety, and adherence to schedules and
-                    budgets.
+                    Expert oversight of construction projects, ensuring quality,
+                    safety, and adherence to schedules and budgets.
                   </p>
                   <ul className="space-y-2 text-sm">
                     <li className="flex items-center gap-2">
@@ -259,7 +296,8 @@ export default function ServicesPage() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-4">
-                    Comprehensive project planning services from feasibility studies to detailed cost estimation.
+                    Comprehensive project planning services from feasibility
+                    studies to detailed cost estimation.
                   </p>
                   <ul className="space-y-2 text-sm">
                     <li className="flex items-center gap-2">
@@ -287,7 +325,8 @@ export default function ServicesPage() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-4">
-                    Navigation of regulatory requirements and securing necessary approvals for your projects.
+                    Navigation of regulatory requirements and securing necessary
+                    approvals for your projects.
                   </p>
                   <ul className="space-y-2 text-sm">
                     <li className="flex items-center gap-2">
@@ -313,9 +352,12 @@ export default function ServicesPage() {
         <section className="py-16 md:py-24 bg-muted/50">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-3xl font-bold tracking-tight mb-4">Our Process</h2>
+              <h2 className="text-3xl font-bold tracking-tight mb-4">
+                Our Process
+              </h2>
               <p className="text-lg text-muted-foreground">
-                A proven methodology that ensures successful project delivery from concept to completion
+                A proven methodology that ensures successful project delivery
+                from concept to completion
               </p>
             </div>
 
@@ -329,7 +371,8 @@ export default function ServicesPage() {
                 </div>
                 <h3 className="text-xl font-bold mb-2">Discovery</h3>
                 <p className="text-muted-foreground">
-                  Understanding your project requirements, constraints, and objectives through detailed consultation.
+                  Understanding your project requirements, constraints, and
+                  objectives through detailed consultation.
                 </p>
               </div>
 
@@ -342,7 +385,8 @@ export default function ServicesPage() {
                 </div>
                 <h3 className="text-xl font-bold mb-2">Planning</h3>
                 <p className="text-muted-foreground">
-                  Developing comprehensive project plans, timelines, and resource allocation strategies.
+                  Developing comprehensive project plans, timelines, and
+                  resource allocation strategies.
                 </p>
               </div>
 
@@ -355,8 +399,8 @@ export default function ServicesPage() {
                 </div>
                 <h3 className="text-xl font-bold mb-2">Design</h3>
                 <p className="text-muted-foreground">
-                  Creating detailed engineering designs and technical specifications using advanced tools and
-                  methodologies.
+                  Creating detailed engineering designs and technical
+                  specifications using advanced tools and methodologies.
                 </p>
               </div>
 
@@ -369,7 +413,8 @@ export default function ServicesPage() {
                 </div>
                 <h3 className="text-xl font-bold mb-2">Delivery</h3>
                 <p className="text-muted-foreground">
-                  Overseeing implementation and providing ongoing support throughout the construction phase.
+                  Overseeing implementation and providing ongoing support
+                  throughout the construction phase.
                 </p>
               </div>
             </div>
@@ -381,10 +426,12 @@ export default function ServicesPage() {
           <div className="container">
             <div className="bg-primary text-primary-foreground rounded-lg p-8 md:p-12">
               <div className="max-w-3xl mx-auto text-center">
-                <h2 className="text-3xl font-bold mb-4">Ready to Start Your Project?</h2>
+                <h2 className="text-3xl font-bold mb-4">
+                  Ready to Start Your Project?
+                </h2>
                 <p className="text-lg mb-8 text-primary-foreground/90">
-                  Contact our team today for a consultation and discover how our engineering expertise can bring your
-                  vision to life.
+                  Contact our team today for a consultation and discover how our
+                  engineering expertise can bring your vision to life.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button size="lg" variant="secondary">
@@ -413,7 +460,8 @@ export default function ServicesPage() {
                 <span className="text-xl font-bold">StructureCraft</span>
               </div>
               <p className="text-muted-foreground mb-4">
-                Building tomorrow's infrastructure with precision and innovation.
+                Building tomorrow's infrastructure with precision and
+                innovation.
               </p>
             </div>
 
@@ -421,27 +469,42 @@ export default function ServicesPage() {
               <h4 className="font-medium mb-4">Quick Links</h4>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/" className="text-muted-foreground hover:text-foreground">
+                  <Link
+                    href="/"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#projects" className="text-muted-foreground hover:text-foreground">
+                  <Link
+                    href="/#projects"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
                     Projects
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services" className="text-muted-foreground hover:text-foreground">
+                  <Link
+                    href="/services"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
                     Services
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#about" className="text-muted-foreground hover:text-foreground">
+                  <Link
+                    href="/#about"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
                     About Us
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#contact" className="text-muted-foreground hover:text-foreground">
+                  <Link
+                    href="/#contact"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
                     Contact
                   </Link>
                 </li>
@@ -452,27 +515,42 @@ export default function ServicesPage() {
               <h4 className="font-medium mb-4">Services</h4>
               <ul className="space-y-2">
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground">
+                  <Link
+                    href="#"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
                     Structural Engineering
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground">
+                  <Link
+                    href="#"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
                     Land Development
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground">
+                  <Link
+                    href="#"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
                     Construction Management
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground">
+                  <Link
+                    href="#"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
                     Infrastructure Design
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground">
+                  <Link
+                    href="#"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
                     Project Planning
                   </Link>
                 </li>
@@ -492,13 +570,20 @@ export default function ServicesPage() {
 
           <div className="border-t mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} StructureCraft Engineering. All rights reserved.
+              © {new Date().getFullYear()} StructureCraft Engineering. All
+              rights reserved.
             </p>
             <div className="flex gap-4 mt-4 md:mt-0">
-              <Link href="#" className="text-muted-foreground hover:text-foreground">
+              <Link
+                href="#"
+                className="text-muted-foreground hover:text-foreground"
+              >
                 Privacy Policy
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-foreground">
+              <Link
+                href="#"
+                className="text-muted-foreground hover:text-foreground"
+              >
                 Terms of Service
               </Link>
             </div>
@@ -506,5 +591,5 @@ export default function ServicesPage() {
         </div>
       </footer>
     </div>
-  )
+  );
 }

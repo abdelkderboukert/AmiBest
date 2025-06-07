@@ -89,7 +89,7 @@ export default function AboutPage() {
           <div className="container relative z-10 py-24 md:py-32">
             <div className="max-w-3xl">
               <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-6">
-                Building Excellence Since 1998
+                Building Excellence Since 2017
               </h1>
               <p className="text-xl text-gray-200 mb-8">
                 AmiBest is a team of dedicated engineers, designers, and project
@@ -100,21 +100,21 @@ export default function AboutPage() {
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 flex items-center gap-3">
                   <Award className="h-8 w-8 text-white" />
                   <div>
-                    <p className="text-2xl font-bold">25+</p>
+                    <p className="text-2xl font-bold">6+</p>
                     <p className="text-sm">Years Experience</p>
                   </div>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 flex items-center gap-3">
                   <Users className="h-8 w-8 text-white" />
                   <div>
-                    <p className="text-2xl font-bold">45+</p>
+                    <p className="text-2xl font-bold">5+</p>
                     <p className="text-sm">Professional Engineers</p>
                   </div>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 flex items-center gap-3">
                   <Building2 className="h-8 w-8 text-white" />
                   <div>
-                    <p className="text-2xl font-bold">250+</p>
+                    <p className="text-2xl font-bold">20+</p>
                     <p className="text-sm">Projects Completed</p>
                   </div>
                 </div>
@@ -139,26 +139,24 @@ export default function AboutPage() {
                   Our Story
                 </h2>
                 <p className="text-lg mb-6">
-                  Founded in 1998 by Sarah Johnson and Michael Chen,
-                  StructureCraft began as a small structural engineering firm
-                  with a vision to transform the built environment through
-                  innovative design and sustainable practices.
+                  Founded in 2017 by Amirat mohamed, AmiBest began as a small
+                  structural engineering firm with a vision to transform the
+                  built environment through innovative design and sustainable
+                  practices.
                 </p>
                 <p className="text-muted-foreground mb-6">
                   What started as a team of five engineers working from a small
                   office has grown into a multidisciplinary firm with over 45
-                  professional engineers and offices in three major cities. Our
-                  growth has been driven by our commitment to excellence, our
-                  collaborative approach, and our ability to tackle complex
-                  engineering challenges.
+                  professional engineers. Our growth has been driven by our
+                  commitment to excellence, our collaborative approach, and our
+                  ability to tackle complex engineering challenges.
                 </p>
                 <p className="text-muted-foreground mb-6">
-                  Today, StructureCraft is recognized as a leader in civil
-                  engineering, known for delivering projects that balance
-                  technical innovation, environmental responsibility, and
-                  community needs. From iconic bridges to sustainable commercial
-                  developments, our portfolio showcases our versatility and
-                  expertise.
+                  Today, AmiBest is recognized as a leader in civil engineering,
+                  known for delivering projects that balance technical
+                  innovation, environmental responsibility, and community needs.
+                  From iconic bridges to sustainable commercial developments,
+                  our portfolio showcases our versatility and expertise.
                 </p>
                 <div className="flex items-center gap-4 mt-8">
                   <Image
@@ -178,7 +176,7 @@ export default function AboutPage() {
               </div>
               <div className="relative h-[500px]">
                 <Image
-                  src="/placeholder.svg?height=500&width=600"
+                  src="/img/about.jpg"
                   alt="Company history"
                   fill
                   className="object-cover rounded-lg"
@@ -346,22 +344,22 @@ export default function AboutPage() {
                   <TeamMember
                     name="James Wilson"
                     role="Senior Structural Engineer"
-                    imageUrl="/placeholder.svg?height=300&width=300"
+                    imageUrl="/img/profil.jpg"
                   />
                   <TeamMember
                     name="Elena Gonzalez"
                     role="Transportation Engineer"
-                    imageUrl="/placeholder.svg?height=300&width=300"
+                    imageUrl="/img/profil.jpg"
                   />
                   <TeamMember
                     name="Robert Kim"
                     role="Geotechnical Engineer"
-                    imageUrl="/placeholder.svg?height=300&width=300"
+                    imageUrl="/img/profil.jpg"
                   />
                   <TeamMember
                     name="Priya Singh"
                     role="Water Resources Engineer"
-                    imageUrl="/placeholder.svg?height=300&width=300"
+                    imageUrl="/img/profil.jpg"
                   />
                 </div>
               </TabsContent>
@@ -371,22 +369,22 @@ export default function AboutPage() {
                   <TeamMember
                     name="Thomas Wright"
                     role="Senior Project Manager"
-                    imageUrl="/placeholder.svg?height=300&width=300"
+                    imageUrl="/img/profil.jpg"
                   />
                   <TeamMember
                     name="Sophia Lee"
                     role="Construction Coordinator"
-                    imageUrl="/placeholder.svg?height=300&width=300"
+                    imageUrl="/img/profil.jpg"
                   />
                   <TeamMember
                     name="Marcus Johnson"
                     role="Quality Assurance Manager"
-                    imageUrl="/placeholder.svg?height=300&width=300"
+                    imageUrl="/img/profil.jpg"
                   />
                   <TeamMember
                     name="Olivia Martinez"
                     role="Client Relations Manager"
-                    imageUrl="/placeholder.svg?height=300&width=300"
+                    imageUrl="/img/profil.jpg"
                   />
                 </div>
               </TabsContent>
@@ -419,14 +417,14 @@ export default function AboutPage() {
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="md:text-right md:pr-12">
-                      <h3 className="text-2xl font-bold mb-2">1998</h3>
+                      <h3 className="text-2xl font-bold mb-2">2017</h3>
                       <h4 className="text-xl font-medium mb-3">
                         Company Founded
                       </h4>
                       <p className="text-muted-foreground">
-                        Sarah Johnson and Michael Chen establish StructureCraft
-                        with a team of five engineers, focusing on structural
-                        design for commercial buildings.
+                        Amirat mohamed establish AmiBest with a team of five
+                        engineers, focusing on structural design for commercial
+                        buildings.
                       </p>
                     </div>
                     <div className="md:pl-12">
@@ -458,7 +456,7 @@ export default function AboutPage() {
                       </div>
                     </div>
                     <div className="md:pl-12 md:order-2 order-1">
-                      <h3 className="text-2xl font-bold mb-2">2005</h3>
+                      <h3 className="text-2xl font-bold mb-2">2020</h3>
                       <h4 className="text-xl font-medium mb-3">
                         First Major Infrastructure Project
                       </h4>
@@ -477,14 +475,13 @@ export default function AboutPage() {
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="md:text-right md:pr-12">
-                      <h3 className="text-2xl font-bold mb-2">2012</h3>
+                      <h3 className="text-2xl font-bold mb-2">2021</h3>
                       <h4 className="text-xl font-medium mb-3">
                         Expansion & New Headquarters
                       </h4>
                       <p className="text-muted-foreground">
-                        With a growing team of 25 engineers, we move into our
-                        current headquarters and open our second office in the
-                        neighboring state.
+                        With a growing team of 5 engineers, we move into our
+                        current headquarters
                       </p>
                     </div>
                     <div className="md:pl-12">
@@ -535,14 +532,13 @@ export default function AboutPage() {
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="md:text-right md:pr-12">
-                      <h3 className="text-2xl font-bold mb-2">2023</h3>
+                      <h3 className="text-2xl font-bold mb-2">2025</h3>
                       <h4 className="text-xl font-medium mb-3">
                         25th Anniversary & Global Projects
                       </h4>
                       <p className="text-muted-foreground">
-                        Celebrating 25 years of excellence with the completion
-                        of our first international project and the opening of
-                        our third office.
+                        Celebrating 8 years of excellence with the completion of
+                        our first international project.
                       </p>
                     </div>
                     <div className="md:pl-12">
@@ -592,7 +588,7 @@ export default function AboutPage() {
               </div>
 
               <div className="flex flex-col items-center text-center">
-                <div className="w-24 h-24 bg-muted rounded-full flex items-center justify-center mb-4">
+                <div className="w-24 h-24 bg-muted rounded-full flex items-center bg-t justify-center mb-4">
                   <Image
                     src="/placeholder.svg?height=60&width=60"
                     alt="Certification 2"
@@ -757,7 +753,7 @@ export default function AboutPage() {
 
             <div className="mt-12 relative h-[400px] rounded-lg overflow-hidden">
               <Image
-                src="/placeholder.svg?height=400&width=1200"
+                src="/img/city.jpg"
                 alt="Office locations map"
                 fill
                 className="object-cover"
@@ -819,7 +815,7 @@ export default function AboutPage() {
               </div>
               <div className="relative h-[400px]">
                 <Image
-                  src="/placeholder.svg?height=400&width=600"
+                  src="/img/team.jpeg"
                   alt="Team working together"
                   fill
                   className="object-cover rounded-lg"
@@ -851,7 +847,7 @@ export default function AboutPage() {
                     variant="outline"
                     className="bg-transparent border-white text-white hover:bg-white/10"
                   >
-                    View Our Projects
+                    <Link href="/projects">View Our Projects</Link>
                   </Button>
                 </div>
               </div>
