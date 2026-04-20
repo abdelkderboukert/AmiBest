@@ -28,7 +28,7 @@ export default function ProjectCard({ title, category, description, imageUrl }: 
         <h3 className="font-bold text-lg mb-1 text-white">{title}</h3>
         <p className="text-white/70 text-sm mb-4">{description}</p>
         <Link href={`/projects/${title}`} className="inline-flex items-center text-sm font-medium text-primary hover:underline">
-          View Project Details
+          Voir les Détails du Projet
           <ArrowUpRight className="ml-1 h-4 w-4" />
         </Link>
       </CardContent>

@@ -14,6 +14,7 @@ import {
   Phone,
   ArrowRight,
   CheckCircle,
+  Loader2,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -31,28 +32,28 @@ export default function Home() {
   const projectImages = [
     {
       src: "/placeholder.svg?height=600&width=800",
-      alt: "City Center Bridge aerial view",
-      caption: "City Center Bridge - Aerial View",
+      alt: "Vue aérienne du pont du centre-ville",
+      caption: "Pont du Centre-Ville - Vue Aérienne",
     },
     {
       src: "/placeholder.svg?height=600&width=800",
-      alt: "Oceanview Towers construction",
-      caption: "Oceanview Towers - Construction Phase",
+      alt: "Construction des tours Oceanview",
+      caption: "Tours Oceanview - Phase de Construction",
     },
     {
       src: "/placeholder.svg?height=600&width=800",
-      alt: "Tech Park Campus rendering",
-      caption: "Tech Park Campus - Architectural Rendering",
+      alt: "Rendu du Campus Tech Park",
+      caption: "Campus Tech Park - Rendu Architectural",
     },
     {
       src: "/placeholder.svg?height=600&width=800",
-      alt: "Harbor Expansion project",
-      caption: "Harbor Expansion - Aerial Progress",
+      alt: "Projet d'expansion du port",
+      caption: "Expansion du Port - Progrès Aérien",
     },
     {
       src: "/placeholder.svg?height=600&width=800",
-      alt: "Central Station interior",
-      caption: "Central Station - Interior Structure",
+      alt: "Intérieur de la gare centrale",
+      caption: "Gare Centrale - Structure Intérieure",
     },
   ];
 
@@ -60,27 +61,27 @@ export default function Home() {
   const processImages = [
     {
       src: "/img/planing.jpg",
-      alt: "Planning phase",
-      title: "Planning",
-      description: "Initial concept development and feasibility studies",
+      alt: "Phase de planification",
+      title: "Planification",
+      description: "Développement conceptuel initial et études de faisabilité",
     },
     {
       src: "/img/desing.jpg",
-      alt: "Design phase",
-      title: "Design",
-      description: "Detailed engineering and architectural design",
+      alt: "Phase de conception",
+      title: "Conception",
+      description: "Ingénierie détaillée et conception architecturale",
     },
     {
       src: "/img/construction.jpg",
-      alt: "Construction phase",
+      alt: "Phase de construction",
       title: "Construction",
-      description: "Expert project management and quality control",
+      description: "Gestion de projet experte et contrôle qualité",
     },
     {
       src: "/img/finProject.jpg",
-      alt: "Completion phase",
-      title: "Completion",
-      description: "Final inspections and project delivery",
+      alt: "Phase d'achèvement",
+      title: "Achèvement",
+      description: "Inspections finales et livraison du projet",
     },
   ];
 
@@ -88,26 +89,26 @@ export default function Home() {
   const awards = [
     {
       src: "/placeholder.svg?height=200&width=200",
-      alt: "Engineering Excellence Award",
-      title: "Engineering Excellence",
+      alt: "Prix de l'Excellence en Ingénierie",
+      title: "Excellence en Ingénierie",
       year: "2023",
     },
     {
       src: "/placeholder.svg?height=200&width=200",
-      alt: "Sustainability Award",
-      title: "Green Building Council Award",
+      alt: "Prix du Développement Durable",
+      title: "Prix du Conseil du Bâtiment Vert",
       year: "2022",
     },
     {
       src: "/placeholder.svg?height=200&width=200",
-      alt: "Innovation Award",
-      title: "Innovation in Design",
+      alt: "Prix de l'Innovation",
+      title: "Innovation en Conception",
       year: "2021",
     },
     {
       src: "/placeholder.svg?height=200&width=200",
-      alt: "Safety Award",
-      title: "Safety Excellence",
+      alt: "Prix de la Sécurité",
+      title: "Excellence en Sécurité",
       year: "2023",
     },
   ];
@@ -137,6 +138,8 @@ export default function Home() {
     subject: "",
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleChange = (
     e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
   ) => {
@@ -150,25 +153,39 @@ export default function Home() {
   // Update handleSubmit
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
-    const response = await fetch("/api/sendEmail", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
+    try {
+      const response = await fetch("/api/sendEmail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    const data = await response.json();
-    if (response.ok) {
-      alert("Email sent successfully!");
-    } else {
-      alert("Error sending email: " + data.error);
+      const data = await response.json();
+      if (response.ok) {
+        alert("Email envoyé avec succès !");
+        setFormData({
+          name: "",
+          company: "",
+          message: "",
+          email: "",
+          subject: "",
+        });
+      } else {
+        alert("Erreur lors de l'envoi de l'email : " + data.error);
+      }
+    } catch (error) {
+      alert("Erreur lors de la connexion au serveur.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen border-t">
       <header className="sticky top-0 z-40 w-full border-b border-white/10 bg-background/80 backdrop-blur-sm">
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
@@ -180,13 +197,13 @@ export default function Home() {
               href="#"
               className="font-medium transition-colors hover:text-primary text-white"
             >
-              Home
+              Accueil
             </Link>
             <Link
               href="#projects"
               className="font-medium transition-colors hover:text-primary text-white/70"
             >
-              Projects
+              Projets
             </Link>
             <Link
               href="/services"
@@ -198,7 +215,7 @@ export default function Home() {
               href="/about"
               className="font-medium transition-colors hover:text-primary text-white/70"
             >
-              About Us
+              À propos
             </Link>
             <Link
               href="#contact"
@@ -209,7 +226,7 @@ export default function Home() {
           </nav>
           <div className="flex items-center gap-4">
             <Button className="hidden md:flex bg-primary hover:bg-primary/90">
-              Get a Quote
+              Obtenir un devis
             </Button>
             <Button
               variant="outline"
@@ -217,7 +234,7 @@ export default function Home() {
               className="md:hidden border-white/20 text-white"
             >
               <HardHat className="h-5 w-5" />
-              <span className="sr-only">Toggle menu</span>
+              <span className="sr-only">Menu</span>
             </Button>
           </div>
         </div>
@@ -228,7 +245,7 @@ export default function Home() {
           <div className="absolute inset-0 z-0">
             <Image
               src="/placeholder.svg?height=800&width=1600"
-              alt="Civil Engineering Project"
+              alt="Projet d'Ingénierie Civile"
               fill
               className="object-cover opacity-30"
               priority
@@ -238,31 +255,31 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="max-w-2xl space-y-4">
                 <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
-                  Building Tomorrow's Infrastructure Today
+                  Construire Aujourd'hui l'Infrastructure de Demain
                 </h1>
                 <p className="text-xl text-gray-200">
-                  Award-winning civil engineering solutions for commercial, residential, and public sector projects.
+                  Solutions d'ingénierie civile récompensées pour les projets commerciaux, résidentiels et du secteur public.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 pt-4">
                   <Button size="lg" className="bg-white text-background hover:bg-gray-100" asChild>
-                    <Link href="/projects">View Our Projects</Link>
+                    <Link href="/projects">Voir Nos Projets</Link>
                   </Button>
                   <Button size="lg" variant="outline" className="bg-white/10 text-white hover:bg-white/20 border-white">
-                    Our Services
+                    Nos Services
                   </Button>
                 </div>
               </div>
               <div className="hidden md:block relative h-[400px] rounded-lg overflow-hidden">
                 <Image
                   src="/placeholder.svg?height=800&width=1200"
-                  alt="Featured engineering project"
+                  alt="Projet d'ingénierie en vedette"
                   fill
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-background to-transparent"></div>
                 <div className="absolute bottom-0 left-0 p-6 max-w-xs">
-                  <p className="text-white/80 text-sm">Featured Project</p>
-                  <h3 className="text-white text-xl font-bold">City Center Bridge</h3>
+                  <p className="text-white/80 text-sm">Projet en Vedette</p>
+                  <h3 className="text-white text-xl font-bold">Pont du Centre-Ville</h3>
                 </div>
               </div>
             </div>
@@ -275,11 +292,11 @@ export default function Home() {
           <div className="container">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tight text-white mb-4">
-                Project Showcase
+                Vitrine de Projets
               </h2>
               <p className="text-white/70 max-w-2xl mx-auto">
-                Explore our latest engineering achievements through our visual
-                gallery
+                Explorez nos dernières réalisations en ingénierie à travers notre
+                galerie visuelle
               </p>
             </div>
 
@@ -353,10 +370,10 @@ export default function Home() {
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
               <div>
                 <h2 className="text-3xl font-bold tracking-tight text-white">
-                  Our Featured Projects
+                  Nos Projets en Vedette
                 </h2>
                 <p className="text-white/70 mt-2">
-                  Explore our portfolio of completed engineering projects
+                  Explorez notre portfolio de projets d'ingénierie achevés
                 </p>
               </div>
             </div>
@@ -364,13 +381,13 @@ export default function Home() {
             <Tabs defaultValue="all" className="mt-6">
               <TabsList className="mb-8 tabs-list">
                 <TabsTrigger value="all" className="tabs-trigger">
-                  All
+                  Tous
                 </TabsTrigger>
                 <TabsTrigger value="commercial" className="tabs-trigger">
                   Commercial
                 </TabsTrigger>
                 <TabsTrigger value="residential" className="tabs-trigger">
-                  Residential
+                  Résidentiel
                 </TabsTrigger>
                 <TabsTrigger value="infrastructure" className="tabs-trigger">
                   Infrastructure
@@ -380,39 +397,39 @@ export default function Home() {
               <TabsContent value="all" className="mt-0">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   <ProjectCard
-                    title="City Center Bridge"
+                    title="Pont du Centre-Ville"
                     category="Infrastructure"
-                    description="A 500-meter suspension bridge connecting downtown areas"
+                    description="Un pont suspendu de 500 mètres reliant les quartiers du centre."
                     imageUrl="/placeholder.svg?height=400&width=600"
                   />
                   <ProjectCard
-                    title="Oceanview Towers"
-                    category="Residential"
-                    description="Luxury condominium complex with earthquake-resistant design"
+                    title="Tours Oceanview"
+                    category="Résidentiel"
+                    description="Complexe résidentiel de luxe avec conception parasismique."
                     imageUrl="/placeholder.svg?height=400&width=600"
                   />
                   <ProjectCard
-                    title="Tech Park Campus"
+                    title="Campus Tech Park"
                     category="Commercial"
-                    description="Sustainable office complex with LEED Gold certification"
+                    description="Complexe de bureaux durable certifié LEED Or."
                     imageUrl="/placeholder.svg?height=400&width=600"
                   />
                   <ProjectCard
-                    title="Harbor Expansion"
+                    title="Expansion du Port"
                     category="Infrastructure"
-                    description="Major port expansion increasing capacity by 40%"
+                    description="Extension majeure du port augmentant la capacité de 40%."
                     imageUrl="/placeholder.svg?height=400&width=600"
                   />
                   <ProjectCard
-                    title="Central Station Renovation"
+                    title="Rénovation de la Gare Centrale"
                     category="Commercial"
-                    description="Historic train station modernization and structural reinforcement"
+                    description="Modernisation et renforcement structurel d'une gare historique."
                     imageUrl="/placeholder.svg?height=400&width=600"
                   />
                   <ProjectCard
-                    title="Riverside Development"
-                    category="Residential"
-                    description="Flood-resistant housing development with integrated water management"
+                    title="Développement Riverside"
+                    category="Résidentiel"
+                    description="Logements résistants aux inondations avec gestion intégrée de l'eau."
                     imageUrl="/placeholder.svg?height=400&width=600"
                   />
                 </div>
@@ -421,15 +438,15 @@ export default function Home() {
               <TabsContent value="commercial">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   <ProjectCard
-                    title="Tech Park Campus"
+                    title="Campus Tech Park"
                     category="Commercial"
-                    description="Sustainable office complex with LEED Gold certification"
+                    description="Complexe de bureaux durable certifié LEED Or."
                     imageUrl="/placeholder.svg?height=400&width=600"
                   />
                   <ProjectCard
-                    title="Central Station Renovation"
+                    title="Rénovation de la Gare Centrale"
                     category="Commercial"
-                    description="Historic train station modernization and structural reinforcement"
+                    description="Modernisation et renforcement structurel d'une gare historique."
                     imageUrl="/placeholder.svg?height=400&width=600"
                   />
                 </div>
@@ -438,15 +455,15 @@ export default function Home() {
               <TabsContent value="residential">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   <ProjectCard
-                    title="Oceanview Towers"
-                    category="Residential"
-                    description="Luxury condominium complex with earthquake-resistant design"
+                    title="Tours Oceanview"
+                    category="Résidentiel"
+                    description="Complexe résidentiel de luxe avec conception parasismique."
                     imageUrl="/placeholder.svg?height=400&width=600"
                   />
                   <ProjectCard
-                    title="Riverside Development"
-                    category="Residential"
-                    description="Flood-resistant housing development with integrated water management"
+                    title="Développement Riverside"
+                    category="Résidentiel"
+                    description="Logements résistants aux inondations avec gestion intégrée de l'eau."
                     imageUrl="/placeholder.svg?height=400&width=600"
                   />
                 </div>
@@ -455,15 +472,15 @@ export default function Home() {
               <TabsContent value="infrastructure">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   <ProjectCard
-                    title="City Center Bridge"
+                    title="Pont du Centre-Ville"
                     category="Infrastructure"
-                    description="A 500-meter suspension bridge connecting downtown areas"
+                    description="Un pont suspendu de 500 mètres reliant les quartiers du centre."
                     imageUrl="/placeholder.svg?height=400&width=600"
                   />
                   <ProjectCard
-                    title="Harbor Expansion"
+                    title="Expansion du Port"
                     category="Infrastructure"
-                    description="Major port expansion increasing capacity by 40%"
+                    description="Extension majeure du port augmentant la capacité de 40%."
                     imageUrl="/placeholder.svg?height=400&width=600"
                   />
                 </div>
@@ -477,7 +494,7 @@ export default function Home() {
                 asChild
               >
                 <Link href="/projects">
-                  View All Projects
+                  Voir Tous les Projets
                   <ChevronRight className="h-4 w-4" />
                 </Link>
               </Button>
@@ -490,11 +507,11 @@ export default function Home() {
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="text-3xl font-bold tracking-tight text-white">
-                Comprehensive Engineering Services
+                Services d'Ingénierie Complets
               </h2>
               <p className="text-white/70 mt-4">
-                From initial concept to final construction, we provide
-                end-to-end civil engineering solutions
+                Du concept initial à la construction finale, nous fournissons
+                des solutions d'ingénierie civile de bout en bout.
               </p>
             </div>
 
@@ -505,11 +522,11 @@ export default function Home() {
                     <Compass className="h-6 w-6 text-white" />
                   </div>
                   <h3 className="text-xl font-bold mb-2 text-white">
-                    Structural Engineering
+                    Ingénierie Structurelle
                   </h3>
                   <p className="text-white/70">
-                    Comprehensive structural analysis, design, and assessment
-                    for buildings and infrastructure projects.
+                    Analyse structurelle complète, conception et évaluation
+                    pour les bâtiments et les projets d'infrastructure.
                   </p>
                 </CardContent>
               </Card>
@@ -520,11 +537,11 @@ export default function Home() {
                     <MapPin className="h-6 w-6 text-white" />
                   </div>
                   <h3 className="text-xl font-bold mb-2 text-white">
-                    Land Development
+                    Aménagement du Territoire
                   </h3>
                   <p className="text-white/70">
-                    Site planning, grading, drainage design, and permitting for
-                    residential and commercial developments.
+                    Planification de site, nivellement, conception de drainage et 
+                    permis pour les développements résidentiels et commerciaux.
                   </p>
                 </CardContent>
               </Card>
@@ -535,11 +552,11 @@ export default function Home() {
                     <HardHat className="h-6 w-6 text-white" />
                   </div>
                   <h3 className="text-xl font-bold mb-2 text-white">
-                    Construction Management
+                    Gestion de Construction
                   </h3>
                   <p className="text-white/70">
-                    Expert oversight of construction projects, ensuring quality,
-                    safety, and adherence to schedules.
+                    Supervision experte des projets de construction, garantissant 
+                    la qualité, la sécurité et le respect des délais.
                   </p>
                 </CardContent>
               </Card>
@@ -550,11 +567,11 @@ export default function Home() {
                     <Building2 className="h-6 w-6 text-white" />
                   </div>
                   <h3 className="text-xl font-bold mb-2 text-white">
-                    Infrastructure Design
+                    Conception d'Infrastructure
                   </h3>
                   <p className="text-white/70">
-                    Planning and design of roads, bridges, water systems, and
-                    other public infrastructure.
+                    Planification et conception de routes, ponts, systèmes d'eau et
+                    autres infrastructures publiques.
                   </p>
                 </CardContent>
               </Card>
@@ -565,11 +582,11 @@ export default function Home() {
                     <Clock className="h-6 w-6 text-white" />
                   </div>
                   <h3 className="text-xl font-bold mb-2 text-white">
-                    Project Planning
+                    Planification de Projet
                   </h3>
                   <p className="text-white/70">
-                    Feasibility studies, cost estimation, and comprehensive
-                    project planning services.
+                    Études de faisabilité, estimation des coûts et services de
+                    planification de projet complets.
                   </p>
                 </CardContent>
               </Card>
@@ -580,11 +597,11 @@ export default function Home() {
                     <Mail className="h-6 w-6 text-white" />
                   </div>
                   <h3 className="text-xl font-bold mb-2 text-white">
-                    Permitting & Compliance
+                    Permis et Conformité
                   </h3>
                   <p className="text-white/70">
-                    Navigation of regulatory requirements and securing necessary
-                    approvals for your projects.
+                    Navigation dans les exigences réglementaires et obtention des
+                    approbations nécessaires pour vos projets.
                   </p>
                 </CardContent>
               </Card>
@@ -597,11 +614,11 @@ export default function Home() {
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="text-3xl font-bold tracking-tight text-white">
-                Our Engineering Process
+                Notre Processus d'Ingénierie
               </h2>
               <p className="text-white/70 mt-4">
-                A systematic approach to delivering exceptional results on every
-                project
+                Une approche systématique pour fournir des résultats exceptionnels 
+                sur chaque projet
               </p>
             </div>
 
@@ -620,7 +637,7 @@ export default function Home() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
                     <div className="absolute top-4 left-4 bg-primary text-white text-sm font-bold py-1 px-3 rounded-full">
-                      Step {index + 1}
+                      Étape {index + 1}
                     </div>
                   </div>
                   <div className="p-6">
@@ -635,7 +652,7 @@ export default function Home() {
 
             <div className="mt-12 text-center">
               <Button className="bg-primary hover:bg-primary/90">
-                Learn About Our Process
+                Découvrez Notre Processus
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
@@ -648,46 +665,47 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl font-bold tracking-tight mb-4 text-white">
-                  About AmiBest
+                  À propos d'AmiBest
                 </h2>
                 <p className="text-lg mb-6 text-white">
-                  With over 25 years of experience, AmiBest has established
-                  itself as a leader in civil engineering excellence. Our team
-                  of certified engineers brings innovation and precision to
-                  every project.
+                  Avec plus de 25 ans d'expérience, AmiBest s'est imposé comme 
+                  un leader de l'excellence en ingénierie civile. Notre équipe 
+                  d'ingénieurs certifiés apporte innovation et précision à 
+                  chaque projet.
                 </p>
                 <p className="text-white/70 mb-8">
-                  We believe in sustainable development practices and
-                  implementing cutting-edge technologies to deliver projects
-                  that stand the test of time. Our commitment to quality and
-                  safety has earned us recognition across the industry.
+                  Nous croyons aux pratiques de développement durable et 
+                  à l'intégration de technologies de pointe pour livrer des 
+                  projets qui résistent à l'épreuve du temps. Notre engagement 
+                  envers la qualité et la sécurité nous a valu une reconnaissance 
+                  dans toute l'industrie.
                 </p>
                 <div className="grid grid-cols-2 gap-4 mb-8">
                   <div>
                     <h4 className="text-4xl font-bold stats-highlight">250+</h4>
-                    <p className="text-white/70">Projects Completed</p>
+                    <p className="text-white/70">Projets Réalisés</p>
                   </div>
                   <div>
                     <h4 className="text-4xl font-bold stats-highlight">45+</h4>
-                    <p className="text-white/70">Professional Engineers</p>
+                    <p className="text-white/70">Ingénieurs Professionnels</p>
                   </div>
                   <div>
                     <h4 className="text-4xl font-bold stats-highlight">25+</h4>
-                    <p className="text-white/70">Years Experience</p>
+                    <p className="text-white/70">Années d'Expérience</p>
                   </div>
                   <div>
                     <h4 className="text-4xl font-bold stats-highlight">18</h4>
-                    <p className="text-white/70">Industry Awards</p>
+                    <p className="text-white/70">Prix de l'Industrie</p>
                   </div>
                 </div>
                 <Button className="bg-primary hover:bg-primary/90">
-                  <Link href={"/about"}>Learn More About Us</Link>
+                  <Link href={"/about"}>En Savoir Plus Sur Nous</Link>
                 </Button>
               </div>
               <div className="relative h-[400px] md:h-[500px]">
                 <Image
                   src="/img/Group 12.png"
-                  alt="Engineering team"
+                  alt="Équipe d'ingénieurs"
                   fill
                   className="object-cover rounded-lg"
                 />
@@ -696,27 +714,27 @@ export default function Home() {
 
             <div className="mt-24">
               <h3 className="text-2xl font-bold text-center mb-12 text-white">
-                Meet Our Leadership Team
+                Rencontrez Notre Équipe Dirigeante
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 <TeamMember
                   name="Sarah Johnson"
-                  role="Principal Engineer"
+                  role="Ingénieure Principale"
                   imageUrl="/img/profil.jpg"
                 />
                 <TeamMember
                   name="Michael Chen"
-                  role="Structural Director"
+                  role="Directeur Structurel"
                   imageUrl="/img/profil.jpg"
                 />
                 <TeamMember
                   name="David Rodriguez"
-                  role="Project Manager"
+                  role="Chef de Projet"
                   imageUrl="/img/profil.jpg"
                 />
                 <TeamMember
                   name="Aisha Patel"
-                  role="Environmental Specialist"
+                  role="Spécialiste en Environnement"
                   imageUrl="/img/profil.jpg"
                 />
               </div>
@@ -729,11 +747,11 @@ export default function Home() {
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="text-3xl font-bold tracking-tight text-white">
-                Awards & Recognition
+                Prix et Reconnaissances
               </h2>
               <p className="text-white/70 mt-4">
-                Our commitment to excellence has been recognized by leading
-                industry organizations
+                Notre engagement envers l'excellence a été reconnu par les 
+                principales organisations de l'industrie.
               </p>
             </div>
 
@@ -761,11 +779,11 @@ export default function Home() {
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="text-3xl font-bold tracking-tight text-white">
-                Project Highlights
+                Points Forts du Projet
               </h2>
               <p className="text-white/70 mt-4">
-                Explore some of our most challenging and innovative engineering
-                solutions
+                Découvrez certaines de nos solutions d'ingénierie les plus 
+                complexes et innovantes.
               </p>
             </div>
 
@@ -775,7 +793,7 @@ export default function Home() {
                 <div className="relative h-64">
                   <Image
                     src="/placeholder.svg?height=500&width=800"
-                    alt="City Center Bridge"
+                    alt="Pont du Centre-Ville"
                     fill
                     className="object-cover"
                   />
@@ -783,30 +801,30 @@ export default function Home() {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-2 text-white">
-                    City Center Bridge
+                    Pont du Centre-Ville
                   </h3>
                   <p className="text-white/70 mb-4">
-                    A 500-meter suspension bridge designed to withstand extreme
-                    weather conditions while maintaining aesthetic harmony with
-                    the urban landscape.
+                    Un pont suspendu de 500 mètres conçu pour résister aux
+                    conditions météorologiques extrêmes tout en conservant une 
+                    harmonie esthétique avec le paysage urbain.
                   </p>
                   <div className="space-y-2 mb-4">
                     <div className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                       <p className="text-white/70 text-sm">
-                        Innovative cable-stayed design
+                        Conception haubanée innovante
                       </p>
                     </div>
                     <div className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                       <p className="text-white/70 text-sm">
-                        Earthquake-resistant foundation
+                        Fondations parasismiques
                       </p>
                     </div>
                     <div className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                       <p className="text-white/70 text-sm">
-                        Integrated pedestrian walkways
+                        Passerelles piétonnes intégrées
                       </p>
                     </div>
                   </div>
@@ -814,7 +832,7 @@ export default function Home() {
                     variant="outline"
                     className="border-white/20 text-white hover:bg-white/10"
                   >
-                    View Project Details
+                    Voir les Détails du Projet
                   </Button>
                 </div>
               </div>
@@ -824,7 +842,7 @@ export default function Home() {
                 <div className="relative h-64">
                   <Image
                     src="/placeholder.svg?height=500&width=800"
-                    alt="Tech Park Campus"
+                    alt="Campus Tech Park"
                     fill
                     className="object-cover"
                   />
@@ -832,29 +850,29 @@ export default function Home() {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-2 text-white">
-                    Tech Park Campus
+                    Campus Tech Park
                   </h3>
                   <p className="text-white/70 mb-4">
-                    A sustainable office complex featuring cutting-edge green
-                    building technologies and LEED Gold certification.
+                    Un complexe de bureaux durable intégrant des technologies 
+                    de construction écologique de pointe et certifié LEED Or.
                   </p>
                   <div className="space-y-2 mb-4">
                     <div className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                       <p className="text-white/70 text-sm">
-                        Solar-integrated building envelope
+                        Enveloppe de bâtiment à énergie solaire
                       </p>
                     </div>
                     <div className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                       <p className="text-white/70 text-sm">
-                        Rainwater harvesting system
+                        Système de collecte des eaux de pluie
                       </p>
                     </div>
                     <div className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                       <p className="text-white/70 text-sm">
-                        Geothermal heating and cooling
+                        Chauffage et refroidissement géothermique
                       </p>
                     </div>
                   </div>
@@ -862,7 +880,7 @@ export default function Home() {
                     variant="outline"
                     className="border-white/20 text-white hover:bg-white/10"
                   >
-                    View Project Details
+                    Voir les Détails du Projet
                   </Button>
                 </div>
               </div>
@@ -874,21 +892,21 @@ export default function Home() {
         <section className="py-16 md:py-24">
           <div className="container">
             <h2 className="text-3xl font-bold tracking-tight text-center mb-12 text-white">
-              What Our Clients Say
+              Ce Que Disent Nos Clients
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
               <TestimonialCard
-                quote="AmiBest delivered our office complex on time and under budget. Their attention to detail and innovative solutions exceeded our expectations."
+                quote="AmiBest a livré notre complexe de bureaux à temps et en respectant le budget. Leur souci du détail et leurs solutions innovantes ont dépassé nos attentes."
                 author="Robert Thompson"
                 company="Westside Development Corp"
               />
               <TestimonialCard
-                quote="Working with the AmiBest team was seamless. Their expertise in structural engineering helped us overcome significant design challenges."
+                quote="Travailler avec l'équipe d'AmiBest s'est fait sans accroc. Leur expertise en ingénierie structurelle nous a aidés à surmonter d'énormes défis de conception."
                 author="Lisa Chen"
                 company="Urban Housing Authority"
               />
               <TestimonialCard
-                quote="The bridge project was complex, but AmiBest's engineers provided creative solutions that saved us time and resources while enhancing safety."
+                quote="Le projet de pont était complexe, mais les ingénieurs d'AmiBest ont proposé des solutions créatives qui nous ont fait gagner du temps tout en renforçant la sécurité."
                 author="James Wilson"
                 company="Metropolitan Transit Authority"
               />
@@ -903,7 +921,7 @@ export default function Home() {
               <div className="relative h-[400px] rounded-lg overflow-hidden">
                 <Image
                   src="/img/startProject.jpg"
-                  alt="Engineering consultation"
+                  alt="Consultation en ingénierie"
                   fill
                   className="object-cover"
                 />
@@ -912,22 +930,23 @@ export default function Home() {
               <div className="bg-primary text-primary-foreground rounded-lg p-8 md:p-12">
                 <div className="max-w-xl">
                   <h2 className="text-3xl font-bold mb-4">
-                    Ready to Start Your Project?
+                    Prêt à Démarrer Votre Projet ?
                   </h2>
                   <p className="text-lg mb-8 text-primary-foreground/90">
-                    Contact our team today for a consultation and discover how
-                    our engineering expertise can bring your vision to life.
+                    Contactez notre équipe dès aujourd'hui pour une consultation
+                    et découvrez comment notre expertise en ingénierie peut
+                    donner vie à votre vision.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4">
                     <Button size="lg" variant="secondary">
-                      Schedule a Consultation
+                      Planifier une Consultation
                     </Button>
                     <Button
                       size="lg"
                       variant="outline"
                       className="bg-transparent border-white text-white hover:bg-white/10"
                     >
-                      View Our Process
+                      Voir Notre Processus
                     </Button>
                   </div>
                 </div>
@@ -942,11 +961,11 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-12">
               <div>
                 <h2 className="text-3xl font-bold tracking-tight mb-4">
-                  Contact Us
+                  Contactez-nous
                 </h2>
                 <p className="text-muted-foreground mb-8">
-                  Have a project in mind or need engineering consultation? Our
-                  team is ready to assist you.
+                  Vous avez un projet en tête ou besoin d'une consultation en 
+                  ingénierie ? Notre équipe est prête à vous aider.
                 </p>
 
                 <div className="space-y-6">
@@ -955,7 +974,7 @@ export default function Home() {
                       <MapPin className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                      <h4 className="font-medium">Office Location</h4>
+                      <h4 className="font-medium">Emplacement du Bureau</h4>
                       <p className="text-muted-foreground">
                         1234 Engineering Way, Suite 500
                         <br />
@@ -969,7 +988,7 @@ export default function Home() {
                       <Phone className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                      <h4 className="font-medium">Phone</h4>
+                      <h4 className="font-medium">Téléphone</h4>
                       <p className="text-muted-foreground">(555) 123-4567</p>
                     </div>
                   </div>
@@ -993,7 +1012,7 @@ export default function Home() {
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <label htmlFor="name" className="text-sm font-medium">
-                        Name
+                        Nom
                       </label>
                       <input
                         id="name"
@@ -1001,7 +1020,7 @@ export default function Home() {
                         value={formData.name}
                         onChange={handleChange}
                         className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                        placeholder="Your name"
+                        placeholder="Votre nom"
                       />
                     </div>
                     <div className="space-y-2">
@@ -1015,14 +1034,14 @@ export default function Home() {
                         onChange={handleChange}
                         type="email"
                         className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                        placeholder="Your email"
+                        placeholder="Votre adresse email"
                       />
                     </div>
                   </div>
 
                   <div className="space-y-2">
                     <label htmlFor="subject" className="text-sm font-medium">
-                      Subject
+                      Sujet
                     </label>
                     <input
                       id="subject"
@@ -1030,7 +1049,7 @@ export default function Home() {
                       value={formData.subject}
                       onChange={handleChange}
                       className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                      placeholder="Project inquiry"
+                      placeholder="Demande concernant un projet"
                     />
                   </div>
 
@@ -1044,12 +1063,13 @@ export default function Home() {
                       value={formData.message}
                       onChange={handleChange}
                       className="flex min-h-[120px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                      placeholder="Tell us about your project"
+                      placeholder="Parlez-nous de votre projet"
                     />
                   </div>
 
-                  <Button type="submit" className="w-full">
-                    Send Message
+                  <Button type="submit" className="w-full" disabled={isSubmitting}>
+                    {isSubmitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                    {isSubmitting ? "Envoi en cours..." : "Envoyer le Message"}
                   </Button>
                 </form>
               </div>
@@ -1066,8 +1086,7 @@ export default function Home() {
                 <span className="text-xl font-bold text-white">AmiBest</span>
               </div>
               <p className="text-white/70 mb-4">
-                Building tomorrow's infrastructure with precision and
-                innovation.
+                Construire l'infrastructure de demain avec précision et innovation.
               </p>
 
               {/* Footer Gallery */}
@@ -1078,8 +1097,8 @@ export default function Home() {
                     className="relative h-16 rounded-sm overflow-hidden"
                   >
                     <Image
-                      src={`/placeholder.svg?height=64&width=64&text=Project${i}`}
-                      alt={`Project thumbnail ${i}`}
+                      src={`/placeholder.svg?height=64&width=64&text=Projet+${i}`}
+                      alt={`Miniature du projet ${i}`}
                       fill
                       className="object-cover hover:scale-110 transition-all duration-300"
                     />
@@ -1089,11 +1108,11 @@ export default function Home() {
             </div>
 
             <div>
-              <h4 className="font-medium mb-4 text-white">Quick Links</h4>
+              <h4 className="font-medium mb-4 text-white">Liens Rapides</h4>
               <ul className="space-y-2">
                 <li>
                   <Link href="#" className="text-white/70 hover:text-white">
-                    Home
+                    Accueil
                   </Link>
                 </li>
                 <li>
@@ -1101,7 +1120,7 @@ export default function Home() {
                     href="#projects"
                     className="text-white/70 hover:text-white"
                   >
-                    Projects
+                    Projets
                   </Link>
                 </li>
                 <li>
@@ -1117,7 +1136,7 @@ export default function Home() {
                     href="/about"
                     className="text-white/70 hover:text-white"
                   >
-                    About Us
+                    À propos
                   </Link>
                 </li>
                 <li>
@@ -1136,27 +1155,27 @@ export default function Home() {
               <ul className="space-y-2">
                 <li>
                   <Link href="#" className="text-white/70 hover:text-white">
-                    Structural Engineering
+                    Ingénierie Structurelle
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className="text-white/70 hover:text-white">
-                    Land Development
+                    Aménagement du Territoire
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className="text-white/70 hover:text-white">
-                    Construction Management
+                    Gestion de Construction
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className="text-white/70 hover:text-white">
-                    Infrastructure Design
+                    Conception d'Infrastructure
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className="text-white/70 hover:text-white">
-                    Project Planning
+                    Planification de Projet
                   </Link>
                 </li>
               </ul>
@@ -1167,21 +1186,21 @@ export default function Home() {
               <address className="not-italic text-white/70 space-y-2">
                 <p>1234 Engineering Way, Suite 500</p>
                 <p>Metropolis, CA 90001</p>
-                <p>Phone: (555) 123-4567</p>
+                <p>Téléphone: (555) 123-4567</p>
                 <p>Email: info@AmiBest.com</p>
               </address>
 
               {/* Map Preview */}
               <div className="mt-4 relative h-32 rounded-lg overflow-hidden">
                 <Image
-                  src="/placeholder.svg?height=150&width=300&text=Map"
-                  alt="Office location map"
+                  src="/placeholder.svg?height=150&width=300&text=Carte"
+                  alt="Carte de l'emplacement du bureau"
                   fill
                   className="object-cover"
                 />
                 <div className="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/10 transition-all">
                   <span className="text-white text-sm font-medium">
-                    View Map
+                    Voir la Carte
                   </span>
                 </div>
               </div>
@@ -1190,15 +1209,15 @@ export default function Home() {
 
           <div className="border-t border-white/10 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-white/70">
-              © {new Date().getFullYear()} AmiBest Engineering. All rights
-              reserved.
+              © {new Date().getFullYear()} Ingénierie AmiBest. Tous droits
+              réservés.
             </p>
             <div className="flex gap-4 mt-4 md:mt-0">
               <Link href="#" className="text-white/70 hover:text-white">
-                Privacy Policy
+                Politique de Confidentialité
               </Link>
               <Link href="#" className="text-white/70 hover:text-white">
-                Terms of Service
+                Conditions d'Utilisation
               </Link>
             </div>
           </div>

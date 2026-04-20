@@ -37,25 +37,20 @@ export async function POST(req: Request) {
       html: `
   <div style="font-family: Arial, sans-serif; background: #f4f6f8; padding: 20px;">
     <div style="max-width: 600px; margin: auto; background: #ffffff; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); padding: 30px;">
-      <h2 style="text-align: center; color: #333;">New Contact Message</h2>
+      <h2 style="text-align: center; color: #333;">Nouveau Message de Contact</h2>
       
       <div style="margin-bottom: 15px;">
-        <strong style="color: #555;">Full Name:</strong>
+        <strong style="color: #555;">Nom Complet:</strong>
         <div style="background: #f1f1f1; padding: 10px; border-radius: 6px;">${name}</div>
       </div>
 
       <div style="margin-bottom: 15px;">
-        <strong style="color: #555;">Company:</strong>
-        <div style="background: #f1f1f1; padding: 10px; border-radius: 6px;">${company}</div>
-      </div>
-
-      <div style="margin-bottom: 15px;">
-        <strong style="color: #555;">Email Address:</strong>
+        <strong style="color: #555;">Adresse Email:</strong>
         <div style="background: #f1f1f1; padding: 10px; border-radius: 6px;">${email}</div>
       </div>
 
       <div style="margin-bottom: 15px;">
-        <strong style="color: #555;">Subject:</strong>
+        <strong style="color: #555;">Sujet:</strong>
         <div style="background: #f1f1f1; padding: 10px; border-radius: 6px;">${subject}</div>
       </div>
 

@@ -30,13 +30,13 @@ export default function AboutPage() {
               href="/"
               className="font-medium transition-colors hover:text-primary"
             >
-              Home
+              Accueil
             </Link>
             <Link
               href="/#projects"
               className="font-medium transition-colors hover:text-primary"
             >
-              Projects
+              Projets
             </Link>
             <Link
               href="/services"
@@ -48,7 +48,7 @@ export default function AboutPage() {
               href="/about"
               className="font-medium transition-colors hover:text-primary text-primary"
             >
-              About Us
+              À propos
             </Link>
             <Link
               href="/#contact"
@@ -57,7 +57,7 @@ export default function AboutPage() {
               Contact
             </Link>
           </nav>
-          <Button className="hidden md:flex">Get a Quote</Button>
+          <Button className="hidden md:flex">Obtenir un devis</Button>
         </div>
       </header>
 
@@ -67,10 +67,10 @@ export default function AboutPage() {
           <div className="container">
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <Link href="/" className="hover:text-foreground">
-                Home
+                Accueil
               </Link>
               <span>/</span>
-              <span className="text-foreground">About Us</span>
+              <span className="text-foreground">À propos</span>
             </div>
           </div>
         </section>
@@ -80,7 +80,7 @@ export default function AboutPage() {
           <div className="absolute inset-0 z-0">
             {/* <Image
               src="/placeholder.svg?height=600&width=1600"
-              alt="Engineering team at work"
+              alt="Équipe d'ingénieurs au travail"
               fill
               className="object-cover opacity-20"
               priority
@@ -89,40 +89,40 @@ export default function AboutPage() {
           <div className="container relative z-10 py-24 md:py-32">
             <div className="max-w-3xl">
               <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-6">
-                Building Excellence Since 2017
+                Bâtir l'Excellence Depuis 2017
               </h1>
               <p className="text-xl text-gray-200 mb-8">
-                AmiBest is a team of dedicated engineers, designers, and project
-                managers committed to delivering innovative and sustainable
-                engineering solutions.
+                AmiBest est une équipe d'ingénieurs, de concepteurs et de chefs
+                de projet dévoués, engagés à fournir des solutions d'ingénierie
+                innovantes et durables.
               </p>
               <div className="flex flex-wrap gap-4 mt-8">
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 flex items-center gap-3">
                   <Award className="h-8 w-8 text-white" />
                   <div>
                     <p className="text-2xl font-bold">6+</p>
-                    <p className="text-sm">Years Experience</p>
+                    <p className="text-sm">Années d'Expérience</p>
                   </div>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 flex items-center gap-3">
                   <Users className="h-8 w-8 text-white" />
                   <div>
                     <p className="text-2xl font-bold">5+</p>
-                    <p className="text-sm">Professional Engineers</p>
+                    <p className="text-sm">Ingénieurs Professionnels</p>
                   </div>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 flex items-center gap-3">
                   <Building2 className="h-8 w-8 text-white" />
                   <div>
                     <p className="text-2xl font-bold">20+</p>
-                    <p className="text-sm">Projects Completed</p>
+                    <p className="text-sm">Projets Réalisés</p>
                   </div>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 flex items-center gap-3">
                   <Award className="h-8 w-8 text-white" />
                   <div>
                     <p className="text-2xl font-bold">18</p>
-                    <p className="text-sm">Industry Awards</p>
+                    <p className="text-sm">Prix de l'Industrie</p>
                   </div>
                 </div>
               </div>
@@ -136,32 +136,34 @@ export default function AboutPage() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl font-bold tracking-tight mb-6">
-                  Our Story
+                  Notre Histoire
                 </h2>
                 <p className="text-lg mb-6">
-                  Founded in 2017 by Amirat mohamed, AmiBest began as a small
-                  structural engineering firm with a vision to transform the
-                  built environment through innovative design and sustainable
-                  practices.
+                  Fondé en 2017 par Amirat Mohamed, AmiBest a commencé comme une
+                  petite firme d'ingénierie structurelle avec pour vision de
+                  transformer l'environnement bâti grâce à des conceptions
+                  innovantes et des pratiques durables.
                 </p>
                 <p className="text-muted-foreground mb-6">
-                  What started as a team of five engineers working from a small
-                  office has grown into a multidisciplinary firm with over 45
-                  professional engineers. Our growth has been driven by our
-                  commitment to excellence, our collaborative approach, and our
-                  ability to tackle complex engineering challenges.
+                  Ce qui a commencé par une équipe de cinq ingénieurs travaillant
+                  dans un petit bureau est devenu un cabinet multidisciplinaire
+                  comptant plus de 45 ingénieurs professionnels. Notre croissance
+                  a été motivée par notre engagement envers l'excellence, notre
+                  approche collaborative et notre capacité à relever des défis
+                  d'ingénierie complexes.
                 </p>
                 <p className="text-muted-foreground mb-6">
-                  Today, AmiBest is recognized as a leader in civil engineering,
-                  known for delivering projects that balance technical
-                  innovation, environmental responsibility, and community needs.
-                  From iconic bridges to sustainable commercial developments,
-                  our portfolio showcases our versatility and expertise.
+                  Aujourd'hui, AmiBest est reconnu comme un leader en ingénierie
+                  civile, réputé pour la livraison de projets équilibrant
+                  l'innovation technique, la responsabilité environnementale et
+                  les besoins de la communauté. Des ponts emblématiques aux
+                  développements commerciaux durables, notre portfolio démontre
+                  notre polyvalence et notre expertise.
                 </p>
                 <div className="flex items-center gap-4 mt-8">
                   <Image
                     src="/placeholder.svg?height=80&width=80"
-                    alt="Sarah Johnson"
+                    alt="Amirat Mohamed"
                     width={80}
                     height={80}
                     className="rounded-full"
@@ -169,7 +171,7 @@ export default function AboutPage() {
                   <div>
                     <p className="font-bold">Amirat Mohamed</p>
                     <p className="text-sm text-muted-foreground">
-                      Co-founder & Principal Engineer
+                      Co-fondateur & Ingénieur Principal
                     </p>
                   </div>
                 </div>
@@ -177,7 +179,7 @@ export default function AboutPage() {
               <div className="relative h-[500px]">
                 <Image
                   src="/img/about.jpg"
-                  alt="Company history"
+                  alt="Histoire de l'entreprise"
                   fill
                   className="object-cover rounded-lg"
                 />
@@ -191,11 +193,11 @@ export default function AboutPage() {
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="text-3xl font-bold tracking-tight mb-4">
-                Our Core Values
+                Nos Valeurs Fondamentales
               </h2>
               <p className="text-lg text-muted-foreground">
-                These principles guide our work and define our approach to every
-                project we undertake
+                Ces principes guident notre travail et définissent notre
+                approche pour chaque projet que nous entreprenons.
               </p>
             </div>
 
@@ -207,8 +209,8 @@ export default function AboutPage() {
                   </div>
                   <h3 className="text-xl font-bold mb-2">Excellence</h3>
                   <p className="text-muted-foreground">
-                    We are committed to delivering the highest quality in
-                    everything we do, from design to execution.
+                    Nous nous engageons à fournir la plus haute qualité dans
+                    tout ce que nous faisons, de la conception à l'exécution.
                   </p>
                 </CardContent>
               </Card>
@@ -220,8 +222,9 @@ export default function AboutPage() {
                   </div>
                   <h3 className="text-xl font-bold mb-2">Collaboration</h3>
                   <p className="text-muted-foreground">
-                    We believe in the power of teamwork and partnership, working
-                    closely with clients and stakeholders.
+                    Nous croyons au pouvoir du travail d'équipe et du
+                    partenariat, en travaillant en étroite collaboration avec
+                    nos clients et parties prenantes.
                   </p>
                 </CardContent>
               </Card>
@@ -234,10 +237,10 @@ export default function AboutPage() {
                       style={{ color: "#06141D" }}
                     />
                   </div>
-                  <h3 className="text-xl font-bold mb-2">Integrity</h3>
+                  <h3 className="text-xl font-bold mb-2">Intégrité</h3>
                   <p className="text-muted-foreground">
-                    We uphold the highest ethical standards in our business
-                    practices and professional relationships.
+                    Nous respectons les normes éthiques les plus strictes dans
+                    nos pratiques commerciales et nos relations professionnelles.
                   </p>
                 </CardContent>
               </Card>
@@ -252,8 +255,8 @@ export default function AboutPage() {
                   </div>
                   <h3 className="text-xl font-bold mb-2">Innovation</h3>
                   <p className="text-muted-foreground">
-                    We continuously seek new ideas and approaches to solve
-                    complex engineering challenges.
+                    Nous recherchons sans cesse de nouvelles idées et approches
+                    pour résoudre des défis d'ingénierie complexes.
                   </p>
                 </CardContent>
               </Card>
@@ -263,10 +266,10 @@ export default function AboutPage() {
                   <div className="rounded-full service-icon-bg p-3 w-12 h-12 flex items-center justify-center mb-4">
                     <Clock className="h-6 w-6" style={{ color: "#06141D" }} />
                   </div>
-                  <h3 className="text-xl font-bold mb-2">Reliability</h3>
+                  <h3 className="text-xl font-bold mb-2">Fiabilité</h3>
                   <p className="text-muted-foreground">
-                    We deliver on our promises, meeting deadlines and exceeding
-                    expectations consistently.
+                    Nous tenons nos promesses, respectons les délais et
+                    dépassons constamment les attentes.
                   </p>
                 </CardContent>
               </Card>
@@ -279,10 +282,11 @@ export default function AboutPage() {
                       style={{ color: "#06141D" }}
                     />
                   </div>
-                  <h3 className="text-xl font-bold mb-2">Sustainability</h3>
+                  <h3 className="text-xl font-bold mb-2">Durabilité</h3>
                   <p className="text-muted-foreground">
-                    We prioritize environmentally responsible design and
-                    construction practices in all our projects.
+                    Nous donnons la priorité aux pratiques de conception et de
+                    construction respectueuses de l'environnement dans tous nos
+                    projets.
                   </p>
                 </CardContent>
               </Card>
@@ -295,21 +299,21 @@ export default function AboutPage() {
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="text-3xl font-bold tracking-tight mb-4">
-                Meet Our Team
+                Rencontrez Notre Équipe
               </h2>
               <p className="text-lg text-muted-foreground">
-                Our diverse team of experts brings together decades of
-                experience in various engineering disciplines
+                Notre équipe diversifiée d'experts réunit des décennies
+                d'expérience dans diverses disciplines d'ingénierie.
               </p>
             </div>
 
             <Tabs defaultValue="leadership" className="w-full">
               <div className="flex justify-center mb-8">
                 <TabsList>
-                  <TabsTrigger value="leadership">Leadership</TabsTrigger>
-                  <TabsTrigger value="engineering">Engineering</TabsTrigger>
+                  <TabsTrigger value="leadership">Direction</TabsTrigger>
+                  <TabsTrigger value="engineering">Ingénierie</TabsTrigger>
                   <TabsTrigger value="project-management">
-                    Project Management
+                    Gestion de Projet
                   </TabsTrigger>
                 </TabsList>
               </div>
@@ -318,22 +322,22 @@ export default function AboutPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                   <TeamMember
                     name="Sarah Johnson"
-                    role="Principal Engineer & Co-founder"
+                    role="Ingénieure Principale & Co-fondatrice"
                     imageUrl="/img/profil.jpg"
                   />
                   <TeamMember
                     name="Michael Chen"
-                    role="Structural Director & Co-founder"
+                    role="Directeur Structurel & Co-fondateur"
                     imageUrl="/img/profil.jpg"
                   />
                   <TeamMember
                     name="David Rodriguez"
-                    role="Chief Project Manager"
+                    role="Chef de Projet Principal"
                     imageUrl="/img/profil.jpg"
                   />
                   <TeamMember
                     name="Aisha Patel"
-                    role="Environmental Division Head"
+                    role="Chef de Division Environnement"
                     imageUrl="/img/profil.jpg"
                   />
                 </div>
@@ -343,22 +347,22 @@ export default function AboutPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                   <TeamMember
                     name="James Wilson"
-                    role="Senior Structural Engineer"
+                    role="Ingénieur Structurel Senior"
                     imageUrl="/img/profil.jpg"
                   />
                   <TeamMember
                     name="Elena Gonzalez"
-                    role="Transportation Engineer"
+                    role="Ingénieure en Transport"
                     imageUrl="/img/profil.jpg"
                   />
                   <TeamMember
                     name="Robert Kim"
-                    role="Geotechnical Engineer"
+                    role="Ingénieur Géotechnique"
                     imageUrl="/img/profil.jpg"
                   />
                   <TeamMember
                     name="Priya Singh"
-                    role="Water Resources Engineer"
+                    role="Ingénieure en Ressources Hydriques"
                     imageUrl="/img/profil.jpg"
                   />
                 </div>
@@ -368,22 +372,22 @@ export default function AboutPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                   <TeamMember
                     name="Thomas Wright"
-                    role="Senior Project Manager"
+                    role="Chef de Projet Senior"
                     imageUrl="/img/profil.jpg"
                   />
                   <TeamMember
                     name="Sophia Lee"
-                    role="Construction Coordinator"
+                    role="Coordinatrice de Construction"
                     imageUrl="/img/profil.jpg"
                   />
                   <TeamMember
                     name="Marcus Johnson"
-                    role="Quality Assurance Manager"
+                    role="Responsable Assurance Qualité"
                     imageUrl="/img/profil.jpg"
                   />
                   <TeamMember
                     name="Olivia Martinez"
-                    role="Client Relations Manager"
+                    role="Responsable Relations Clients"
                     imageUrl="/img/profil.jpg"
                   />
                 </div>
@@ -397,11 +401,11 @@ export default function AboutPage() {
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="text-3xl font-bold tracking-tight mb-4">
-                Our Journey
+                Notre Parcours
               </h2>
               <p className="text-lg text-muted-foreground">
-                Key milestones in our company's history that have shaped who we
-                are today
+                Les étapes clés de l'histoire de notre entreprise qui ont façonné 
+                ce que nous sommes aujourd'hui.
               </p>
             </div>
 
@@ -419,19 +423,19 @@ export default function AboutPage() {
                     <div className="md:text-right md:pr-12">
                       <h3 className="text-2xl font-bold mb-2">2017</h3>
                       <h4 className="text-xl font-medium mb-3">
-                        Company Founded
+                        Fondation de l'Entreprise
                       </h4>
                       <p className="text-muted-foreground">
-                        Amirat mohamed establish AmiBest with a team of five
-                        engineers, focusing on structural design for commercial
-                        buildings.
+                        Amirat Mohamed fonde AmiBest avec une équipe de cinq
+                        ingénieurs, se concentrant sur la conception structurelle 
+                        de bâtiments commerciaux.
                       </p>
                     </div>
                     <div className="md:pl-12">
                       <div className="relative h-48 rounded-lg overflow-hidden">
                         <Image
                           src="/placeholder.svg?height=200&width=300"
-                          alt="Company founding"
+                          alt="Fondation de l'entreprise"
                           fill
                           className="object-cover"
                         />
@@ -449,7 +453,7 @@ export default function AboutPage() {
                       <div className="relative h-48 rounded-lg overflow-hidden">
                         <Image
                           src="/placeholder.svg?height=200&width=300"
-                          alt="First major project"
+                          alt="Premier projet majeur"
                           fill
                           className="object-cover"
                         />
@@ -458,12 +462,12 @@ export default function AboutPage() {
                     <div className="md:pl-12 md:order-2 order-1">
                       <h3 className="text-2xl font-bold mb-2">2020</h3>
                       <h4 className="text-xl font-medium mb-3">
-                        First Major Infrastructure Project
+                        Premier Projet Majeur d'Infrastructure
                       </h4>
                       <p className="text-muted-foreground">
-                        Completion of the Westside Bridge project marks our
-                        expansion into public infrastructure, earning the firm
-                        its first industry award for innovation.
+                        L'achèvement du pont Westside marque notre expansion 
+                        dans l'infrastructure publique, permettant à l'entreprise 
+                        de remporter son premier prix de l'industrie pour l'innovation.
                       </p>
                     </div>
                   </div>
@@ -477,18 +481,18 @@ export default function AboutPage() {
                     <div className="md:text-right md:pr-12">
                       <h3 className="text-2xl font-bold mb-2">2021</h3>
                       <h4 className="text-xl font-medium mb-3">
-                        Expansion & New Headquarters
+                        Expansion et Nouveau Siège Social
                       </h4>
                       <p className="text-muted-foreground">
-                        With a growing team of 5 engineers, we move into our
-                        current headquarters
+                        Avec une équipe grandissante de 5 ingénieurs, nous 
+                        emménageons dans notre siège social actuel.
                       </p>
                     </div>
                     <div className="md:pl-12">
                       <div className="relative h-48 rounded-lg overflow-hidden">
                         <Image
                           src="/placeholder.svg?height=200&width=300"
-                          alt="New headquarters"
+                          alt="Nouveau siège social"
                           fill
                           className="object-cover"
                         />
@@ -506,7 +510,7 @@ export default function AboutPage() {
                       <div className="relative h-48 rounded-lg overflow-hidden">
                         <Image
                           src="/placeholder.svg?height=200&width=300"
-                          alt="Sustainability initiative"
+                          alt="Initiative environnementale"
                           fill
                           className="object-cover"
                         />
@@ -515,43 +519,15 @@ export default function AboutPage() {
                     <div className="md:pl-12 md:order-2 order-1">
                       <h3 className="text-2xl font-bold mb-2">2025</h3>
                       <h4 className="text-xl font-medium mb-3">
-                        8th Anniversary & Global Projects
+                        8ème Anniversaire et Projets Mondiaux
                       </h4>
                       <p className="text-muted-foreground">
-                        Celebrating 8 years of excellence with the completion of
-                        our first international project.
+                        Célébration de 8 années d'excellence avec l'achèvement 
+                        de notre premier projet international.
                       </p>
                     </div>
                   </div>
                 </div>
-
-                {/* <div className="relative">
-                  <div className="absolute left-1/2 transform -translate-x-1/2 -mt-3">
-                    <div className="w-6 h-6 rounded-full bg-primary"></div>
-                  </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div className="md:text-right md:pr-12">
-                      <h3 className="text-2xl font-bold mb-2">2025</h3>
-                      <h4 className="text-xl font-medium mb-3">
-                        8th Anniversary & Global Projects
-                      </h4>
-                      <p className="text-muted-foreground">
-                        Celebrating 8 years of excellence with the completion of
-                        our first international project.
-                      </p>
-                    </div>
-                    <div className="md:pl-12">
-                      <div className="relative h-48 rounded-lg overflow-hidden">
-                        <Image
-                          src="/placeholder.svg?height=200&width=300"
-                          alt="25th anniversary"
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div> */}
               </div>
             </div>
           </div>
@@ -562,11 +538,11 @@ export default function AboutPage() {
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="text-3xl font-bold tracking-tight mb-4">
-                Certifications & Affiliations
+                Certifications et Affiliations
               </h2>
               <p className="text-lg text-muted-foreground">
-                We maintain the highest standards through professional
-                certifications and industry partnerships
+                Nous maintenons les normes les plus élevées à travers des certifications 
+                professionnelles et des partenariats industriels.
               </p>
             </div>
 
@@ -580,9 +556,9 @@ export default function AboutPage() {
                     height={60}
                   />
                 </div>
-                <h4 className="font-bold mb-1">LEED Certified</h4>
+                <h4 className="font-bold mb-1">Certifié LEED</h4>
                 <p className="text-sm text-muted-foreground">
-                  Leadership in Energy and Environmental Design
+                  Leadership en Énergie et Design Environnemental
                 </p>
               </div>
 
@@ -597,7 +573,7 @@ export default function AboutPage() {
                 </div>
                 <h4 className="font-bold mb-1">ISO 9001</h4>
                 <p className="text-sm text-muted-foreground">
-                  Quality Management Systems
+                  Systèmes de Gestion de la Qualité
                 </p>
               </div>
 
@@ -610,9 +586,9 @@ export default function AboutPage() {
                     height={60}
                   />
                 </div>
-                <h4 className="font-bold mb-1">ASCE Member</h4>
+                <h4 className="font-bold mb-1">Membre ASCE</h4>
                 <p className="text-sm text-muted-foreground">
-                  American Society of Civil Engineers
+                  Société Américaine des Ingénieurs Civils
                 </p>
               </div>
 
@@ -625,47 +601,47 @@ export default function AboutPage() {
                     height={60}
                   />
                 </div>
-                <h4 className="font-bold mb-1">PE Licensed</h4>
+                <h4 className="font-bold mb-1">Licence PE</h4>
                 <p className="text-sm text-muted-foreground">
-                  Professional Engineer Certification
+                  Certification d'Ingénieur Professionnel
                 </p>
               </div>
             </div>
 
             <div className="text-center">
-              <h3 className="text-xl font-bold mb-6">Industry Partners</h3>
+              <h3 className="text-xl font-bold mb-6">Partenaires de l'Industrie</h3>
               <div className="flex flex-wrap justify-center gap-12">
                 <Image
                   src="/placeholder.svg?height=60&width=120"
-                  alt="Partner 1"
+                  alt="Partenaire 1"
                   width={120}
                   height={60}
                   className="opacity-70 hover:opacity-100 transition-opacity"
                 />
                 <Image
                   src="/placeholder.svg?height=60&width=120"
-                  alt="Partner 2"
+                  alt="Partenaire 2"
                   width={120}
                   height={60}
                   className="opacity-70 hover:opacity-100 transition-opacity"
                 />
                 <Image
                   src="/placeholder.svg?height=60&width=120"
-                  alt="Partner 3"
+                  alt="Partenaire 3"
                   width={120}
                   height={60}
                   className="opacity-70 hover:opacity-100 transition-opacity"
                 />
                 <Image
                   src="/placeholder.svg?height=60&width=120"
-                  alt="Partner 4"
+                  alt="Partenaire 4"
                   width={120}
                   height={60}
                   className="opacity-70 hover:opacity-100 transition-opacity"
                 />
                 <Image
                   src="/placeholder.svg?height=60&width=120"
-                  alt="Partner 5"
+                  alt="Partenaire 5"
                   width={120}
                   height={60}
                   className="opacity-70 hover:opacity-100 transition-opacity"
@@ -680,11 +656,11 @@ export default function AboutPage() {
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="text-3xl font-bold tracking-tight mb-4">
-                Our Locations
+                Nos Emplacements
               </h2>
               <p className="text-lg text-muted-foreground">
-                With offices in three major cities, we're positioned to serve
-                clients across the region
+                Avec des bureaux dans trois grandes villes, nous sommes bien 
+                placés pour servir nos clients à travers la région.
               </p>
             </div>
 
@@ -694,17 +670,17 @@ export default function AboutPage() {
                   <div className="rounded-full service-icon-bg p-3 w-12 h-12 flex items-center justify-center mb-4">
                     <MapPin className="h-6 w-6" style={{ color: "#06141D" }} />
                   </div>
-                  <h3 className="text-xl font-bold mb-2">Headquarters</h3>
+                  <h3 className="text-xl font-bold mb-2">Siège Social</h3>
                   <p className="text-muted-foreground mb-4">
                     1234 Engineering Way, Suite 500
                     <br />
                     Metropolis, CA 90001
                   </p>
                   <p className="text-sm text-muted-foreground mb-2">
-                    <strong>Phone:</strong> (555) 123-4567
+                    <strong>Téléphone:</strong> (555) 123-4567
                   </p>
                   <p className="text-sm text-muted-foreground">
-                    <strong>Email:</strong> info@structurecraft.com
+                    <strong>Email:</strong> info@amibest.com
                   </p>
                 </CardContent>
               </Card>
@@ -714,17 +690,17 @@ export default function AboutPage() {
                   <div className="rounded-full service-icon-bg p-3 w-12 h-12 flex items-center justify-center mb-4">
                     <MapPin className="h-6 w-6" style={{ color: "#06141D" }} />
                   </div>
-                  <h3 className="text-xl font-bold mb-2">East Coast Office</h3>
+                  <h3 className="text-xl font-bold mb-2">Bureau Côte Est</h3>
                   <p className="text-muted-foreground mb-4">
                     567 Harbor Boulevard
                     <br />
                     Eastport, NY 10023
                   </p>
                   <p className="text-sm text-muted-foreground mb-2">
-                    <strong>Phone:</strong> (555) 234-5678
+                    <strong>Téléphone:</strong> (555) 234-5678
                   </p>
                   <p className="text-sm text-muted-foreground">
-                    <strong>Email:</strong> eastcoast@structurecraft.com
+                    <strong>Email:</strong> coteest@amibest.com
                   </p>
                 </CardContent>
               </Card>
@@ -734,17 +710,17 @@ export default function AboutPage() {
                   <div className="rounded-full service-icon-bg p-3 w-12 h-12 flex items-center justify-center mb-4">
                     <MapPin className="h-6 w-6" style={{ color: "#06141D" }} />
                   </div>
-                  <h3 className="text-xl font-bold mb-2">Midwest Office</h3>
+                  <h3 className="text-xl font-bold mb-2">Bureau Midwest</h3>
                   <p className="text-muted-foreground mb-4">
-                    890 Central Avenue, Floor 12
+                    890 Central Avenue, Étage 12
                     <br />
                     Lakeside, IL 60601
                   </p>
                   <p className="text-sm text-muted-foreground mb-2">
-                    <strong>Phone:</strong> (555) 345-6789
+                    <strong>Téléphone:</strong> (555) 345-6789
                   </p>
                   <p className="text-sm text-muted-foreground">
-                    <strong>Email:</strong> midwest@structurecraft.com
+                    <strong>Email:</strong> midwest@amibest.com
                   </p>
                 </CardContent>
               </Card>
@@ -753,7 +729,7 @@ export default function AboutPage() {
             <div className="mt-12 relative h-[400px] rounded-lg overflow-hidden">
               <Image
                 src="/img/city.jpg"
-                alt="Office locations map"
+                alt="Carte des emplacements de bureaux"
                 fill
                 className="object-cover"
               />
@@ -767,55 +743,54 @@ export default function AboutPage() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl font-bold tracking-tight mb-6">
-                  Join Our Team
+                  Rejoignez Notre Équipe
                 </h2>
                 <p className="text-lg mb-6">
-                  We're always looking for talented individuals who share our
-                  passion for engineering excellence and innovation. Join our
-                  team and be part of projects that shape the future of our
-                  built environment.
+                  Nous sommes toujours à la recherche d'individus talentueux qui 
+                  partagent notre passion pour l'excellence et l'innovation en ingénierie. 
+                  Rejoignez notre équipe et participez à des projets qui façonnent 
+                  l'avenir de notre environnement bâti.
                 </p>
                 <p className="text-muted-foreground mb-6">
-                  At StructureCraft, we offer competitive compensation,
-                  professional development opportunities, and a collaborative
-                  work environment that fosters growth and creativity.
+                  Chez AmiBest, nous offrons une rémunération compétitive, 
+                  des opportunités de développement professionnel et un environnement 
+                  de travail collaboratif qui favorise la croissance et la créativité.
                 </p>
                 <div className="space-y-4 mb-8">
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                     <div>
-                      <h4 className="font-medium">Professional Development</h4>
+                      <h4 className="font-medium">Développement Professionnel</h4>
                       <p className="text-sm text-muted-foreground">
-                        Continuous learning opportunities and career advancement
+                        Opportunités d'apprentissage continu et d'avancement professionnel
                       </p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                     <div>
-                      <h4 className="font-medium">Work-Life Balance</h4>
+                      <h4 className="font-medium">Équilibre Travail-Vie Personnelle</h4>
                       <p className="text-sm text-muted-foreground">
-                        Flexible scheduling and remote work options
+                        Horaires flexibles et options de télétravail
                       </p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                     <div>
-                      <h4 className="font-medium">Diverse Projects</h4>
+                      <h4 className="font-medium">Projets Diversifiés</h4>
                       <p className="text-sm text-muted-foreground">
-                        Opportunity to work on a wide range of challenging
-                        projects
+                        L'opportunité de travailler sur un large éventail de projets stimulants
                       </p>
                     </div>
                   </div>
                 </div>
-                <Button>View Open Positions</Button>
+                <Button>Voir les Postes Ouverts</Button>
               </div>
               <div className="relative h-[400px]">
                 <Image
                   src="/img/team.jpeg"
-                  alt="Team working together"
+                  alt="L'équipe travaillant ensemble"
                   fill
                   className="object-cover rounded-lg"
                 />
@@ -830,23 +805,23 @@ export default function AboutPage() {
             <div className="bg-primary text-primary-foreground rounded-lg p-8 md:p-12">
               <div className="max-w-3xl mx-auto text-center">
                 <h2 className="text-3xl font-bold mb-4">
-                  Ready to Work With Us?
+                  Prêt à Travailler Avec Nous ?
                 </h2>
                 <p className="text-lg mb-8 text-primary-foreground/90">
-                  Contact our team today to discuss your project needs and
-                  discover how our engineering expertise can bring your vision
-                  to life.
+                  Contactez notre équipe dès aujourd'hui pour discuter des besoins 
+                  de votre projet et découvrir comment notre expertise en ingénierie 
+                  peut donner vie à votre vision.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button size="lg" variant="secondary">
-                    Schedule a Consultation
+                    Planifier une Consultation
                   </Button>
                   <Button
                     size="lg"
                     variant="outline"
                     className="bg-transparent border-white text-white hover:bg-white/10"
                   >
-                    <Link href="/projects">View Our Projects</Link>
+                    <Link href="/projects">Voir Nos Projets</Link>
                   </Button>
                 </div>
               </div>
@@ -861,23 +836,23 @@ export default function AboutPage() {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <Building2 className="h-6 w-6 text-primary" />
-                <span className="text-xl font-bold">StructureCraft</span>
+                <span className="text-xl font-bold">AmiBest</span>
               </div>
               <p className="text-muted-foreground mb-4">
-                Building tomorrow's infrastructure with precision and
+                Construire l'infrastructure de demain avec précision et
                 innovation.
               </p>
             </div>
 
             <div>
-              <h4 className="font-medium mb-4">Quick Links</h4>
+              <h4 className="font-medium mb-4">Liens Rapides</h4>
               <ul className="space-y-2">
                 <li>
                   <Link
                     href="/"
                     className="text-muted-foreground hover:text-foreground"
                   >
-                    Home
+                    Accueil
                   </Link>
                 </li>
                 <li>
@@ -885,7 +860,7 @@ export default function AboutPage() {
                     href="/#projects"
                     className="text-muted-foreground hover:text-foreground"
                   >
-                    Projects
+                    Projets
                   </Link>
                 </li>
                 <li>
@@ -901,7 +876,7 @@ export default function AboutPage() {
                     href="/about"
                     className="text-muted-foreground hover:text-foreground"
                   >
-                    About Us
+                    À propos
                   </Link>
                 </li>
                 <li>
@@ -923,7 +898,7 @@ export default function AboutPage() {
                     href="#"
                     className="text-muted-foreground hover:text-foreground"
                   >
-                    Structural Engineering
+                    Ingénierie Structurelle
                   </Link>
                 </li>
                 <li>
@@ -931,7 +906,7 @@ export default function AboutPage() {
                     href="#"
                     className="text-muted-foreground hover:text-foreground"
                   >
-                    Land Development
+                    Aménagement du Territoire
                   </Link>
                 </li>
                 <li>
@@ -939,7 +914,7 @@ export default function AboutPage() {
                     href="#"
                     className="text-muted-foreground hover:text-foreground"
                   >
-                    Construction Management
+                    Gestion de Construction
                   </Link>
                 </li>
                 <li>
@@ -947,7 +922,7 @@ export default function AboutPage() {
                     href="#"
                     className="text-muted-foreground hover:text-foreground"
                   >
-                    Infrastructure Design
+                    Conception d'Infrastructure
                   </Link>
                 </li>
                 <li>
@@ -955,7 +930,7 @@ export default function AboutPage() {
                     href="#"
                     className="text-muted-foreground hover:text-foreground"
                   >
-                    Project Planning
+                    Planification de Projet
                   </Link>
                 </li>
               </ul>
@@ -966,29 +941,29 @@ export default function AboutPage() {
               <address className="not-italic text-muted-foreground space-y-2">
                 <p>1234 Engineering Way, Suite 500</p>
                 <p>Metropolis, CA 90001</p>
-                <p>Phone: (555) 123-4567</p>
-                <p>Email: info@structurecraft.com</p>
+                <p>Téléphone: (555) 123-4567</p>
+                <p>Email: info@amibest.com</p>
               </address>
             </div>
           </div>
 
           <div className="border-t mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} StructureCraft Engineering. All
-              rights reserved.
+              © {new Date().getFullYear()} Ingénierie AmiBest. Tous droits
+              réservés.
             </p>
             <div className="flex gap-4 mt-4 md:mt-0">
               <Link
                 href="#"
                 className="text-muted-foreground hover:text-foreground"
               >
-                Privacy Policy
+                Politique de Confidentialité
               </Link>
               <Link
                 href="#"
                 className="text-muted-foreground hover:text-foreground"
               >
-                Terms of Service
+                Conditions d'Utilisation
               </Link>
             </div>
           </div>

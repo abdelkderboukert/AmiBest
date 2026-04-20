@@ -94,16 +94,16 @@ export default function MultiLayerParallax() {
       <div className="container relative py-24 md:py-32 lg:py-40 z-50">
         <div className="max-w-2xl space-y-4">
           <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
-            Building Tomorrow's Infrastructure Today
+            Construire l'Infrastructure de Demain, Aujourd'hui
           </h1>
           <p className="text-xl text-gray-200">
-            Award-winning civil engineering solutions for commercial,
-            residential, and public sector projects.
+            Solutions d'ingénierie civile primées pour des projets commerciaux,
+            résidentiels et du secteur public.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
             <Button size="lg">
               <Link href="/projects">
-                <span>View Our Projects</span>
+                <span>Voir Nos Projets</span>
               </Link>
             </Button>
             <Button
@@ -112,7 +112,7 @@ export default function MultiLayerParallax() {
               className="bg-white/10 text-white hover:bg-white/20"
             >
               <Link href="/services">
-                <span>Our Services</span>
+                <span>Nos Services</span>
               </Link>
             </Button>
           </div>
